@@ -2,7 +2,7 @@
 
 @section('content')
 {{-- Hero Section --}}
-<section class="relative min-h-[600px] flex flex-col justify-center overflow-hidden">
+<section class="relative min-h-[800px] flex flex-col justify-center overflow-hidden">
     {{-- Background Image --}}
     <div class="absolute inset-0 z-0">
         <img src="{{ asset('storage/assets/img/bg-hero.webp') }}"
@@ -40,136 +40,67 @@
             </p>
         </div>
 
-        {{-- Logo Slider --}}
-        <div class="relative">
-            {{-- Fade edges for smooth transition effect --}}
-            <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
-            <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
-
-            <div class="flex items-center gap-12 animate-scroll">
-                {{-- First set of logos --}}
-                <div class="flex items-center gap-12 logos-wrapper">
-                    {{-- Client 1 --}}
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-1.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
-                    {{-- Client 2 --}}
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-2.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
-                    {{-- Client 3 --}}
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-3.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
-                    {{-- Client 4 --}}
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-4.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
-                    {{-- Client 5 --}}
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-5.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
-                    {{-- Client 6 --}}
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-6.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
-                    {{-- Client 7 --}}
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-7.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
-                    {{-- Client 8 --}}
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-8.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
+        {{-- Static Logo Grid --}}
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            {{-- Row 1: 5 logos --}}
+            <div class="flex items-center justify-center gap-6 sm:gap-10 lg:gap-14 -mb-8">
+                {{-- Client 1 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-1.webp') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
+                {{-- Client 2 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-2.webp') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                {{-- Client 3 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-3.webp') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                {{-- Client 4 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-4.webp') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                {{-- Client 5 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-5.webp') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+            </div>
 
-                {{-- Duplicate set for seamless infinite scroll --}}
-                <div class="flex items-center gap-12 logos-wrapper">
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-1.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-2.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-3.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-4.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-5.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-6.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-7.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
-                    <div class="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity">
-                        <img src="{{ asset('storage/assets/img/client-8.webp') }}"
-                             alt="Client Logo"
-                             class="h-10 w-auto grayscale hover:grayscale-0 transition-all">
-                    </div>
+            {{-- Row 2: 3 logos (centered) --}}
+            <div class="flex items-center justify-center gap-6 sm:gap-10 lg:gap-14">
+                {{-- Client 6 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-6.webp') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                {{-- Client 7 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-7.png') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                {{-- Client 8 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-8.png') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
             </div>
         </div>
+        </div>
     </div>
 </section>
-
-<style>
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-50% - 3rem));
-    }
-}
-
-.animate-scroll {
-    animation: scroll 40s linear infinite;
-    width: max-content;
-}
-
-.animate-scroll:hover {
-    animation-play-state: paused;
-}
-
-.logos-wrapper {
-    width: max-content;
-}
-</style>
 
 {{-- Scroll Animation Section --}}
 <section id="welcome-section" class="relative" style="height: 350vh;">
@@ -185,7 +116,7 @@
             <div id="scrolling-logo" class="relative transition-all duration-300 ease-out opacity-0 scale-150">
                 <div class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-gray-200/50 backdrop-blur-md border border-gray-300/60 rounded-3xl flex items-center justify-center shadow-lg">
                     {{-- Mata --}}
-                    <div class="absolute w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex justify-between items-start pt-4 sm:pt-5 md:pt-6">
+                    <div class="absolute w-16 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24 flex justify-between items-start pt-4 sm:pt-5 md:pt-6">
                         <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-gray-900 rounded-full"></div>
                         <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-gray-900 rounded-full"></div>
                     </div>
