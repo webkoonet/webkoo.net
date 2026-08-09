@@ -33,6 +33,9 @@ return [
     'products' => 'Services',
     'resources' => 'Resources',
 
+    // Trusted By
+    'trusted_by' => 'Trusted by leading companies',
+
     // Products Megamenu
     'web_services' => 'Web Services',
     'websites' => 'Business Websites',

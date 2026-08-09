@@ -49,6 +49,9 @@ return [
     'products' => 'Layanan',
     'resources' => 'Sumber Daya',
 
+    // Trusted By
+    'trusted_by' => 'Dipercaya oleh perusahaan terkemuka',
+
     // Products Megamenu
     'web_services' => 'Layanan Website',
     'websites' => 'Website Bisnis',
