@@ -55,6 +55,12 @@
                     <div class="absolute w-14 h-7 border-b-4 border-gray-900 rounded-b-full"></div>
                 </div>
             </div>
+
+            {{-- Animated Description Text --}}
+            <p id="description-text" class="mt-8 text-sm sm:text-base text-gray-600 opacity-0 transition-all duration-700 text-center max-w-xs leading-relaxed">
+                Your creative journey starts here<br>
+                Let's create something amazing together ✨
+            </p>
         </div>
     </div>
 </section>
@@ -84,8 +90,9 @@
     const welcomeSection = document.getElementById('welcome-section');
     const scrollingLogo = document.getElementById('scrolling-logo');
     const welcomeText = document.getElementById('welcome-text');
+    const descriptionText = document.getElementById('description-text');
 
-    if (welcomeSection && scrollingLogo && welcomeText) {
+    if (welcomeSection && scrollingLogo && welcomeText && descriptionText) {
         window.addEventListener('scroll', function() {
             const rect = welcomeSection.getBoundingClientRect();
             const windowHeight = window.innerHeight;
@@ -107,6 +114,8 @@
                 scrollingLogo.style.opacity = logoOpacity.toString();
                 scrollingLogo.style.transform = `scale(${logoScale})`;
                 welcomeText.style.opacity = '0';
+                descriptionText.style.opacity = '0';
+                descriptionText.style.transform = 'translateY(20px)';
             }
             // Stage 2: Logo mengecil lebih lanjut (dari 1.0 ke 0.6) (0.25 - 0.5)
             else if (progress < 0.5) {
@@ -115,6 +124,8 @@
                 scrollingLogo.style.opacity = '1';
                 scrollingLogo.style.transform = `scale(${logoScale})`;
                 welcomeText.style.opacity = '0';
+                descriptionText.style.opacity = '0';
+                descriptionText.style.transform = 'translateY(20px)';
             }
             // Stage 3: Teks muncul (0.5 - 0.75)
             else if (progress < 0.75) {
@@ -122,12 +133,18 @@
                 scrollingLogo.style.opacity = '1';
                 scrollingLogo.style.transform = 'scale(0.6)';
                 welcomeText.style.opacity = Math.min(1, textOpacity).toString();
+                // Description fades in slightly after welcome text
+                const descOpacity = Math.max(0, (progress - 0.55) / 0.2);
+                descriptionText.style.opacity = Math.min(1, descOpacity).toString();
+                descriptionText.style.transform = `translateY(${20 - descOpacity * 20}px)`;
             }
             // Stage 4: Animasi selesai, tampilan final
             else {
                 scrollingLogo.style.opacity = '1';
                 scrollingLogo.style.transform = 'scale(0.6)';
                 welcomeText.style.opacity = '1';
+                descriptionText.style.opacity = '1';
+                descriptionText.style.transform = 'translateY(0)';
             }
         });
 
