@@ -44,7 +44,7 @@
             </p>
 
             {{-- Logo - Middle --}}
-            <div id="scrolling-logo" class="transition-all duration-300 ease-out opacity-0 scale-150">
+            <div id="scrolling-logo" class="relative transition-all duration-300 ease-out opacity-0 scale-150">
                 <div class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-gray-200/50 backdrop-blur-md border border-gray-300/60 rounded-3xl flex items-center justify-center shadow-lg">
                     {{-- Mata --}}
                     <div class="absolute w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex justify-between items-start pt-4 sm:pt-5 md:pt-6">
@@ -53,6 +53,13 @@
                     </div>
                     {{-- Senyum --}}
                     <div class="absolute w-10 h-5 sm:w-12 sm:h-6 md:w-14 md:h-7 border-b-3 sm:border-b-4 border-gray-900 rounded-b-full"></div>
+                </div>
+
+                {{-- Green Checkmark Icon - Right side --}}
+                <div class="absolute -right-4 top-3 w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 bg-green-500 rounded-full flex items-center justify-center shadow-md">
+                    <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                    </svg>
                 </div>
             </div>
 
