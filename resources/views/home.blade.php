@@ -33,155 +33,23 @@
     </div>
 </section>
 
-{{-- Features Section --}}
-<section id="services" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Layanan Kami
-            </h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Kami menyediakan berbagai solusi digital untuk membantu bisnis Anda berkembang
+{{-- Scroll Animation Section --}}
+<section id="welcome-section" class="relative" style="height: 250vh;">
+    {{-- Sticky Container - tetap di tengah layar saat scroll --}}
+    <div class="sticky top-0 flex items-center justify-center h-screen overflow-hidden">
+        <div class="flex flex-col items-center justify-center">
+            {{-- Logo yang akan di-animasikan --}}
+            <div id="scrolling-logo" class="transition-all duration-300 ease-out opacity-0 scale-150">
+                <img src="{{ asset('storage/assets/img/logo.webp') }}"
+                     alt="Webkoo"
+                     class="w-32 h-32 object-contain">
+            </div>
+
+            {{-- Welcome Text --}}
+            <p id="welcome-text" class="mt-6 text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 opacity-0 transition-opacity duration-700">
+                Hello welcome to webkoo :)
             </p>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center p-8">
-                <div class="inline-flex items-center justify-center w-16 h-16 bg-gray-900 rounded-full mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-3">Web Development</h3>
-                <p class="text-gray-600">
-                    Website modern dengan teknologi terkini dan performa tinggi
-                </p>
-            </div>
-
-            <div class="text-center p-8">
-                <div class="inline-flex items-center justify-center w-16 h-16 bg-gray-900 rounded-full mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-3">Mobile Apps</h3>
-                <p class="text-gray-600">
-                    Aplikasi mobile responsif untuk iOS dan Android
-                </p>
-            </div>
-
-            <div class="text-center p-8">
-                <div class="inline-flex items-center justify-center w-16 h-16 bg-gray-900 rounded-full mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-3">UI/UX Design</h3>
-                <p class="text-gray-600">
-                    Desain antarmuka yang intuitif dan menarik untuk pengguna
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-{{-- About Section --}}
-<section id="about" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                Tentang Webkoo
-            </h2>
-            <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                Webkoo adalah perusahaan teknologi yang berfokus pada pengembangan solusi digital berkualitas tinggi.
-                Kami menggabungkan kreativitas dengan teknologi terkini untuk menghasilkan produk yang tidak hanya
-                berfungsi dengan baik, tetapi juga memberikan pengalaman pengguna yang luar biasa.
-            </p>
-            <p class="text-lg text-gray-600 leading-relaxed">
-                Dengan tim berpengalaman dan pendekatan yang berorientasi pada hasil, kami siap membantu bisnis Anda
-                bertransformasi di era digital.
-            </p>
-        </div>
-    </div>
-</section>
-
-{{-- Portfolio Section --}}
-<section id="portfolio" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Portfolio
-            </h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Beberapa proyek yang telah kami kerjakan dengan dedikasi
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {{-- Portfolio Item 1 --}}
-            <div class="group relative overflow-hidden rounded-lg bg-gray-100 aspect-[4/3]">
-                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div class="absolute inset-0 flex items-end p-6">
-                    <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                        <h3 class="text-lg font-semibold mb-1">E-Commerce Platform</h3>
-                        <p class="text-sm text-gray-300">Web Development</p>
-                    </div>
-                </div>
-                <div class="absolute inset-0 flex items-center justify-center text-gray-400">
-                    <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
-                </div>
-            </div>
-
-            {{-- Portfolio Item 2 --}}
-            <div class="group relative overflow-hidden rounded-lg bg-gray-100 aspect-[4/3]">
-                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div class="absolute inset-0 flex items-end p-6">
-                    <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                        <h3 class="text-lg font-semibold mb-1">Mobile Banking App</h3>
-                        <p class="text-sm text-gray-300">Mobile Development</p>
-                    </div>
-                </div>
-                <div class="absolute inset-0 flex items-center justify-center text-gray-400">
-                    <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                    </svg>
-                </div>
-            </div>
-
-            {{-- Portfolio Item 3 --}}
-            <div class="group relative overflow-hidden rounded-lg bg-gray-100 aspect-[4/3]">
-                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div class="absolute inset-0 flex items-end p-6">
-                    <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                        <h3 class="text-lg font-semibold mb-1">Brand Identity</h3>
-                        <p class="text-sm text-gray-300">UI/UX Design</p>
-                    </div>
-                </div>
-                <div class="absolute inset-0 flex items-center justify-center text-gray-400">
-                    <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-{{-- Contact Section --}}
-<section id="contact" class="py-20 bg-gray-900">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
-            Hubungi Kami
-        </h2>
-        <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
-            Siap untuk memulai proyek Anda bersama kami? Hubungi kami dan mari diskusikan solusi terbaik untuk bisnis Anda.
-        </p>
-        <a href="mailto:info@webkoo.net"
-           class="inline-block px-8 py-3 bg-white text-gray-900 font-medium rounded-full shadow-lg hover:shadow-xl transition-shadow">
-            info@webkoo.net
-        </a>
     </div>
 </section>
 
@@ -205,5 +73,60 @@
             textElement.style.transform = 'translateY(0)';
         }, 500);
     }, 3000);
+
+    // Scroll Animation untuk Logo dan Welcome Text
+    const welcomeSection = document.getElementById('welcome-section');
+    const scrollingLogo = document.getElementById('scrolling-logo');
+    const welcomeText = document.getElementById('welcome-text');
+
+    if (welcomeSection && scrollingLogo && welcomeText) {
+        window.addEventListener('scroll', function() {
+            const rect = welcomeSection.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            // Hitung progress berdasarkan seberapa jauh section sudah discroll
+            // Section height 250vh, sticky container h-screen
+            // Progress = 0 saat section top = 0, progress = 1 saat section selesai
+            const scrolledDistance = -rect.top;
+            const totalScrollDistance = rect.height - windowHeight;
+
+            let progress = scrolledDistance / totalScrollDistance;
+            progress = Math.max(0, Math.min(1, progress));
+
+            // Animasi logo: opacity dan scale
+            // Stage 1: Logo muncul dari opacity 0 ke 1 (0 - 0.25)
+            if (progress < 0.25) {
+                const logoOpacity = progress / 0.25;
+                const logoScale = 1.5 - (progress / 0.25) * 0.5; // dari 1.5 ke 1.0
+                scrollingLogo.style.opacity = logoOpacity.toString();
+                scrollingLogo.style.transform = `scale(${logoScale})`;
+                welcomeText.style.opacity = '0';
+            }
+            // Stage 2: Logo mengecil lebih lanjut (dari 1.0 ke 0.6) (0.25 - 0.5)
+            else if (progress < 0.5) {
+                const stageProgress = (progress - 0.25) / 0.25;
+                const logoScale = 1.0 - stageProgress * 0.4; // dari 1.0 ke 0.6
+                scrollingLogo.style.opacity = '1';
+                scrollingLogo.style.transform = `scale(${logoScale})`;
+                welcomeText.style.opacity = '0';
+            }
+            // Stage 3: Teks muncul (0.5 - 0.75)
+            else if (progress < 0.75) {
+                const textOpacity = (progress - 0.5) / 0.25;
+                scrollingLogo.style.opacity = '1';
+                scrollingLogo.style.transform = 'scale(0.6)';
+                welcomeText.style.opacity = Math.min(1, textOpacity).toString();
+            }
+            // Stage 4: Animasi selesai, tampilan final
+            else {
+                scrollingLogo.style.opacity = '1';
+                scrollingLogo.style.transform = 'scale(0.6)';
+                welcomeText.style.opacity = '1';
+            }
+        });
+
+        // Trigger animasi awal saat load
+        window.dispatchEvent(new Event('scroll'));
+    }
 </script>
 @endsection
