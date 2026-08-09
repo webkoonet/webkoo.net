@@ -37,36 +37,37 @@
 <section id="welcome-section" class="relative" style="height: 350vh;">
     {{-- Sticky Container - tetap di tengah layar saat scroll --}}
     <div class="sticky top-0 flex items-center justify-center h-screen overflow-hidden">
-        <div class="flex flex-col items-center justify-center">
-            {{-- Welcome Text --}}
-            <p id="welcome-text" class="mb-6 text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 opacity-0 transition-opacity duration-700">
+        <div class="flex flex-col items-center justify-between h-full px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12 pt-20 sm:pt-24 md:pt-32">
+            {{-- Welcome Text - Top --}}
+            <p id="welcome-text" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 opacity-0 transition-opacity duration-700 text-center px-4">
                 Hello welcome to webkoo
             </p>
 
-            {{-- Logo yang akan di-animasikan --}}
+            {{-- Logo - Middle --}}
             <div id="scrolling-logo" class="transition-all duration-300 ease-out opacity-0 scale-150">
-                <div class="w-32 h-32 bg-gray-200/50 backdrop-blur-md border border-gray-300/60 rounded-3xl flex items-center justify-center shadow-lg">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-gray-200/50 backdrop-blur-md border border-gray-300/60 rounded-3xl flex items-center justify-center shadow-lg">
                     {{-- Mata --}}
-                    <div class="absolute w-24 h-24 flex justify-between items-start pt-6">
-                        <div class="w-3 h-3 bg-gray-900 rounded-full"></div>
-                        <div class="w-3 h-3 bg-gray-900 rounded-full"></div>
+                    <div class="absolute w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex justify-between items-start pt-4 sm:pt-5 md:pt-6">
+                        <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-gray-900 rounded-full"></div>
+                        <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-gray-900 rounded-full"></div>
                     </div>
                     {{-- Senyum --}}
-                    <div class="absolute w-14 h-7 border-b-4 border-gray-900 rounded-b-full"></div>
+                    <div class="absolute w-10 h-5 sm:w-12 sm:h-6 md:w-14 md:h-7 border-b-3 sm:border-b-4 border-gray-900 rounded-b-full"></div>
                 </div>
             </div>
 
-            {{-- Animated Description Text --}}
-            <p id="description-text" class="mt-8 text-sm sm:text-base text-gray-600 opacity-0 transition-all duration-700 text-center max-w-xs leading-relaxed">
-                Your creative journey starts here<br>
-                Let's create something amazing together ✨
-            </p>
+            {{-- Bottom Section - Description & Button --}}
+            <div class="flex flex-col items-center pb-4 sm:pb-6 md:pb-8">
+                <p id="description-text" class="mb-3 sm:mb-4 text-xs sm:text-sm md:text-base text-gray-600 opacity-0 transition-all duration-700 text-center max-w-[200px] sm:max-w-xs md:max-w-xs leading-relaxed">
+                    Your creative journey starts here<br>
+                    Let's create something amazing together ✨
+                </p>
 
-            {{-- CTA Button --}}
-            <a id="cta-button" href="#services"
-               class="mt-6 px-6 py-2.5 bg-white text-gray-900 text-sm font-medium rounded-full opacity-0 transition-all duration-700 hover:bg-gray-100 hover:scale-105 shadow-md">
-                Jelajahi layanan kami
-            </a>
+                <a id="cta-button" href="#services"
+                   class="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 bg-white text-gray-900 text-xs sm:text-sm font-medium rounded-full opacity-0 transition-all duration-700 hover:bg-gray-100 hover:scale-105 shadow-md">
+                    Jelajahi layanan kami
+                </a>
+            </div>
         </div>
     </div>
 </section>
