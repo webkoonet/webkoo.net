@@ -61,6 +61,12 @@
                 Your creative journey starts here<br>
                 Let's create something amazing together ✨
             </p>
+
+            {{-- CTA Button --}}
+            <a id="cta-button" href="#services"
+               class="mt-6 px-6 py-2.5 bg-white text-gray-900 text-sm font-medium rounded-full opacity-0 transition-all duration-700 hover:bg-gray-100 hover:scale-105 shadow-md">
+                Jelajahi layanan kami
+            </a>
         </div>
     </div>
 </section>
@@ -91,8 +97,9 @@
     const scrollingLogo = document.getElementById('scrolling-logo');
     const welcomeText = document.getElementById('welcome-text');
     const descriptionText = document.getElementById('description-text');
+    const ctaButton = document.getElementById('cta-button');
 
-    if (welcomeSection && scrollingLogo && welcomeText && descriptionText) {
+    if (welcomeSection && scrollingLogo && welcomeText && descriptionText && ctaButton) {
         window.addEventListener('scroll', function() {
             const rect = welcomeSection.getBoundingClientRect();
             const windowHeight = window.innerHeight;
@@ -116,6 +123,8 @@
                 welcomeText.style.opacity = '0';
                 descriptionText.style.opacity = '0';
                 descriptionText.style.transform = 'translateY(20px)';
+                ctaButton.style.opacity = '0';
+                ctaButton.style.transform = 'translateY(20px)';
             }
             // Stage 2: Logo mengecil lebih lanjut (dari 1.0 ke 0.6) (0.25 - 0.5)
             else if (progress < 0.5) {
@@ -126,6 +135,8 @@
                 welcomeText.style.opacity = '0';
                 descriptionText.style.opacity = '0';
                 descriptionText.style.transform = 'translateY(20px)';
+                ctaButton.style.opacity = '0';
+                ctaButton.style.transform = 'translateY(20px)';
             }
             // Stage 3: Teks muncul (0.5 - 0.75)
             else if (progress < 0.75) {
@@ -137,6 +148,10 @@
                 const descOpacity = Math.max(0, (progress - 0.55) / 0.2);
                 descriptionText.style.opacity = Math.min(1, descOpacity).toString();
                 descriptionText.style.transform = `translateY(${20 - descOpacity * 20}px)`;
+                // Button fades in after description
+                const btnOpacity = Math.max(0, (progress - 0.6) / 0.15);
+                ctaButton.style.opacity = Math.min(1, btnOpacity).toString();
+                ctaButton.style.transform = `translateY(${20 - btnOpacity * 20}px)`;
             }
             // Stage 4: Animasi selesai, tampilan final
             else {
@@ -145,6 +160,8 @@
                 welcomeText.style.opacity = '1';
                 descriptionText.style.opacity = '1';
                 descriptionText.style.transform = 'translateY(0)';
+                ctaButton.style.opacity = '1';
+                ctaButton.style.transform = 'translateY(0)';
             }
         });
 
