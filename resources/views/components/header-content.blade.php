@@ -45,27 +45,50 @@
                             </svg>
                         </button>
                         <div class="megamenu-content absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 w-[600px] -ml-4">
-                                <div class="grid grid-cols-3 gap-6">
-                                    <div>
-                                        <h3 class="font-semibold text-gray-900 mb-3">{{ __('messages.pricing') }}</h3>
-                                        <ul class="space-y-2">
-                                            <li><a href="#starter" class="text-sm text-gray-600 hover:text-gray-900">Starter</a></li>
-                                            <li><a href="#professional" class="text-sm text-gray-600 hover:text-gray-900">Professional</a></li>
-                                            <li><a href="#enterprise" class="text-sm text-gray-600 hover:text-gray-900">Enterprise</a></li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-semibold text-gray-900 mb-3">Compare</h3>
-                                        <ul class="space-y-2">
-                                            <li><a href="#compare" class="text-sm text-gray-600 hover:text-gray-900">All Plans</a></li>
-                                            <li><a href="#features" class="text-sm text-gray-600 hover:text-gray-900">Features</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="bg-gray-50 rounded-xl p-4">
-                                        <p class="text-sm text-gray-700 font-medium mb-2">Need custom pricing?</p>
-                                        <a href="#contact" class="text-sm text-gray-900 hover:underline">Contact Sales →</a>
-                                    </div>
+                            <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 w-[680px]">
+                                {{-- Header --}}
+                                <div class="mb-4 pb-3 border-b border-gray-100">
+                                    <h3 class="text-sm font-semibold text-gray-900">{{ __('messages.pricing_plans') }}</h3>
+                                </div>
+
+                                {{-- Pricing Cards Grid --}}
+                                <div class="grid grid-cols-3 gap-4">
+                                    {{-- Webkoo Builder --}}
+                                    <a href="#webkoo-builder" class="group block">
+                                        <div class="bg-gray-50 hover:bg-gray-100 rounded-xl p-4 transition-all duration-200">
+                                            <div class="flex items-start justify-between mb-2">
+                                                <h4 class="font-semibold text-gray-900 text-sm">{{ __('messages.webkoo_builder') }}</h4>
+                                                <span class="px-2 py-0.5 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-[10px] font-medium rounded-full">{{ __('messages.popular') }}</span>
+                                            </div>
+                                            <p class="text-xs text-gray-600 leading-relaxed">{{ __('messages.webkoo_builder_desc') }}</p>
+                                        </div>
+                                    </a>
+
+                                    {{-- WordPress --}}
+                                    <a href="#wordpress" class="group block">
+                                        <div class="bg-gray-50 hover:bg-gray-100 rounded-xl p-4 transition-all duration-200">
+                                            <h4 class="font-semibold text-gray-900 text-sm mb-2">{{ __('messages.wordpress') }}</h4>
+                                            <p class="text-xs text-gray-600 leading-relaxed">{{ __('messages.wordpress_desc') }}</p>
+                                        </div>
+                                    </a>
+
+                                    {{-- Custom --}}
+                                    <a href="#custom" class="group block">
+                                        <div class="bg-gray-50 hover:bg-gray-100 rounded-xl p-4 transition-all duration-200">
+                                            <div class="flex items-start justify-between mb-2">
+                                                <h4 class="font-semibold text-gray-900 text-sm">{{ __('messages.custom_build') }}</h4>
+                                                <span class="px-2 py-0.5 bg-gradient-to-r from-green-500 to-green-600 text-white text-[10px] font-medium rounded-full">{{ __('messages.new') }}</span>
+                                            </div>
+                                            <p class="text-xs text-gray-600 leading-relaxed">{{ __('messages.custom_build_desc') }}</p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                {{-- CTA Section --}}
+                                <div class="mt-4 pt-3 border-t border-gray-100">
+                                    <a href="#contact" class="text-sm text-gray-900 hover:text-gray-700 font-medium flex items-center gap-1">
+                                        {{ __('messages.need_custom_pricing') }} →
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -81,27 +104,20 @@
                             </svg>
                         </button>
                         <div class="megamenu-content absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 w-[700px] -ml-4">
-                                <div class="grid grid-cols-3 gap-6">
+                            <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 w-[500px]">
+                                <div class="grid grid-cols-2 gap-6">
                                     <div>
-                                        <h3 class="font-semibold text-gray-900 mb-3">Web Development</h3>
+                                        <h3 class="font-semibold text-gray-900 mb-3">{{ __('messages.web_services') }}</h3>
                                         <ul class="space-y-2">
-                                            <li><a href="#websites" class="text-sm text-gray-600 hover:text-gray-900">Websites</a></li>
-                                            <li><a href="#web-apps" class="text-sm text-gray-600 hover:text-gray-900">Web Apps</a></li>
-                                            <li><a href="#ecommerce" class="text-sm text-gray-600 hover:text-gray-900">E-Commerce</a></li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-semibold text-gray-900 mb-3">Mobile & IoT</h3>
-                                        <ul class="space-y-2">
-                                            <li><a href="#mobile" class="text-sm text-gray-600 hover:text-gray-900">Mobile Apps</a></li>
-                                            <li><a href="#iot" class="text-sm text-gray-600 hover:text-gray-900">Microcontrollers</a></li>
-                                            <li><a href="#embedded" class="text-sm text-gray-600 hover:text-gray-900">Embedded Systems</a></li>
+                                            <li><a href="#websites" class="text-sm text-gray-600 hover:text-gray-900">{{ __('messages.websites') }}</a></li>
+                                            <li><a href="#web-apps" class="text-sm text-gray-600 hover:text-gray-900">{{ __('messages.web_apps') }}</a></li>
+                                            <li><a href="#ecommerce" class="text-sm text-gray-600 hover:text-gray-900">{{ __('messages.ecommerce') }}</a></li>
+                                            <li><a href="#landing-pages" class="text-sm text-gray-600 hover:text-gray-900">{{ __('messages.landing_pages') }}</a></li>
                                         </ul>
                                     </div>
                                     <div class="bg-gray-50 rounded-xl p-4">
-                                        <p class="text-sm text-gray-700 font-medium mb-2">Explore all products</p>
-                                        <a href="#all-products" class="text-sm text-gray-900 hover:underline">View Catalog →</a>
+                                        <p class="text-sm text-gray-700 font-medium mb-2">{{ __('messages.custom_web_project') }}</p>
+                                        <a href="#contact" class="text-sm text-gray-900 hover:underline">{{ __('messages.consultation') }} →</a>
                                     </div>
                                 </div>
                             </div>
@@ -118,27 +134,19 @@
                             </svg>
                         </button>
                         <div class="megamenu-content absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 w-[700px] -ml-4">
-                                <div class="grid grid-cols-3 gap-6">
+                            <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 w-[500px]">
+                                <div class="grid grid-cols-2 gap-6">
                                     <div>
-                                        <h3 class="font-semibold text-gray-900 mb-3">Learn</h3>
+                                        <h3 class="font-semibold text-gray-900 mb-3">{{ __('messages.learn') }}</h3>
                                         <ul class="space-y-2">
-                                            <li><a href="#blog" class="text-sm text-gray-600 hover:text-gray-900">Blog</a></li>
-                                            <li><a href="#tutorials" class="text-sm text-gray-600 hover:text-gray-900">Tutorials</a></li>
-                                            <li><a href="#documentation" class="text-sm text-gray-600 hover:text-gray-900">Documentation</a></li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-semibold text-gray-900 mb-3">Support</h3>
-                                        <ul class="space-y-2">
-                                            <li><a href="#help-center" class="text-sm text-gray-600 hover:text-gray-900">Help Center</a></li>
-                                            <li><a href="#community" class="text-sm text-gray-600 hover:text-gray-900">Community</a></li>
-                                            <li><a href="#faq" class="text-sm text-gray-600 hover:text-gray-900">FAQ</a></li>
+                                            <li><a href="#blog" class="text-sm text-gray-600 hover:text-gray-900">{{ __('messages.blog') }}</a></li>
+                                            <li><a href="#tutorials" class="text-sm text-gray-600 hover:text-gray-900">{{ __('messages.tutorials') }}</a></li>
+                                            <li><a href="#documentation" class="text-sm text-gray-600 hover:text-gray-900">{{ __('messages.documentation') }}</a></li>
                                         </ul>
                                     </div>
                                     <div class="bg-gray-50 rounded-xl p-4">
-                                        <p class="text-sm text-gray-700 font-medium mb-2">Get in touch</p>
-                                        <a href="#contact-support" class="text-sm text-gray-900 hover:underline">Contact Support →</a>
+                                        <p class="text-sm text-gray-700 font-medium mb-2">{{ __('messages.need_help') }}</p>
+                                        <a href="#contact" class="text-sm text-gray-900 hover:underline">{{ __('messages.contact_us') }} →</a>
                                     </div>
                                 </div>
                             </div>
