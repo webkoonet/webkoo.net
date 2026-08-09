@@ -13,21 +13,21 @@
     {{-- Hero Content --}}
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 whitespace-nowrap">
-            Make Website, Improve <span id="rotating-text" class="inline-block transition-all duration-500 min-h-[1.2em] font-light">Business</span>
+            {{ __('messages.make_website') }} <span id="rotating-text" class="inline-block transition-all duration-500 min-h-[1.2em] font-light">{{ __('messages.business') }}</span>
         </h1>
         <p class="text-base sm:text-lg text-gray-500 mb-10 max-w-2xl mx-auto">
-            We build high-performing websites designed to elevate your professional image and drive results
+            {{ __('messages.hero_description') }}
         </p>
 
         {{-- CTA Buttons --}}
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#contact"
                class="px-8 py-3 bg-gradient-to-r from-[#323232] to-[#000000] text-white font-medium rounded-full hover:opacity-90 transition-opacity shadow-lg">
-                Build a website
+                {{ __('messages.build_website') }}
             </a>
             <a href="#portfolio"
                class="px-8 py-3 bg-white text-gray-900 font-medium rounded-full shadow-lg hover:shadow-xl transition-shadow">
-                View free demo
+                {{ __('messages.view_demo') }}
             </a>
         </div>
     </div>
@@ -186,7 +186,11 @@
 </section>
 
 <script>
-    const texts = ['Business', 'Branding', 'Revenue'];
+    const texts = [
+        '{{ __('messages.business') }}',
+        '{{ __('messages.branding') }}',
+        '{{ __('messages.revenue') }}'
+    ];
     let currentIndex = 0;
     const textElement = document.getElementById('rotating-text');
 

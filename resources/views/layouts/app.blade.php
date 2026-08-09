@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    {{-- Hreflang SEO Tags --}}
+    @php
+        $currentPath = request()->path();
+        $queryParams = empty(request()->query->all()) ? '' : '?' . http_build_query(request()->query->all());
+        $pathWithoutLocale = str_replace('/id', '', $currentPath);
+        if (empty($pathWithoutLocale)) $pathWithoutLocale = '/';
+    @endphp
+    <link rel="alternate" hreflang="en" href="{{ url('/') . ($pathWithoutLocale === '/' ? '' : '/' . $pathWithoutLocale) . $queryParams }}">
+    <link rel="alternate" hreflang="id" href="{{ url('/id') . ($pathWithoutLocale === '/' ? '' : $pathWithoutLocale) . $queryParams }}">
+    <link rel="alternate" hreflang="x-default" href="{{ url('/') . ($pathWithoutLocale === '/' ? '' : '/' . $pathWithoutLocale) . $queryParams }}">
+
     <title>{{ $title ?? config('app.name', 'Laravel') }}</title>
 
     <link rel="stylesheet" href="{{ asset('fonts.css') }}">

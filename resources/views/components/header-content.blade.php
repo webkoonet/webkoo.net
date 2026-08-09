@@ -3,7 +3,24 @@
     <nav class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
             {{-- Logo & Brand --}}
-            <a href="{{ route('home') }}" class="flex items-center gap-2.5">
+            @php
+                $currentLocale = app()->getLocale();
+                $isIndonesian = $currentLocale === 'id';
+                $requestUri = request()->getRequestUri();
+                $queryString = request()->getQueryString();
+                $queryParams = $queryString ? '?' . $queryString : '';
+
+                // Get path without locale prefix
+                $path = request()->path();
+                if (str_starts_with($path, 'id/')) {
+                    $pathWithoutLocale = substr($path, 3);
+                } elseif ($path === 'id') {
+                    $pathWithoutLocale = '';
+                } else {
+                    $pathWithoutLocale = $path;
+                }
+            @endphp
+            <a href="{{ $isIndonesian ? '/' : route('home') }}" class="flex items-center gap-2.5">
                 <img src="{{ asset('storage/assets/img/logo.webp') }}"
                      alt="Webkoo"
                      class="h-9 w-auto">
@@ -12,15 +29,29 @@
                 </span>
             </a>
 
-            {{-- Right Side: Menu + Auth --}}
+            {{-- Right Side: Language + Menu + Auth --}}
             <div class="hidden md:flex items-center gap-10">
+                {{-- Language Switcher --}}
+                <div class="flex items-center gap-1">
+                    {{-- English --}}
+                    <a href="{{ '/' . ltrim($pathWithoutLocale, '/') . $queryParams }}"
+                       class="px-2.5 py-1.5 text-sm font-normal rounded-md transition-colors {{ !$isIndonesian ? 'text-gray-900 bg-gray-100' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50' }}">
+                        EN
+                    </a>
+                    {{-- Indonesian --}}
+                    <a href="{{ '/id' . ($pathWithoutLocale ? '/' . ltrim($pathWithoutLocale, '/') : '') . $queryParams }}"
+                       class="px-2.5 py-1.5 text-sm font-normal rounded-md transition-colors {{ $isIndonesian ? 'text-gray-900 bg-gray-100' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50' }}">
+                        ID
+                    </a>
+                </div>
+
                 @php
                     $menuItems = [
-                        ['name' => 'home', 'label' => 'Home'],
-                        ['name' => 'about', 'label' => 'About', 'href' => '#about'],
-                        ['name' => 'services', 'label' => 'Services', 'href' => '#services'],
-                        ['name' => 'portfolio', 'label' => 'Portfolio', 'href' => '#portfolio'],
-                        ['name' => 'contact', 'label' => 'Contact', 'href' => '#contact'],
+                        ['name' => 'home', 'label' => __('messages.home')],
+                        ['name' => 'about', 'label' => __('messages.about'), 'href' => '#about'],
+                        ['name' => 'services', 'label' => __('messages.services'), 'href' => '#services'],
+                        ['name' => 'portfolio', 'label' => __('messages.portfolio'), 'href' => '#portfolio'],
+                        ['name' => 'contact', 'label' => __('messages.contact'), 'href' => '#contact'],
                     ];
                 @endphp
 
@@ -43,27 +74,27 @@
                 @auth
                     <a href="{{ route('dashboard') }}"
                        class="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                        Dashboard
+                        {{ __('messages.dashboard') }}
                     </a>
                     <form method="POST" action="{{ route('logout') }}" class="inline">
                         @csrf
                         <button type="submit"
                                 class="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                            Logout
+                            {{ __('messages.logout') }}
                         </button>
                     </form>
                 @else
                     @if (Route::has('login'))
                         <a href="{{ route('login') }}"
                            class="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                            Login
+                            {{ __('messages.login') }}
                         </a>
                     @endif
 
                     @if (Route::has('register'))
                         <a href="{{ route('register') }}"
                            class="text-sm font-medium text-gray-900 hover:text-gray-700 transition-colors">
-                            Get Started
+                            {{ __('messages.get_started') }}
                         </a>
                     @endif
                 @endauth
@@ -86,6 +117,20 @@
         {{-- Mobile Menu --}}
         <div id="mobile-menu" class="hidden md:hidden pb-6">
             <div class="flex flex-col gap-4">
+                {{-- Language Switcher (Mobile) --}}
+                <div class="flex items-center gap-2">
+                    <span class="text-sm text-gray-600">{{ __('messages.language') }}:</span>
+                    <a href="{{ '/' . ltrim($pathWithoutLocale, '/') . $queryParams }}"
+                       class="text-sm font-medium {{ !$isIndonesian ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900' }}">
+                        EN
+                    </a>
+                    <span class="text-gray-300">|</span>
+                    <a href="{{ '/id' . ($pathWithoutLocale ? '/' . ltrim($pathWithoutLocale, '/') : '') . $queryParams }}"
+                       class="text-sm font-medium {{ $isIndonesian ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900' }}">
+                        ID
+                    </a>
+                </div>
+
                 @foreach($menuItems as $item)
                     @php
                         $isActiveMobile = isset($item['href']) ? false : request()->routeIs($item['name']);
@@ -100,28 +145,28 @@
                 @auth
                     <a href="{{ route('dashboard') }}"
                        class="text-base text-gray-600 hover:text-gray-900 transition-colors">
-                        Dashboard
+                        {{ __('messages.dashboard') }}
                     </a>
 
                     <form method="POST" action="{{ route('logout') }}" class="inline">
                         @csrf
                         <button type="submit"
                                 class="text-base text-gray-600 hover:text-gray-900 transition-colors text-left">
-                            Logout
+                            {{ __('messages.logout') }}
                         </button>
                     </form>
                 @else
                     @if (Route::has('login'))
                         <a href="{{ route('login') }}"
                            class="text-base text-gray-600 hover:text-gray-900 transition-colors">
-                            Login
+                            {{ __('messages.login') }}
                         </a>
                     @endif
 
                     @if (Route::has('register'))
                         <a href="{{ route('register') }}"
                            class="text-base font-medium text-gray-900">
-                            Get Started
+                            {{ __('messages.get_started') }}
                         </a>
                     @endif
                 @endauth
