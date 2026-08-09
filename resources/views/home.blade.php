@@ -34,21 +34,21 @@
 </section>
 
 {{-- Scroll Animation Section --}}
-<section id="welcome-section" class="relative" style="height: 250vh;">
+<section id="welcome-section" class="relative" style="height: 350vh;">
     {{-- Sticky Container - tetap di tengah layar saat scroll --}}
     <div class="sticky top-0 flex items-center justify-center h-screen overflow-hidden">
         <div class="flex flex-col items-center justify-center">
+            {{-- Welcome Text --}}
+            <p id="welcome-text" class="mb-6 text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 opacity-0 transition-opacity duration-700">
+                Hello welcome to webkoo
+            </p>
+
             {{-- Logo yang akan di-animasikan --}}
             <div id="scrolling-logo" class="transition-all duration-300 ease-out opacity-0 scale-150">
                 <img src="{{ asset('storage/assets/img/logo.webp') }}"
                      alt="Webkoo"
                      class="w-32 h-32 object-contain">
             </div>
-
-            {{-- Welcome Text --}}
-            <p id="welcome-text" class="mt-6 text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 opacity-0 transition-opacity duration-700">
-                Hello welcome to webkoo :)
-            </p>
         </div>
     </div>
 </section>
