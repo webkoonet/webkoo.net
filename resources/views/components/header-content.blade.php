@@ -155,18 +155,58 @@
                 </div>
             </div>
 
-            {{-- Right Side: Language Switcher Only --}}
-            <div class="flex items-center gap-1 shrink-0">
-                {{-- English --}}
-                <a href="{{ '/' . ltrim($pathWithoutLocale, '/') . $queryParams }}"
-                   class="px-2.5 py-1.5 text-sm font-normal rounded-md transition-colors {{ !$isIndonesian ? 'text-gray-900 bg-gray-100' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50' }}">
-                    EN
-                </a>
-                {{-- Indonesian --}}
-                <a href="{{ '/id' . ($pathWithoutLocale ? '/' . ltrim($pathWithoutLocale, '/') : '') . $queryParams }}"
-                   class="px-2.5 py-1.5 text-sm font-normal rounded-md transition-colors {{ $isIndonesian ? 'text-gray-900 bg-gray-100' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50' }}">
-                    ID
-                </a>
+            {{-- Right Side: Language Switcher Dropdown --}}
+            <div class="flex items-center shrink-0">
+                <form id="language-form" method="GET" action="">
+                    <input type="hidden" name="lang" id="lang-input" value="{{ $isIndonesian ? 'id' : 'en' }}">
+                    @foreach(request()->query() as $key => $value)
+                        @if($key !== 'lang')
+                            <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+                        @endif
+                    @endforeach
+                </form>
+
+                <div class="relative">
+                    <button type="button"
+                            id="language-dropdown-btn"
+                            class="flex items-center gap-2 px-3 py-1.5 text-sm font-normal rounded-md transition-colors bg-gray-100 text-gray-900 hover:bg-gray-200 cursor-pointer">
+                        <img src="{{ asset($isIndonesian ? 'storage/assets/img/flag-id.svg' : 'storage/assets/img/flag-en.svg') }}"
+                             alt="{{ $isIndonesian ? 'Indonesian' : 'English' }}"
+                             class="w-5 h-3 object-cover rounded">
+                        <span>{{ $isIndonesian ? 'ID' : 'EN' }}</span>
+                        <svg class="w-4 h-4 transition-transform" id="lang-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+
+                    {{-- Dropdown Menu --}}
+                    <div id="language-dropdown"
+                         class="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 hidden z-50">
+                        <div class="py-1">
+                            {{-- English Option --}}
+                            <button type="button"
+                                    data-lang="en"
+                                    data-url="{{ '/' . ltrim($pathWithoutLocale, '/') . $queryParams }}"
+                                    class="language-option w-full flex items-center gap-2 px-4 py-2 text-sm {{ !$isIndonesian ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-50' }} transition-colors">
+                                <img src="{{ asset('storage/assets/img/flag-en.svg') }}"
+                                     alt="English"
+                                     class="w-5 h-3 object-cover rounded">
+                                <span>English</span>
+                            </button>
+
+                            {{-- Indonesian Option --}}
+                            <button type="button"
+                                    data-lang="id"
+                                    data-url="{{ '/id' . ($pathWithoutLocale ? '/' . ltrim($pathWithoutLocale, '/') : '') . $queryParams }}"
+                                    class="language-option w-full flex items-center gap-2 px-4 py-2 text-sm {{ $isIndonesian ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-50' }} transition-colors">
+                                <img src="{{ asset('storage/assets/img/flag-id.svg') }}"
+                                     alt="Indonesian"
+                                     class="w-5 h-3 object-cover rounded">
+                                <span>Indonesian</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             {{-- Mobile Menu Button --}}
@@ -218,6 +258,44 @@
 
                 menuIcon.classList.toggle('hidden');
                 closeIcon.classList.toggle('hidden');
+            });
+        }
+
+        // Language Dropdown Toggle
+        const langDropdownBtn = document.getElementById('language-dropdown-btn');
+        const langDropdown = document.getElementById('language-dropdown');
+        const langChevron = document.getElementById('lang-chevron');
+
+        if (langDropdownBtn && langDropdown) {
+            // Toggle dropdown
+            langDropdownBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langDropdown.classList.toggle('hidden');
+                langChevron.classList.toggle('rotate-180');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function() {
+                if (!langDropdown.classList.contains('hidden')) {
+                    langDropdown.classList.add('hidden');
+                    langChevron.classList.remove('rotate-180');
+                }
+            });
+
+            // Prevent dropdown from closing when clicking inside
+            langDropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+
+            // Handle language option clicks
+            const langOptions = document.querySelectorAll('.language-option');
+            langOptions.forEach(function(option) {
+                option.addEventListener('click', function() {
+                    const url = this.getAttribute('data-url');
+                    if (url) {
+                        window.location.href = url;
+                    }
+                });
             });
         }
     });
