@@ -27,4 +27,9 @@ return [
     'welcome_text' => 'Selamat datang di Webkoo',
     'description_text' => 'Solusi teknologi untuk mempermudah hari Anda<br>Mari wujudkan ide Anda bersama kami ✨',
     'explore_services' => 'Jelajahi Solusi',
+
+    // Navigation
+    'pricing' => 'Harga',
+    'products' => 'Produk',
+    'resources' => 'Sumber Daya',
 ];

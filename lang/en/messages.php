@@ -27,4 +27,9 @@ return [
     'welcome_text' => 'Welcome to Webkoo',
     'description_text' => 'Technology solutions to simplify your day<br>Let\'s bring your ideas to life ✨',
     'explore_services' => 'Explore Solutions',
+
+    // Navigation
+    'pricing' => 'Pricing',
+    'products' => 'Products',
+    'resources' => 'Resources',
 ];
