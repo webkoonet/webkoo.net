@@ -1,7 +1,7 @@
 {{-- Header / Navbar - Megamenu Navigation --}}
 <header class="bg-white/80 backdrop-blur-xl border-b border-gray-200/50 sticky top-0 z-50">
     <div class="w-full">
-        <div class="flex items-center justify-between h-20 px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 px-6 lg:px-8">
 
             {{-- Left Side: Logo + Megamenu --}}
             <div class="flex items-center gap-8">
