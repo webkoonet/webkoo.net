@@ -13,13 +13,18 @@ return [
     'language' => 'Bahasa',
 
     // Hero Section
-    'make_website' => 'Buat Website, Tingkatkan',
-    'hero_description' => 'Kami membangun website berkinerja tinggi yang dirancang untuk meningkatkan citra profesional Anda dan menghasilkan hasil',
-    'build_website' => 'Buat website',
-    'view_demo' => 'Lihat demo gratis',
+    'make_website' => 'Solusi Digital untuk',
+    'hero_description' => 'Webkoo membantu bisnis Anda berkembang dengan solusi teknologi yang sederhana, aman, dan terpercaya - mulai dari website hingga sistem digital',
+    'build_website' => 'Mulai Sekarang',
+    'view_demo' => 'Lihat Karya Kami',
 
     // Rotating Text
-    'business' => 'Bisnis',
-    'branding' => 'Branding',
-    'revenue' => 'Pendapatan',
+    'business' => 'Bisnis Anda',
+    'branding' => 'Ide Besar',
+    'revenue' => 'Kehidupan Digital',
+
+    // Scroll Animation
+    'welcome_text' => 'Selamat datang di Webkoo',
+    'description_text' => 'Solusi teknologi untuk mempermudah hari Anda<br>Mari wujudkan ide Anda bersama kami ✨',
+    'explore_services' => 'Jelajahi Solusi',
 ];

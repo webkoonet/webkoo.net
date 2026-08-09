@@ -13,13 +13,18 @@ return [
     'language' => 'Language',
 
     // Hero Section
-    'make_website' => 'Make Website, Improve',
-    'hero_description' => 'We build high-performing websites designed to elevate your professional image and drive results',
-    'build_website' => 'Build a website',
-    'view_demo' => 'View free demo',
+    'make_website' => 'Digital Solutions for',
+    'hero_description' => 'Webkoo helps your business grow with simple, secure, and reliable technology solutions - from websites to complete digital systems',
+    'build_website' => 'Get Started',
+    'view_demo' => 'View Our Work',
 
     // Rotating Text
-    'business' => 'Business',
-    'branding' => 'Branding',
-    'revenue' => 'Revenue',
+    'business' => 'Your Business',
+    'branding' => 'Big Ideas',
+    'revenue' => 'Digital Life',
+
+    // Scroll Animation
+    'welcome_text' => 'Welcome to Webkoo',
+    'description_text' => 'Technology solutions to simplify your day<br>Let\'s bring your ideas to life ✨',
+    'explore_services' => 'Explore Solutions',
 ];
