@@ -45,7 +45,7 @@
 
             {{-- Logo yang akan di-animasikan --}}
             <div id="scrolling-logo" class="transition-all duration-300 ease-out opacity-0 scale-150">
-                <div class="w-32 h-32 bg-white/30 backdrop-blur-md border border-white/40 rounded-3xl flex items-center justify-center shadow-lg">
+                <div class="w-32 h-32 bg-gray-200/50 backdrop-blur-md border border-gray-300/60 rounded-3xl flex items-center justify-center shadow-lg">
                     {{-- Mata --}}
                     <div class="absolute w-24 h-24 flex justify-between items-start pt-6">
                         <div class="w-3 h-3 bg-gray-900 rounded-full"></div>
