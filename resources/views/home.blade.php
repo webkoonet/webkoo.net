@@ -1,40 +1,42 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- Hero Section --}}
-<section class="relative min-h-[800px] flex flex-col justify-center overflow-hidden">
-    {{-- Background Image --}}
+{{-- Hero Wrapper - menyatukan background untuk hero dan client section --}}
+<div class="relative -mt-16">
+    {{-- Background Image - menyatu untuk hero dan client section --}}
     <div class="absolute inset-0 z-0">
         <img src="{{ asset('storage/assets/img/bg-hero.webp') }}"
              alt="Hero Background"
              class="w-full h-full object-cover">
     </div>
 
-    {{-- Hero Content --}}
-    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex-1 flex flex-col justify-center">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 whitespace-nowrap">
-            {{ __('messages.make_website') }} <span id="rotating-text" class="inline-block transition-all duration-500 min-h-[1.2em] font-light">{{ __('messages.business') }}</span>
-        </h1>
-        <p class="text-base sm:text-lg text-gray-500 mb-10 max-w-2xl mx-auto">
-            {{ __('messages.hero_description') }}
-        </p>
+    {{-- Hero Content Section - h-screen --}}
+    <section class="relative z-10 h-screen flex items-center justify-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 whitespace-nowrap">
+                {{ __('messages.make_website') }} <span id="rotating-text" class="inline-block transition-all duration-500 min-h-[1.2em] font-light">{{ __('messages.business') }}</span>
+            </h1>
+            <p class="text-base sm:text-lg text-gray-500 mb-10 max-w-2xl mx-auto">
+                {{ __('messages.hero_description') }}
+            </p>
 
-        {{-- CTA Buttons --}}
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#contact"
-               class="px-8 py-3 bg-gradient-to-r from-[#323232] to-[#000000] text-white font-medium rounded-full hover:opacity-90 transition-opacity shadow-lg">
-                {{ __('messages.build_website') }}
-            </a>
-            <a href="#portfolio"
-               class="px-8 py-3 bg-white text-gray-900 font-medium rounded-full shadow-lg hover:shadow-xl transition-shadow">
-                {{ __('messages.view_demo') }}
-            </a>
+            {{-- CTA Buttons --}}
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contact"
+                   class="px-8 py-3 bg-gradient-to-r from-[#323232] to-[#000000] text-white font-medium rounded-full hover:opacity-90 transition-opacity shadow-lg">
+                    {{ __('messages.build_website') }}
+                </a>
+                <a href="#portfolio"
+                   class="px-8 py-3 bg-white text-gray-900 font-medium rounded-full shadow-lg hover:shadow-xl transition-shadow">
+                    {{ __('messages.view_demo') }}
+                </a>
+            </div>
         </div>
-    </div>
+    </section>
 
-    {{-- Trusted By / Clients Slider (inside Hero) --}}
-    <div class="relative z-10 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5">
+    {{-- Trusted By / Clients Section --}}
+    <section class="relative z-10 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
             <p class="text-center text-sm text-gray-600 font-medium tracking-wide uppercase">
                 {{ __('messages.trusted_by') }}
             </p>
@@ -98,9 +100,8 @@
                 </div>
             </div>
         </div>
-        </div>
-    </div>
-</section>
+    </section>
+</div>
 
 {{-- Scroll Animation Section --}}
 <section id="welcome-section" class="relative" style="height: 350vh;">
