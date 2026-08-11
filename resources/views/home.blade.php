@@ -288,9 +288,7 @@
 
                     {{-- Freelancer Label --}}
                     <div class="absolute bottom-2 left-0 right-0 text-center">
-                        <span class="text-base font-semibold text-white">Jerry</span>
-                        <span class="text-white/50 mx-1">—</span>
-                        <span class="text-sm text-white/70">Web Developer</span>
+                        <span class="text-base font-semibold text-white">Profesional Web Developer</span>
                     </div>
                 </div>
                 <div class="p-8">
@@ -336,7 +334,7 @@
 
 {{-- Testimonial Section --}}
 <section id="testimonials" class="bg-white py-16 lg:py-24 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="w-full px-4 sm:px-6 lg:px-8">
         {{-- Section Header --}}
         <div class="text-center mb-12">
             <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">{{ __('messages.trusted_by') }}</h2>
@@ -412,18 +410,6 @@
                     </div>
                 @endforeach
             </div>
-
-            {{-- Navigation Arrows --}}
-            <button id="prev-btn" class="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors z-10">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                </svg>
-            </button>
-            <button id="next-btn" class="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors z-10">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-            </button>
         </div>
     </div>
 </section>
@@ -589,8 +575,6 @@
     // Testimonial Slider - Peek-a-boo
     const slider = document.getElementById('testimonial-slider');
     const slides = document.querySelectorAll('.testimonial-slide');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
 
     if (slider && slides.length > 0) {
         let currentSlide = 0;
@@ -652,10 +636,6 @@
             goToSlide(currentSlide + 1);
         }
 
-        function prevSlide() {
-            goToSlide(currentSlide - 1);
-        }
-
         // Store interval ID for autoplay
         let autoplayInterval;
 
@@ -667,21 +647,6 @@
             }
             // Start new interval
             autoplayInterval = setInterval(nextSlide, 5000);
-        }
-
-        // Event listeners for navigation buttons with timer reset
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                nextSlide();
-                startAutoplay(); // Reset timer on click
-            });
-        }
-
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                prevSlide();
-                startAutoplay(); // Reset timer on click
-            });
         }
 
         // Handle window resize for responsive updates
