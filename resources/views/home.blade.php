@@ -152,6 +152,8 @@
     </div>
 </section>
 
+
+
 <script>
     const texts = [
         '{{ __('messages.business') }}',
@@ -180,6 +182,7 @@
     const descriptionText = document.getElementById('description-text');
     const ctaButton = document.getElementById('cta-button');
     const gradientBg = document.getElementById('gradient-bg');
+    const header = document.querySelector('header');
 
     if (welcomeSection && scrollingLogo && welcomeText && descriptionText && ctaButton && gradientBg) {
         window.addEventListener('scroll', function() {
@@ -194,6 +197,17 @@
 
             let progress = scrolledDistance / totalScrollDistance;
             progress = Math.max(0, Math.min(1, progress));
+
+            // Hide/Show Header based on sticky behavior
+            // Hide header when sticky content is active (section top at viewport top, section still has scroll)
+            // Show header when sticky behavior ends (section bottom <= viewport bottom) OR before section starts
+            if (rect.top <= 0 && rect.bottom > windowHeight && header) {
+                // Sticky is active - hide header
+                header.style.transform = 'translateY(-100%)';
+            } else if ((rect.bottom <= windowHeight || rect.top > 0) && header) {
+                // Sticky ended OR before section starts - show header
+                header.style.transform = 'translateY(0)';
+            }
 
             // Animasi gradient background - langsung fade in saat section masuk viewport
             if (progress >= 0 && gradientBg.style.opacity !== '1') {

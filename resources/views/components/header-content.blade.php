@@ -1,5 +1,5 @@
 {{-- Header / Navbar - Megamenu Navigation --}}
-<header class="bg-white/80 backdrop-blur-xl border-b border-gray-200/50 sticky top-0 z-50">
+<header class="bg-white/80 backdrop-blur-xl border-b border-gray-200/50 sticky top-0 z-50 transition-transform duration-300">
     <div class="w-full">
         <div class="flex items-center justify-between h-16 px-6 lg:px-8">
 
