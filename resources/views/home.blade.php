@@ -656,20 +656,39 @@
             goToSlide(currentSlide - 1);
         }
 
-        // Event listeners for navigation buttons
+        // Store interval ID for autoplay
+        let autoplayInterval;
+
+        // Function to start/restart autoplay
+        function startAutoplay() {
+            // Clear existing interval if any
+            if (autoplayInterval) {
+                clearInterval(autoplayInterval);
+            }
+            // Start new interval
+            autoplayInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Event listeners for navigation buttons with timer reset
         if (nextBtn) {
-            nextBtn.addEventListener('click', nextSlide);
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                startAutoplay(); // Reset timer on click
+            });
         }
 
         if (prevBtn) {
-            prevBtn.addEventListener('click', prevSlide);
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                startAutoplay(); // Reset timer on click
+            });
         }
 
         // Handle window resize for responsive updates
         window.addEventListener('resize', updateSlider);
 
-        // Auto-advance every 5 seconds
-        setInterval(nextSlide, 5000);
+        // Start autoplay
+        startAutoplay();
 
         // Initialize after a small delay to ensure proper layout
         setTimeout(updateSlider, 100);
