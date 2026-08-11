@@ -105,7 +105,7 @@
 
 {{-- Scroll Animation Section --}}
 <section id="welcome-section" class="relative" style="height: 350vh;">
-    {{-- Gradient Background - muncul saat scroll --}}
+    {{-- Gradient Background - sticky saat scroll, lalu ikut scroll setelah section selesai --}}
     <div id="gradient-bg" class="fixed inset-0 opacity-0 transition-opacity duration-700 pointer-events-none -z-10"
          style="background: linear-gradient(180deg, #091524 0%, #1d2e57 100%);">
     </div>
@@ -185,10 +185,19 @@
     const gradientBg = document.getElementById('gradient-bg');
     const header = document.querySelector('header');
 
+    // Track scroll direction
+    let lastScrollY = window.scrollY;
+    let scrollDirection = 'down';
+
     if (welcomeSection && scrollingLogo && welcomeText && descriptionText && ctaButton && gradientBg) {
         window.addEventListener('scroll', function() {
             const rect = welcomeSection.getBoundingClientRect();
             const windowHeight = window.innerHeight;
+            const currentScrollY = window.scrollY;
+
+            // Track scroll direction
+            scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+            lastScrollY = currentScrollY;
 
             // Hitung progress berdasarkan seberapa jauh section sudah discroll
             // Section height 250vh, sticky container h-screen
@@ -210,9 +219,42 @@
                 header.style.transform = 'translateY(0)';
             }
 
-            // Animasi gradient background - langsung fade in saat section masuk viewport
-            if (progress >= 0 && gradientBg.style.opacity !== '1') {
+            // Gradient background: sticky saat scroll aktif, lalu ikut scroll setelah section selesai
+            // Fade in saat section masuk viewport
+            if (rect.top <= windowHeight && rect.bottom > 0) {
                 gradientBg.style.opacity = '1';
+            }
+
+            // Ubah posisi gradient berdasarkan scroll direction dan section position
+            // Saat scroll ke bawah dan section selesai: ubah ke absolute dengan height 100vh
+            if (scrollDirection === 'down' && rect.bottom <= windowHeight) {
+                if (!gradientBg.classList.contains('absolute')) {
+                    gradientBg.classList.remove('fixed');
+                    gradientBg.classList.add('absolute');
+                    gradientBg.style.top = 'auto';
+                    gradientBg.style.bottom = '0';
+                    gradientBg.style.height = '100vh'; // Satu layar penuh, bukan seluruh section
+                }
+            }
+            // Saat scroll ke atas dan section mulai muncul kembali: ubah ke fixed (sticky)
+            else if (scrollDirection === 'up' && rect.bottom > windowHeight) {
+                if (!gradientBg.classList.contains('fixed')) {
+                    gradientBg.classList.remove('absolute');
+                    gradientBg.classList.add('fixed');
+                    gradientBg.style.top = '';
+                    gradientBg.style.bottom = '';
+                    gradientBg.style.height = '';
+                }
+            }
+            // Reset ke fixed saat scroll kembali ke atas section
+            else if (rect.top > 0) {
+                if (!gradientBg.classList.contains('fixed')) {
+                    gradientBg.classList.remove('absolute');
+                    gradientBg.classList.add('fixed');
+                    gradientBg.style.top = '';
+                    gradientBg.style.bottom = '';
+                    gradientBg.style.height = '';
+                }
             }
 
             // Animasi logo: opacity dan scale
