@@ -81,4 +81,7 @@ return [
     'documentation' => 'Dokumentasi',
     'need_help' => 'Butuh bantuan?',
     'contact_us' => 'Hubungi Kami',
+
+    // Testimonial Section
+    'testimonial_subtitle' => 'Mereka sudah sukses online, kini giliran Anda',
 ];

@@ -334,7 +334,99 @@
     </div>
 </section>
 
+{{-- Testimonial Section --}}
+<section id="testimonials" class="bg-white py-16 lg:py-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {{-- Section Header --}}
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">{{ __('messages.trusted_by') }}</h2>
+            <p class="text-lg text-gray-600">{{ __('messages.testimonial_subtitle') }}</p>
+        </div>
 
+        {{-- Peek-a-boo Testimonial Slider --}}
+        <div class="relative">
+            {{-- Slider Container --}}
+            <div id="testimonial-slider" class="relative w-full h-96 lg:h-[28rem]">
+                @php
+                    $testimonials = [
+                        [
+                            'name' => 'Ahmad Pratama',
+                            'role' => 'Founder, TokoOnline',
+                            'content' => 'Website yang dibuat Webkoo sangat profesional dan meningkatkan penjualan kami hingga 300%. Sangat recommended!',
+                            'rating' => 5
+                        ],
+                        [
+                            'name' => 'Siti Rahayu',
+                            'role' => 'Owner, Kafe Senja',
+                            'content' => 'Pelayanan excellent dan hasil website sesuai ekspektasi. Tim Webkoo sangat responsif dan mudah diajak kerjasama.',
+                            'rating' => 5
+                        ],
+                        [
+                            'name' => 'Budi Santoso',
+                            'role' => 'CEO, Startup Indo',
+                            'content' => 'Solusi custom development dari Webkoo membantu bisnis kami bertransformasi digital dengan lancar. Top quality!',
+                            'rating' => 5
+                        ],
+                        [
+                            'name' => 'Dewi Lestari',
+                            'role' => 'Marketing Manager, BrandXYZ',
+                            'content' => 'Website company profile yang elegan dan modern. Klien kami sangat impressed dengan hasil kerja Webkoo.',
+                            'rating' => 5
+                        ],
+                        [
+                            'name' => 'Rizky Ramadhan',
+                            'role' => 'Founder, E-Commerce Store',
+                            'content' => 'Migration to platform baru berjalan smooth tanpa downtime. Webkoo benar-benar expert di bidangnya.',
+                            'rating' => 5
+                        ]
+                    ];
+                @endphp
+
+                @foreach($testimonials as $index => $testimonial)
+                    <div class="testimonial-slide flex-shrink-0 w-80 md:w-96 transition-all duration-300"
+                         data-index="{{ $index }}">
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                            {{-- Rating Stars --}}
+                            <div class="flex gap-1 mb-4">
+                                @for($i = 1; $i <= $testimonial['rating']; $i++)
+                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                @endfor
+                            </div>
+
+                            {{-- Testimonial Content --}}
+                            <p class="text-gray-700 mb-6 leading-relaxed">"{{ $testimonial['content'] }}"</p>
+
+                            {{-- Author Info --}}
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
+                                    {{ substr($testimonial['name'], 0, 1) }}
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">{{ $testimonial['name'] }}</h4>
+                                    <p class="text-sm text-gray-600">{{ $testimonial['role'] }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            {{-- Navigation Arrows --}}
+            <button id="prev-btn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 w-10 h-10 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors z-10">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <button id="next-btn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 w-10 h-10 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors z-10">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
 
 <script>
     const texts = [
@@ -492,6 +584,90 @@
 
         // Trigger animasi awal saat load
         window.dispatchEvent(new Event('scroll'));
+    }
+
+    // Testimonial Slider
+    const slider = document.getElementById('testimonial-slider');
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    if (slider && slides.length > 0) {
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        function updateSlider() {
+            slides.forEach((slide, index) => {
+                // Calculate distance from current slide (handles circular navigation)
+                let distance = index - currentSlide;
+
+                // Normalize distance for circular navigation
+                if (distance > totalSlides / 2) {
+                    distance -= totalSlides;
+                } else if (distance < -totalSlides / 2) {
+                    distance += totalSlides;
+                }
+
+                // Reset all classes and inline styles
+                slide.className = 'testimonial-slide flex-shrink-0 w-80 md:w-96 transition-all duration-300 absolute top-0 left-1/2 -translate-x-1/2';
+                slide.style.transform = '';
+                slide.style.left = '';
+
+                // Get slide width for positioning (responsive)
+                const slideWidth = slide.offsetWidth;
+                const offset = distance * (slideWidth + 16); // 16px gap
+
+                if (distance === 0) {
+                    // Active slide - fully visible in center
+                    slide.classList.add('opacity-100', 'scale-100', 'z-10');
+                    slide.style.left = '50%';
+                    slide.style.transform = 'translateX(-50%) scale(1)';
+                } else if (distance === 1 || distance === -(totalSlides - 1)) {
+                    // Next slide (peek-a-boo on right)
+                    slide.classList.add('opacity-70', 'scale-90', 'z-0');
+                    slide.style.left = '50%';
+                    slide.style.transform = `translateX(calc(-50% + ${offset}px)) scale(0.9)`;
+                } else if (distance === -1 || distance === (totalSlides - 1)) {
+                    // Previous slide (peek-a-boo on left)
+                    slide.classList.add('opacity-70', 'scale-90', 'z-0');
+                    slide.style.left = '50%';
+                    slide.style.transform = `translateX(calc(-50% + ${offset}px)) scale(0.9)`;
+                } else {
+                    // Far slides - hidden far away
+                    slide.classList.add('opacity-0', 'scale-75', '-z-10');
+                    slide.style.left = '50%';
+                    slide.style.transform = `translateX(calc(-50% + ${offset}px)) scale(0.75)`;
+                }
+            });
+        }
+
+        function goToSlide(index) {
+            currentSlide = (index + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        // Event listeners for navigation buttons
+        if (nextBtn) {
+            nextBtn.addEventListener('click', nextSlide);
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', prevSlide);
+        }
+
+        // Auto-advance every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Initialize
+        updateSlider();
     }
 </script>
 @endsection

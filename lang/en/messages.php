@@ -65,4 +65,7 @@ return [
     'documentation' => 'Documentation',
     'need_help' => 'Need help?',
     'contact_us' => 'Contact Us',
+
+    // Testimonial Section
+    'testimonial_subtitle' => 'They have succeeded online, now it\'s your turn',
 ];
