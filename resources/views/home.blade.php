@@ -493,6 +493,13 @@
             50% { transform: translateX(150px) scale(0.7); opacity: 0.6; }
             100% { transform: translateX(300px) scale(1); opacity: 1; }
         }
+        @keyframes data-flow-icon-move {
+            0% { transform: translateX(0) scale(0.8); opacity: 0; }
+            10% { opacity: 1; transform: translateX(50px) scale(1); }
+            50% { transform: translateX(200px) scale(1.5); }
+            90% { opacity: 1; transform: translateX(350px) scale(1); }
+            100% { transform: translateX(400px) scale(0.8); opacity: 0; }
+        }
         @keyframes server-light-blink {
             0%, 100% { background-color: #ef4444; box-shadow: 0 0 5px #ef4444; }
             50% { background-color: #22c55e; box-shadow: 0 0 10px #22c55e; }
@@ -522,6 +529,7 @@
         .migration-float { animation: migration-float 4s ease-in-out infinite; }
         .migration-pulse { animation: migration-pulse-glow 2s ease-in-out infinite; }
         .data-flow { animation: data-flow-particle 2.5s ease-in-out infinite; }
+        .data-flow-icon { animation: data-flow-icon-move 4s ease-in-out infinite; }
         .server-light { animation: server-light-blink 2s ease-in-out infinite; }
         .progress-animate { animation: progress-bar-fill 3s ease-out forwards; }
         .fade-in-up { animation: fade-in-up 0.6s ease-out forwards; }
@@ -557,11 +565,11 @@
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Section Header with Animation --}}
         <div class="text-left mb-8 migration-animate-init fade-in-up">
-            <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 border border-blue-200 rounded-full mb-4 migration-pulse">
-                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 border border-gray-200 rounded-full mb-4">
+                <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
                 </svg>
-                <span class="text-blue-700 text-sm font-medium">Migrasi Gratis</span>
+                <span class="text-gray-800 text-sm font-medium">Migrasi Gratis</span>
             </div>
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-900">
                 Sudah Punya Website? Ingin Berpindah?
@@ -577,10 +585,10 @@
             <div class="bg-white rounded-2xl shadow-lg p-4 mb-6 border border-gray-100">
                 <div class="flex items-center justify-between mb-2">
                     <span class="text-sm font-medium text-gray-700">Progress Migrasi</span>
-                    <span class="text-base font-bold text-blue-600">75%</span>
+                    <span class="text-base font-bold text-gray-900">75%</span>
                 </div>
                 <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
-                    <div class="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full progress-animate"></div>
+                    <div class="h-full bg-gray-900 rounded-full progress-animate"></div>
                 </div>
             </div>
 
@@ -616,22 +624,41 @@
                     <p class="mt-2 text-xs text-gray-600">Website Lama</p>
                 </div>
 
-                {{-- Data Flow Animation --}}
-                <div class="flex-1 relative h-20">
+                {{-- Data Flow Animation - Website Elements Icons --}}
+                <div class="flex-1 relative h-28">
                     <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative w-full h-10">
-                            <div class="absolute top-0.5 left-0 w-3 h-3 bg-blue-500 rounded-lg data-flow flex items-center justify-center" style="animation-delay: 0s;">
-                                <svg class="w-1.5 h-1.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                        <div class="relative w-full h-20">
+                            {{-- Database Icon --}}
+                            <div class="absolute top-0 left-0 data-flow-icon bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-2 flex items-center justify-center shadow-lg" style="animation-delay: 0s;">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
                                 </svg>
                             </div>
-                            <div class="absolute top-2 left-0 w-2 h-2 bg-green-500 rounded-full data-flow" style="animation-delay: 0.5s;"></div>
-                            <div class="absolute top-3.5 left-0 w-3 h-3 bg-purple-500 rounded-lg data-flow flex items-center justify-center" style="animation-delay: 1s;">
-                                <svg class="w-1.5 h-1.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                            {{-- File/Document Icon --}}
+                            <div class="absolute top-4 left-0 data-flow-icon bg-gradient-to-br from-gray-600 to-gray-700 rounded-xl p-2 flex items-center justify-center shadow-lg" style="animation-delay: 0.8s;">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                                 </svg>
                             </div>
-                            <div class="absolute top-5 left-0 w-2 h-2 bg-yellow-500 rounded-full data-flow" style="animation-delay: 1.5s;"></div>
+                            {{-- Image/Photo Icon --}}
+                            <div class="absolute top-8 left-0 data-flow-icon bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-2 flex items-center justify-center shadow-lg" style="animation-delay: 1.6s;">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            {{-- Code Icon --}}
+                            <div class="absolute top-12 left-0 data-flow-icon bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-2 flex items-center justify-center shadow-lg" style="animation-delay: 2.4s;">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                                </svg>
+                            </div>
+                            {{-- Settings/Config Icon --}}
+                            <div class="absolute top-16 left-0 data-flow-icon bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-2 flex items-center justify-center shadow-lg" style="animation-delay: 3.2s;">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -639,21 +666,21 @@
                 {{-- New Server --}}
                 <div class="flex-1 text-center migration-float delay-300">
                     <div class="relative inline-block">
-                        <div class="w-24 h-20 sm:w-32 sm:h-24 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl shadow-xl p-2 mx-auto relative overflow-hidden migration-pulse">
+                        <div class="w-24 h-20 sm:w-32 sm:h-24 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl shadow-xl p-2 mx-auto relative overflow-hidden">
                             <div class="absolute top-1 left-1 right-1 flex gap-1">
-                                <div class="flex-1 h-1 bg-blue-400 rounded"></div>
-                                <div class="w-1.5 h-1 bg-blue-300 rounded-full server-light"></div>
-                                <div class="w-1.5 h-1 bg-blue-300 rounded-full server-light delay-200"></div>
+                                <div class="flex-1 h-1 bg-gray-500 rounded"></div>
+                                <div class="w-1.5 h-1 bg-green-500 rounded-full server-light"></div>
+                                <div class="w-1.5 h-1 bg-green-500 rounded-full server-light delay-200"></div>
                             </div>
                             <div class="mt-2 space-y-1">
-                                <div class="h-0.5 bg-blue-300 rounded"></div>
-                                <div class="h-0.5 bg-blue-300 rounded"></div>
+                                <div class="h-0.5 bg-gray-500 rounded"></div>
+                                <div class="h-0.5 bg-gray-500 rounded"></div>
                             </div>
                             <div class="absolute bottom-1 left-1 right-1 flex justify-between">
-                                <span class="text-xs text-blue-200">NEW</span>
+                                <span class="text-xs text-gray-300">NEW</span>
                                 <div class="flex gap-0.5">
-                                    <div class="w-1 h-1 bg-blue-200 rounded-full server-light"></div>
-                                    <div class="w-1 h-1 bg-blue-200 rounded-full server-light delay-100"></div>
+                                    <div class="w-1 h-1 bg-green-500 rounded-full server-light"></div>
+                                    <div class="w-1 h-1 bg-green-500 rounded-full server-light delay-100"></div>
                                 </div>
                             </div>
                         </div>
@@ -663,43 +690,43 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="mt-2 text-xs text-blue-600 font-medium">Website Baru ✨</p>
+                    <p class="mt-2 text-xs text-gray-900 font-medium">Website Baru ✨</p>
                 </div>
             </div>
 
             {{-- Migration Steps - Animated Cards --}}
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
                 {{-- Step 1 - Complete --}}
-                <div class="migration-card bg-blue-50 rounded-xl p-3 border border-blue-200 migration-animate-init fade-in-up delay-300 text-center">
-                    <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <div class="migration-card bg-white rounded-xl p-3 border border-gray-200 migration-animate-init fade-in-up delay-300 text-center">
+                    <div class="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center mx-auto mb-2">
                         <svg class="w-4 h-4 text-white bounce-check" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                     </div>
                     <h4 class="font-semibold text-gray-900 text-xs">Backup Data</h4>
-                    <p class="text-xs text-blue-600">Selesai</p>
+                    <p class="text-xs text-gray-600">Selesai</p>
                 </div>
 
                 {{-- Step 2 - Complete --}}
-                <div class="migration-card bg-blue-50 rounded-xl p-3 border border-blue-200 migration-animate-init fade-in-up delay-400 text-center">
-                    <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <div class="migration-card bg-white rounded-xl p-3 border border-gray-200 migration-animate-init fade-in-up delay-400 text-center">
+                    <div class="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center mx-auto mb-2">
                         <svg class="w-4 h-4 text-white bounce-check delay-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
                     </div>
                     <h4 class="font-semibold text-gray-900 text-xs">Transfer DB</h4>
-                    <p class="text-xs text-blue-600">Selesai</p>
+                    <p class="text-xs text-gray-600">Selesai</p>
                 </div>
 
                 {{-- Step 3 - In Progress --}}
-                <div class="migration-card bg-blue-50 rounded-xl p-3 border border-blue-200 migration-animate-init fade-in-up delay-500 text-center">
-                    <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <div class="migration-card bg-white rounded-xl p-3 border border-gray-200 migration-animate-init fade-in-up delay-500 text-center">
+                    <div class="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center mx-auto mb-2">
                         <svg class="w-4 h-4 text-white animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
                         </svg>
                     </div>
                     <h4 class="font-semibold text-gray-900 text-xs">Transfer Files</h4>
-                    <p class="text-xs text-blue-600">Sedang...</p>
+                    <p class="text-xs text-gray-600">Sedang...</p>
                 </div>
 
                 {{-- Step 4 - Waiting --}}
@@ -740,7 +767,7 @@
         {{-- Main Content Grid --}}
         <div class="space-y-6">
             {{-- Benefits List - Horizontal --}}
-            <div class="flex flex-wrap items-center gap-4 sm:gap-6 migration-animate-init fade-in-up delay-100">
+            <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 migration-animate-init fade-in-up delay-100">
                 {{-- Benefit 1 --}}
                 <div class="flex items-center gap-2 bg-white rounded-xl px-4 py-3 border border-gray-200">
                     <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -775,43 +802,33 @@
             </div>
 
             {{-- Highlight Card, Support Card & CTA --}}
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {{-- Highlight Card - Perpanjangan Murah --}}
-                <div class="migration-animate-init fade-in-up delay-500 bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-6 border border-blue-200 relative overflow-hidden">
-                    {{-- Decorative glow --}}
-                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-200/30 rounded-full blur-3xl"></div>
-                    <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-200/30 rounded-full blur-3xl"></div>
-
-                    <div class="relative">
-                        <div class="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-2xl mb-4">
-                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="migration-animate-init fade-in-up delay-500 bg-gray-50 rounded-2xl p-4 border border-gray-200">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Hemat Biaya Perpanjangan</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-                            Biaya perpanjangan yang jauh lebih terjangkau dibanding provider lain. Hemat hingga 50% setiap tahun.
-                        </p>
-                        <div class="flex items-center gap-2 text-blue-600">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="font-semibold">Mulai dari Rp 489.000/tahun</span>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-bold text-gray-900">Hemat Biaya</h3>
+                            <p class="text-xs text-gray-700 font-semibold">Mulai Rp 489.000/tahun</p>
                         </div>
                     </div>
                 </div>
 
                 {{-- Support Card --}}
                 <div class="migration-animate-init fade-in-up delay-600 bg-white rounded-2xl p-4 border border-gray-200 migration-card">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center shrink-0">
-                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
                             </svg>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-base font-bold text-gray-900">Support 24/7</h3>
-                            <p class="text-gray-600 text-sm">Tim support kami siap membantu kapan saja via WhatsApp.</p>
+                            <h3 class="text-sm font-bold text-gray-900">Support 24/7</h3>
+                            <p class="text-xs text-gray-600">Via WhatsApp</p>
                         </div>
                     </div>
                 </div>
