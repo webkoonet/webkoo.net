@@ -113,7 +113,7 @@
     <div class="sticky top-0 flex items-center justify-center h-screen overflow-hidden">
         <div class="flex flex-col items-center justify-between h-full px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12 pt-20 sm:pt-24 md:pt-32">
             {{-- Welcome Text - Top --}}
-            <p id="welcome-text" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 opacity-0 transition-opacity duration-700 text-center px-4">
+            <p id="welcome-text" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-white opacity-0 transition-opacity duration-700 text-center px-4">
                 {{ __('messages.welcome_text') }}
             </p>
 
@@ -139,12 +139,12 @@
 
             {{-- Bottom Section - Description & Button --}}
             <div class="flex flex-col items-center pb-4 sm:pb-6 md:pb-8">
-                <p id="description-text" class="mb-3 sm:mb-4 text-xs sm:text-sm md:text-base text-gray-600 opacity-0 transition-all duration-700 text-center max-w-[200px] sm:max-w-xs md:max-w-xs leading-relaxed">
+                <p id="description-text" class="mb-3 sm:mb-4 text-xs sm:text-sm md:text-base text-white opacity-0 transition-all duration-700 text-center max-w-[200px] sm:max-w-xs md:max-w-xs leading-relaxed">
                     {!! __('messages.description_text') !!}
                 </p>
 
                 <a id="cta-button" href="#services"
-                   class="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 bg-white text-gray-900 text-xs sm:text-sm font-medium rounded-full opacity-0 transition-all duration-700 hover:bg-gray-100 hover:scale-105 shadow-md">
+                   class="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 bg-white text-gray-900 text-xs sm:text-sm font-medium rounded-full opacity-0 transition-all duration-700 hover:bg-white/90 hover:scale-105 shadow-lg">
                     {{ __('messages.explore_services') }}
                 </a>
             </div>
