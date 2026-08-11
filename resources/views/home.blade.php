@@ -344,7 +344,7 @@
         {{-- Peek-a-boo Testimonial Slider --}}
         <div class="relative">
             {{-- Slider Container --}}
-            <div id="testimonial-slider" class="relative w-full h-96 lg:h-[28rem]">
+            <div id="testimonial-slider" class="relative w-full h-96 lg:h-[28rem] cursor-grab active:cursor-grabbing">
                 @php
                     $testimonials = [
                         [
@@ -409,6 +409,65 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+        </div>
+
+        {{-- Client Logos Grid --}}
+        <div class="mt-10 max-w-6xl mx-auto">
+            {{-- Row 1: 5 logos --}}
+            <div class="flex items-center justify-center gap-6 sm:gap-10 lg:gap-14 -mb-8">
+                {{-- Client 1 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-1.webp') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                {{-- Client 2 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-2.webp') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                {{-- Client 3 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-3.webp') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                {{-- Client 4 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-4.webp') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                {{-- Client 5 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-5.webp') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+            </div>
+
+            {{-- Row 2: 3 logos (centered) --}}
+            <div class="flex items-center justify-center gap-6 sm:gap-10 lg:gap-14">
+                {{-- Client 6 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-6.webp') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                {{-- Client 7 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-7.png') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                {{-- Client 8 --}}
+                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="{{ asset('storage/assets/img/client-8.png') }}"
+                         alt="Client Logo"
+                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
             </div>
         </div>
     </div>
@@ -572,13 +631,94 @@
         window.dispatchEvent(new Event('scroll'));
     }
 
-    // Testimonial Slider - Peek-a-boo
+    // Testimonial Slider - Peek-a-boo with Drag Support
     const slider = document.getElementById('testimonial-slider');
     const slides = document.querySelectorAll('.testimonial-slide');
 
     if (slider && slides.length > 0) {
         let currentSlide = 0;
         const totalSlides = slides.length;
+        let isDragging = false;
+        let startX = 0;
+        let currentX = 0;
+
+        // Mouse/Touch event handlers for drag
+        slider.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - slider.offsetLeft;
+            currentX = startX;
+            slider.style.cursor = 'grabbing';
+            // Pause autoplay during drag
+            if (autoplayInterval) {
+                clearInterval(autoplayInterval);
+            }
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            if (isDragging) {
+                isDragging = false;
+                slider.style.cursor = 'grab';
+                // Restart autoplay
+                startAutoplay();
+            }
+        });
+
+        slider.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            slider.style.cursor = 'grab';
+
+            const dragDistance = currentX - startX;
+            const threshold = 50; // Minimum drag distance to trigger slide change
+
+            if (dragDistance > threshold) {
+                // Dragged right - go to previous slide
+                goToSlide(currentSlide - 1);
+            } else if (dragDistance < -threshold) {
+                // Dragged left - go to next slide
+                goToSlide(currentSlide + 1);
+            }
+
+            // Restart autoplay
+            startAutoplay();
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            currentX = e.pageX - slider.offsetLeft;
+        });
+
+        // Touch support
+        slider.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startX = e.touches[0].pageX - slider.offsetLeft;
+            currentX = startX;
+            if (autoplayInterval) {
+                clearInterval(autoplayInterval);
+            }
+        });
+
+        slider.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+
+            const dragDistance = currentX - startX;
+            const threshold = 50;
+
+            if (dragDistance > threshold) {
+                goToSlide(currentSlide - 1);
+            } else if (dragDistance < -threshold) {
+                goToSlide(currentSlide + 1);
+            }
+
+            startAutoplay();
+        });
+
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            currentX = e.touches[0].pageX - slider.offsetLeft;
+        });
 
         function updateSlider() {
             // Use a simple gap based on viewport width for responsiveness
