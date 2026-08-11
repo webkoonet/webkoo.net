@@ -107,7 +107,7 @@
 <section id="welcome-section" class="relative" style="height: 350vh;">
     {{-- Gradient Background - sticky saat scroll, lalu ikut scroll setelah section selesai --}}
     <div id="gradient-bg" class="fixed inset-0 opacity-0 transition-opacity duration-700 pointer-events-none -z-10"
-         style="background: linear-gradient(180deg, #091524 0%, #1d2e57 100%);">
+         style="background: linear-gradient(180deg, #091524 0%, #1c2d55 100%);">
     </div>
 
     {{-- Sticky Container - tetap di tengah layar saat scroll --}}
@@ -148,6 +148,162 @@
                    class="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 bg-white text-gray-900 text-xs sm:text-sm font-medium rounded-full opacity-0 transition-all duration-700 hover:bg-white/90 hover:scale-105 shadow-lg">
                     {{ __('messages.explore_services') }}
                 </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- Services Section - 3 Cards --}}
+<section id="services" class="relative py-20 sm:py-28 md:py-32 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('storage/assets/img/background-blue.webp') }}');">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {{-- Section Header --}}
+        <div class="text-center mb-12 sm:mb-16">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+                Choose Your Platform
+            </h2>
+            <p class="text-base sm:text-lg text-white/80 max-w-2xl mx-auto">
+                Select the perfect solution for your needs. We specialize in multiple platforms to deliver the best results.
+            </p>
+        </div>
+
+        {{-- Cards Grid --}}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {{-- Website Builder Card --}}
+            <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+                <div class="p-8">
+                    {{-- Icon --}}
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/>
+                        </svg>
+                    </div>
+                    {{-- Title --}}
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Website Builder</h3>
+                    {{-- Description --}}
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Fast, affordable websites using modern drag-and-drop builders. Perfect for small businesses and startups.
+                    </p>
+                    {{-- Features List --}}
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Quick deployment (3-5 days)
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Easy to manage
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Budget-friendly
+                        </li>
+                    </ul>
+                    {{-- CTA --}}
+                    <a href="#webkoo-builder" class="inline-flex items-center gap-2 text-purple-600 font-semibold hover:text-purple-700 group-hover:gap-3 transition-all">
+                        Learn more
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            {{-- WordPress Card --}}
+            <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+                <div class="p-8">
+                    {{-- Icon --}}
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.02 0C5.382 0 0 5.382 0 12.02c0 5.283 3.432 9.768 8.232 11.392-.113-.994-.216-2.522.045-3.61.236-.983 1.521-6.456 1.521-6.456s-.388-.776-.388-1.923c0-1.8 1.044-3.148 2.345-3.148 1.106 0 1.641.828 1.641 1.821 0 1.109-.705 2.767-1.069 4.303-.304 1.288.646 2.339 1.914 2.339 2.297 0 4.063-2.424 4.063-5.922 0-3.095-2.228-5.257-5.407-5.257-3.681 0-5.843 2.761-5.843 5.616 0 1.112.428 2.304.964 2.954.106.127.121.238.09.367-.098.406-.315 1.288-.358 1.467-.056.237-.186.287-.428.173-1.607-.748-2.616-3.096-2.616-4.983 0-4.053 2.946-7.777 8.503-7.777 4.464 0 7.93 3.178 7.93 7.423 0 4.432-2.792 8.001-6.671 8.001-1.302 0-2.527-.677-2.946-1.475l-.802 3.056c-.29 1.107-1.078 2.492-1.604 3.341 1.207.374 2.487.574 3.814.574 6.638 0 12.02-5.382 12.02-12.02C18.681 5.382 13.299 0 6.66 0h-.001z"/>
+                        </svg>
+                    </div>
+                    {{-- Title --}}
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">WordPress</h3>
+                    {{-- Description --}}
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Flexible and scalable CMS solution. Ideal for blogs, content sites, and growing businesses.
+                    </p>
+                    {{-- Features List --}}
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Custom theme development
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Plugin integration
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            SEO optimized
+                        </li>
+                    </ul>
+                    {{-- CTA --}}
+                    <a href="#wordpress" class="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 group-hover:gap-3 transition-all">
+                        Learn more
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            {{-- Custom Development Card --}}
+            <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+                <div class="p-8">
+                    {{-- Icon --}}
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                    </div>
+                    {{-- Title --}}
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Custom Development</h3>
+                    {{-- Description --}}
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Fully custom web applications built from scratch. For unique requirements and enterprise solutions.
+                    </p>
+                    {{-- Features List --}}
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Tailored architecture
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Scalable & secure
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Full ownership
+                        </li>
+                    </ul>
+                    {{-- CTA --}}
+                    <a href="#custom" class="inline-flex items-center gap-2 text-green-600 font-semibold hover:text-green-700 group-hover:gap-3 transition-all">
+                        Learn more
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
