@@ -106,7 +106,7 @@
 <section id="welcome-section" class="relative" style="height: 350vh;">
     {{-- Gradient Background - muncul saat scroll --}}
     <div id="gradient-bg" class="fixed inset-0 opacity-0 transition-opacity duration-700 pointer-events-none -z-10"
-         style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+         style="background: linear-gradient(180deg, #091524 0%, #1d2e57 100%);">
     </div>
 
     {{-- Sticky Container - tetap di tengah layar saat scroll --}}
