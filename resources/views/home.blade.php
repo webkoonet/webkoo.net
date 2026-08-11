@@ -104,6 +104,11 @@
 
 {{-- Scroll Animation Section --}}
 <section id="welcome-section" class="relative" style="height: 350vh;">
+    {{-- Gradient Background - muncul saat scroll --}}
+    <div id="gradient-bg" class="fixed inset-0 opacity-0 transition-opacity duration-700 pointer-events-none -z-10"
+         style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    </div>
+
     {{-- Sticky Container - tetap di tengah layar saat scroll --}}
     <div class="sticky top-0 flex items-center justify-center h-screen overflow-hidden">
         <div class="flex flex-col items-center justify-between h-full px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12 pt-20 sm:pt-24 md:pt-32">
@@ -174,8 +179,9 @@
     const welcomeText = document.getElementById('welcome-text');
     const descriptionText = document.getElementById('description-text');
     const ctaButton = document.getElementById('cta-button');
+    const gradientBg = document.getElementById('gradient-bg');
 
-    if (welcomeSection && scrollingLogo && welcomeText && descriptionText && ctaButton) {
+    if (welcomeSection && scrollingLogo && welcomeText && descriptionText && ctaButton && gradientBg) {
         window.addEventListener('scroll', function() {
             const rect = welcomeSection.getBoundingClientRect();
             const windowHeight = window.innerHeight;
@@ -188,6 +194,11 @@
 
             let progress = scrolledDistance / totalScrollDistance;
             progress = Math.max(0, Math.min(1, progress));
+
+            // Animasi gradient background - langsung fade in saat section masuk viewport
+            if (progress >= 0 && gradientBg.style.opacity !== '1') {
+                gradientBg.style.opacity = '1';
+            }
 
             // Animasi logo: opacity dan scale
             // Stage 1: Logo muncul dari opacity 0 ke 1 (0 - 0.25)
