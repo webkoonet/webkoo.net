@@ -473,6 +473,456 @@
     </div>
 </section>
 
+{{-- Migration Section dengan Animasi --}}
+<section class="relative py-20 sm:py-28 md:py-32 overflow-hidden" id="migration-section">
+    <style>
+        /* Migration Animation Keyframes */
+        @keyframes migration-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        @keyframes migration-pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
+            50% { box-shadow: 0 0 40px rgba(34, 197, 94, 0.5); }
+        }
+        @keyframes data-flow-particle {
+            0% { transform: translateX(0) scale(1); opacity: 1; }
+            50% { transform: translateX(150px) scale(0.7); opacity: 0.6; }
+            100% { transform: translateX(300px) scale(1); opacity: 1; }
+        }
+        @keyframes server-light-blink {
+            0%, 100% { background-color: #ef4444; box-shadow: 0 0 5px #ef4444; }
+            50% { background-color: #22c55e; box-shadow: 0 0 10px #22c55e; }
+        }
+        @keyframes progress-bar-fill {
+            0% { width: 0%; }
+            100% { width: 75%; }
+        }
+        @keyframes fade-in-up {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slide-in-left {
+            0% { transform: translateX(-50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes bounce-check {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        @keyframes card-hover-lift {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-8px); }
+        }
+
+        /* Animation Classes */
+        .migration-float { animation: migration-float 4s ease-in-out infinite; }
+        .migration-pulse { animation: migration-pulse-glow 2s ease-in-out infinite; }
+        .data-flow { animation: data-flow-particle 2.5s ease-in-out infinite; }
+        .server-light { animation: server-light-blink 2s ease-in-out infinite; }
+        .progress-animate { animation: progress-bar-fill 3s ease-out forwards; }
+        .fade-in-up { animation: fade-in-up 0.6s ease-out forwards; }
+        .slide-in-left { animation: slide-in-left 0.5s ease-out forwards; }
+        .bounce-check { animation: bounce-check 0.5s ease-in-out; }
+
+        /* Delays */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+        .delay-700 { animation-delay: 0.7s; }
+        .delay-800 { animation-delay: 0.8s; }
+        .delay-1000 { animation-delay: 1s; }
+
+        /* Initial hidden state */
+        .migration-animate-init {
+            opacity: 0;
+        }
+
+        /* Card hover effects */
+        .migration-card {
+            transition: all 0.3s ease;
+        }
+        .migration-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+    </style>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {{-- Section Header with Animation --}}
+        <div class="text-left mb-12 sm:mb-16 migration-animate-init fade-in-up">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 border border-green-200 rounded-full mb-4 migration-pulse">
+                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                </svg>
+                <span class="text-green-700 text-sm font-medium">Migrasi Gratis</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-900">
+                Sudah Punya Website? Ingin Berpindah?
+            </h2>
+            <p class="text-gray-600 mt-4 max-w-2xl">
+                Pindahkan website Anda ke Webkoo tanpa biaya migrasi. Nikmati biaya perpanjangan yang terjangkau dan performa yang lebih baik.
+            </p>
+        </div>
+
+        {{-- Migration Process Visualization --}}
+        <div class="mb-12 migration-animate-init fade-in-up delay-200">
+            {{-- Progress Bar --}}
+            <div class="bg-white rounded-2xl shadow-lg p-6 mb-8 border border-gray-100">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-sm font-medium text-gray-700">Progress Migrasi</span>
+                    <span class="text-lg font-bold text-green-600">75%</span>
+                </div>
+                <div class="h-3 bg-gray-100 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full progress-animate"></div>
+                </div>
+            </div>
+
+            {{-- Server Animation - Old to New --}}
+            <div class="flex items-center justify-between gap-4 sm:gap-8 mb-8">
+                {{-- Old Server --}}
+                <div class="flex-1 text-center migration-float">
+                    <div class="relative inline-block">
+                        <div class="w-32 h-24 sm:w-40 sm:h-28 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl shadow-xl p-3 mx-auto relative overflow-hidden">
+                            <div class="absolute top-2 left-2 right-2 flex gap-1">
+                                <div class="flex-1 h-1.5 bg-gray-500 rounded"></div>
+                                <div class="w-2 h-1.5 bg-red-500 rounded-full"></div>
+                                <div class="w-2 h-1.5 bg-red-500 rounded-full"></div>
+                            </div>
+                            <div class="mt-3 space-y-1.5">
+                                <div class="h-0.5 bg-gray-400 rounded"></div>
+                                <div class="h-0.5 bg-gray-400 rounded"></div>
+                                <div class="h-0.5 bg-gray-400 rounded"></div>
+                            </div>
+                            <div class="absolute bottom-2 left-2 right-2 flex justify-between">
+                                <span class="text-xs text-gray-400">OLD</span>
+                                <div class="flex gap-0.5">
+                                    <div class="w-1 h-1 bg-red-500 rounded-full"></div>
+                                    <div class="w-1 h-1 bg-red-500 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-7 h-7 bg-red-500 rounded-full flex items-center justify-center shadow-lg">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="mt-3 text-sm text-gray-600">Website Lama</p>
+                </div>
+
+                {{-- Data Flow Animation --}}
+                <div class="flex-1 relative h-24">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="relative w-full h-12">
+                            <div class="absolute top-1 left-0 w-4 h-4 bg-blue-500 rounded-lg data-flow flex items-center justify-center" style="animation-delay: 0s;">
+                                <svg class="w-2 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                                </svg>
+                            </div>
+                            <div class="absolute top-3 left-0 w-3 h-3 bg-green-500 rounded-full data-flow" style="animation-delay: 0.5s;"></div>
+                            <div class="absolute top-5 left-0 w-4 h-4 bg-purple-500 rounded-lg data-flow flex items-center justify-center" style="animation-delay: 1s;">
+                                <svg class="w-2 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                                </svg>
+                            </div>
+                            <div class="absolute top-7 left-0 w-2.5 h-2.5 bg-yellow-500 rounded-full data-flow" style="animation-delay: 1.5s;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- New Server --}}
+                <div class="flex-1 text-center migration-float delay-300">
+                    <div class="relative inline-block">
+                        <div class="w-32 h-24 sm:w-40 sm:h-28 bg-gradient-to-br from-green-500 to-green-700 rounded-xl shadow-xl p-3 mx-auto relative overflow-hidden migration-pulse">
+                            <div class="absolute top-2 left-2 right-2 flex gap-1">
+                                <div class="flex-1 h-1.5 bg-green-400 rounded"></div>
+                                <div class="w-2 h-1.5 bg-green-300 rounded-full server-light"></div>
+                                <div class="w-2 h-1.5 bg-green-300 rounded-full server-light delay-200"></div>
+                            </div>
+                            <div class="mt-3 space-y-1.5">
+                                <div class="h-0.5 bg-green-300 rounded"></div>
+                                <div class="h-0.5 bg-green-300 rounded"></div>
+                                <div class="h-0.5 bg-green-300 rounded"></div>
+                            </div>
+                            <div class="absolute bottom-2 left-2 right-2 flex justify-between">
+                                <span class="text-xs text-green-200">NEW</span>
+                                <div class="flex gap-0.5">
+                                    <div class="w-1 h-1 bg-green-200 rounded-full server-light"></div>
+                                    <div class="w-1 h-1 bg-green-200 rounded-full server-light delay-100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-7 h-7 bg-white rounded-full flex items-center justify-center shadow-lg">
+                            <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="mt-3 text-sm text-green-600 font-medium">Website Baru ✨</p>
+                </div>
+            </div>
+
+            {{-- Migration Steps - Animated Cards --}}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                {{-- Step 1 - Complete --}}
+                <div class="migration-card bg-green-50 rounded-xl p-4 border border-green-200 migration-animate-init fade-in-up delay-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-white bounce-check" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 text-sm">Backup Data</h4>
+                            <p class="text-xs text-green-600">Selesai</p>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Step 2 - Complete --}}
+                <div class="migration-card bg-green-50 rounded-xl p-4 border border-green-200 migration-animate-init fade-in-up delay-400">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-white bounce-check delay-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 text-sm">Transfer Database</h4>
+                            <p class="text-xs text-green-600">Selesai</p>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Step 3 - In Progress --}}
+                <div class="migration-card bg-blue-50 rounded-xl p-4 border border-blue-200 migration-animate-init fade-in-up delay-500">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-white animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 text-sm">Transfer Files</h4>
+                            <p class="text-xs text-blue-600">Sedang berjalan...</p>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Step 4 - Waiting --}}
+                <div class="migration-card bg-gray-50 rounded-xl p-4 border border-gray-200 migration-animate-init fade-in-up delay-600">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-300 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-500 text-sm">Konfigurasi DNS</h4>
+                            <p class="text-xs text-gray-400">Menunggu...</p>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Step 5 - Waiting --}}
+                <div class="migration-card bg-gray-50 rounded-xl p-4 border border-gray-200 migration-animate-init fade-in-up delay-700">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-300 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-500 text-sm">Testing</h4>
+                            <p class="text-xs text-gray-400">Menunggu...</p>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Step 6 - Waiting --}}
+                <div class="migration-card bg-gray-50 rounded-xl p-4 border border-gray-200 migration-animate-init fade-in-up delay-800">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-300 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-500 text-sm">Go Live!</h4>
+                            <p class="text-xs text-gray-400">Menunggu...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Main Content Grid --}}
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {{-- Left: Benefits List --}}
+            <div class="space-y-4">
+                {{-- Benefit 1 --}}
+                <div class="migration-card migration-animate-init fade-in-up delay-100 bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-gray-900 mb-1">Migrasi Gratis</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Tim kami akan memindahkan website Anda tanpa biaya tambahan. Cukup pilih paket hosting, sisanya kami yang urus.</p>
+                        </div>
+                        <svg class="w-5 h-5 text-green-500 shrink-0 opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+
+                {{-- Benefit 2 --}}
+                <div class="migration-card migration-animate-init fade-in-up delay-200 bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-gray-900 mb-1">Performa Lebih Cepat</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Website Anda akan berjalan lebih cepat dengan server modern dan teknologi caching yang optimal.</p>
+                        </div>
+                        <svg class="w-5 h-5 text-green-500 shrink-0 opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+
+                {{-- Benefit 3 --}}
+                <div class="migration-card migration-animate-init fade-in-up delay-300 bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-gray-900 mb-1">Tanpa Downtime</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Proses migrasi berjalan tanpa mengganggu operasional website. Website tetap online selama proses berlangsung.</p>
+                        </div>
+                        <svg class="w-5 h-5 text-green-500 shrink-0 opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+
+                {{-- Benefit 4 --}}
+                <div class="migration-card migration-animate-init fade-in-up delay-400 bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-gray-900 mb-1">Proses Cepat</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Migrasi website WordPress biasanya selesai dalam kurang dari 24 jam. Website lainnya dalam 1-2 hari kerja.</p>
+                        </div>
+                        <svg class="w-5 h-5 text-green-500 shrink-0 opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Right: Highlight Card + CTA --}}
+            <div class="space-y-6">
+                {{-- Highlight Card - Perpanjangan Murah --}}
+                <div class="migration-animate-init fade-in-up delay-500 bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-200 relative overflow-hidden">
+                    {{-- Decorative glow --}}
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-green-200/30 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-emerald-200/30 rounded-full blur-3xl"></div>
+
+                    <div class="relative">
+                        <div class="flex items-center justify-center w-16 h-16 bg-green-100 rounded-2xl mb-6">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Hemat Biaya Perpanjangan</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Biaya perpanjangan yang jauh lebih terjangkau dibanding provider lain. Hemat hingga 50% setiap tahun.
+                        </p>
+                        <div class="flex items-center gap-2 text-green-600">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-semibold">Mulai dari Rp 500rb/tahun</span>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Support Card --}}
+                <div class="migration-animate-init fade-in-up delay-600 bg-white rounded-2xl p-6 border border-gray-200 migration-card">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center shrink-0">
+                            <svg class="w-7 h-7 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-gray-900">Support 24/7</h3>
+                            <p class="text-gray-600 text-sm">Tim support kami siap membantu kapan saja via WhatsApp.</p>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- CTA Button --}}
+                <a href="https://wa.me/6281234567890?text=Halo%20Webkoo,%20saya%20ingin%20migrasi%20website%20saya%20ke%20Webkoo"
+                   target="_blank"
+                   class="migration-animate-init fade-in-up delay-700 group inline-flex items-center justify-center gap-3 w-full px-8 py-5 bg-gray-900 text-white font-bold rounded-2xl hover:bg-gray-800 hover:scale-105 transition-all duration-300 shadow-xl">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    <span>Migrasi Sekarang via WhatsApp</span>
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {{-- Animation Trigger Script --}}
+    <script>
+        // Trigger animations when migration section is visible
+        const migrationSection = document.getElementById('migration-section');
+        const migrationAnimateElements = document.querySelectorAll('.migration-animate-init');
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const migrationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    migrationAnimateElements.forEach(el => {
+                        el.style.opacity = '1';
+                    });
+                    migrationObserver.unobserve(migrationSection);
+                }
+            });
+        }, observerOptions);
+
+        if (migrationSection) {
+            migrationObserver.observe(migrationSection);
+        }
+    </script>
+</section>
+
 <script>
     const texts = [
         '{{ __('messages.business') }}',
