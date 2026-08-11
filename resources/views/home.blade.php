@@ -253,13 +253,10 @@
 
             {{-- Custom Development Card --}}
             <div class="group bg-gray-900/70 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-2xl hover:bg-gray-900/80 transition-all duration-300 overflow-hidden border border-white/10">
+                <div class="flex items-center justify-center p-8">
+                    <img src="{{ asset('storage/assets/img/jerry.webp') }}" alt="Jerry - Freelance Developer" class="max-h-[180px] w-full h-auto object-contain rounded-xl grayscale">
+                </div>
                 <div class="p-8">
-                    {{-- Icon --}}
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                        </svg>
-                    </div>
                     {{-- Title --}}
                     <h3 class="text-xl font-bold text-white mb-3">Custom Development</h3>
                     {{-- Description --}}
