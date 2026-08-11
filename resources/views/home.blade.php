@@ -383,7 +383,7 @@
                 @endphp
 
                 @foreach($testimonials as $index => $testimonial)
-                    <div class="testimonial-slide flex-shrink-0 w-80 md:w-96 transition-all duration-300"
+                    <div class="testimonial-slide absolute top-0 left-1/2 -translate-x-1/2 flex-shrink-0 w-80 md:w-96 transition-all duration-300 ease-out"
                          data-index="{{ $index }}">
                         <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                             {{-- Rating Stars --}}
@@ -414,12 +414,12 @@
             </div>
 
             {{-- Navigation Arrows --}}
-            <button id="prev-btn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 w-10 h-10 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors z-10">
+            <button id="prev-btn" class="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors z-10">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>
             </button>
-            <button id="next-btn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 w-10 h-10 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors z-10">
+            <button id="next-btn" class="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors z-10">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                 </svg>
@@ -586,7 +586,7 @@
         window.dispatchEvent(new Event('scroll'));
     }
 
-    // Testimonial Slider
+    // Testimonial Slider - Peek-a-boo
     const slider = document.getElementById('testimonial-slider');
     const slides = document.querySelectorAll('.testimonial-slide');
     const prevBtn = document.getElementById('prev-btn');
@@ -597,6 +597,11 @@
         const totalSlides = slides.length;
 
         function updateSlider() {
+            // Use a simple gap based on viewport width for responsiveness
+            const isMobile = window.innerWidth < 768;
+            const slideWidth = isMobile ? 320 : 384; // w-80 = 320px, w-96 = 384px
+            const gap = 16; // 16px gap between slides
+
             slides.forEach((slide, index) => {
                 // Calculate distance from current slide (handles circular navigation)
                 let distance = index - currentSlide;
@@ -608,14 +613,11 @@
                     distance += totalSlides;
                 }
 
-                // Reset all classes and inline styles
-                slide.className = 'testimonial-slide flex-shrink-0 w-80 md:w-96 transition-all duration-300 absolute top-0 left-1/2 -translate-x-1/2';
-                slide.style.transform = '';
-                slide.style.left = '';
+                // Reset base classes
+                slide.className = 'testimonial-slide absolute top-0 transition-all duration-300 ease-out w-80 md:w-96';
 
-                // Get slide width for positioning (responsive)
-                const slideWidth = slide.offsetWidth;
-                const offset = distance * (slideWidth + 16); // 16px gap
+                // Calculate horizontal offset
+                const xOffset = distance * (slideWidth + gap);
 
                 if (distance === 0) {
                     // Active slide - fully visible in center
@@ -624,19 +626,19 @@
                     slide.style.transform = 'translateX(-50%) scale(1)';
                 } else if (distance === 1 || distance === -(totalSlides - 1)) {
                     // Next slide (peek-a-boo on right)
-                    slide.classList.add('opacity-70', 'scale-90', 'z-0');
+                    slide.classList.add('opacity-60', 'scale-90', 'z-0');
                     slide.style.left = '50%';
-                    slide.style.transform = `translateX(calc(-50% + ${offset}px)) scale(0.9)`;
+                    slide.style.transform = `translateX(calc(-50% + ${slideWidth + gap}px)) scale(0.9)`;
                 } else if (distance === -1 || distance === (totalSlides - 1)) {
                     // Previous slide (peek-a-boo on left)
-                    slide.classList.add('opacity-70', 'scale-90', 'z-0');
+                    slide.classList.add('opacity-60', 'scale-90', 'z-0');
                     slide.style.left = '50%';
-                    slide.style.transform = `translateX(calc(-50% + ${offset}px)) scale(0.9)`;
+                    slide.style.transform = `translateX(calc(-50% - ${slideWidth + gap}px)) scale(0.9)`;
                 } else {
-                    // Far slides - hidden far away
+                    // Far slides - hidden off-screen
                     slide.classList.add('opacity-0', 'scale-75', '-z-10');
                     slide.style.left = '50%';
-                    slide.style.transform = `translateX(calc(-50% + ${offset}px)) scale(0.75)`;
+                    slide.style.transform = `translateX(calc(-50% + ${xOffset}px)) scale(0.75)`;
                 }
             });
         }
@@ -663,11 +665,14 @@
             prevBtn.addEventListener('click', prevSlide);
         }
 
+        // Handle window resize for responsive updates
+        window.addEventListener('resize', updateSlider);
+
         // Auto-advance every 5 seconds
         setInterval(nextSlide, 5000);
 
-        // Initialize
-        updateSlider();
+        // Initialize after a small delay to ensure proper layout
+        setTimeout(updateSlider, 100);
     }
 </script>
 @endsection
