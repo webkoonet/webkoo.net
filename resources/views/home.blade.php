@@ -211,7 +211,7 @@
             {{-- WordPress Card --}}
             <div class="group bg-gray-900/70 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-2xl hover:bg-gray-900/80 transition-all duration-300 overflow-hidden border border-white/10">
                 <div class="flex items-center justify-center p-8">
-                    <img src="{{ asset('storage/assets/img/wordpress-icon.png') }}" alt="WordPress" class="w-full h-auto object-contain rounded-xl">
+                    <img src="{{ asset('storage/assets/img/website-wordpress-display.png') }}" alt="WordPress" class="w-full h-auto object-contain rounded-xl">
                 </div>
                 <div class="p-8">
                     {{-- Title --}}
