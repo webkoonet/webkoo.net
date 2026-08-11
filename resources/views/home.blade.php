@@ -344,7 +344,7 @@
         {{-- Peek-a-boo Testimonial Slider --}}
         <div class="relative">
             {{-- Slider Container --}}
-            <div id="testimonial-slider" class="relative w-full h-96 lg:h-[28rem] cursor-grab active:cursor-grabbing">
+            <div id="testimonial-slider" class="relative w-full h-80 cursor-grab active:cursor-grabbing">
                 @php
                     $testimonials = [
                         [
