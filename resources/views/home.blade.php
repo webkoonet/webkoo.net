@@ -167,11 +167,10 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {{-- Website Builder Card --}}
             <div class="group bg-gray-900/70 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-2xl hover:bg-gray-900/80 transition-all duration-300 overflow-hidden border border-white/10">
+                <div class="flex items-center justify-center p-8">
+                    <img src="{{ asset('storage/assets/img/website-builder-display.png') }}" alt="Website Builder" class="w-full h-auto object-contain rounded-xl">
+                </div>
                 <div class="p-8">
-                    {{-- Icon --}}
-                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <img src="{{ asset('storage/assets/img/logo.webp') }}" alt="Webkoo Logo" class="w-10 h-10 object-contain">
-                    </div>
                     {{-- Title --}}
                     <h3 class="text-xl font-bold text-white mb-3">Website Builder</h3>
                     {{-- Description --}}
@@ -211,13 +210,10 @@
 
             {{-- WordPress Card --}}
             <div class="group bg-gray-900/70 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-2xl hover:bg-gray-900/80 transition-all duration-300 overflow-hidden border border-white/10">
+                <div class="flex items-center justify-center p-8">
+                    <img src="{{ asset('storage/assets/img/wordpress-icon.png') }}" alt="WordPress" class="w-full h-auto object-contain rounded-xl">
+                </div>
                 <div class="p-8">
-                    {{-- Icon --}}
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12.02 0C5.382 0 0 5.382 0 12.02c0 5.283 3.432 9.768 8.232 11.392-.113-.994-.216-2.522.045-3.61.236-.983 1.521-6.456 1.521-6.456s-.388-.776-.388-1.923c0-1.8 1.044-3.148 2.345-3.148 1.106 0 1.641.828 1.641 1.821 0 1.109-.705 2.767-1.069 4.303-.304 1.288.646 2.339 1.914 2.339 2.297 0 4.063-2.424 4.063-5.922 0-3.095-2.228-5.257-5.407-5.257-3.681 0-5.843 2.761-5.843 5.616 0 1.112.428 2.304.964 2.954.106.127.121.238.09.367-.098.406-.315 1.288-.358 1.467-.056.237-.186.287-.428.173-1.607-.748-2.616-3.096-2.616-4.983 0-4.053 2.946-7.777 8.503-7.777 4.464 0 7.93 3.178 7.93 7.423 0 4.432-2.792 8.001-6.671 8.001-1.302 0-2.527-.677-2.946-1.475l-.802 3.056c-.29 1.107-1.078 2.492-1.604 3.341 1.207.374 2.487.574 3.814.574 6.638 0 12.02-5.382 12.02-12.02C18.681 5.382 13.299 0 6.66 0h-.001z"/>
-                        </svg>
-                    </div>
                     {{-- Title --}}
                     <h3 class="text-xl font-bold text-white mb-3">WordPress</h3>
                     {{-- Description --}}
