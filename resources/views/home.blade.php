@@ -593,7 +593,7 @@
             </div>
 
             {{-- Server Animation - Old to New --}}
-            <div class="flex items-center justify-center gap-4 sm:gap-8 mb-6">
+            <div class="flex items-center justify-center gap-4 sm:gap-8 my-6">
                 {{-- Old Server --}}
                 <div class="flex-1 text-center migration-float">
                     <div class="relative inline-block">
@@ -719,14 +719,14 @@
                 </div>
 
                 {{-- Step 3 - In Progress --}}
-                <div class="migration-card bg-white rounded-xl p-3 border border-gray-200 migration-animate-init fade-in-up delay-500 text-center">
-                    <div class="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <div class="migration-card bg-blue-50 rounded-xl p-3 border border-blue-200 migration-animate-init fade-in-up delay-500 text-center">
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-2">
                         <svg class="w-4 h-4 text-white animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
                         </svg>
                     </div>
-                    <h4 class="font-semibold text-gray-900 text-xs">Transfer Files</h4>
-                    <p class="text-xs text-gray-600">Sedang...</p>
+                    <h4 class="font-semibold text-blue-900 text-xs">Transfer Files</h4>
+                    <p class="text-xs text-blue-600 font-medium">Sedang...</p>
                 </div>
 
                 {{-- Step 4 - Waiting --}}
@@ -802,9 +802,9 @@
             </div>
 
             {{-- Highlight Card, Support Card & CTA --}}
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 {{-- Highlight Card - Perpanjangan Murah --}}
-                <div class="migration-animate-init fade-in-up delay-500 bg-gray-50 rounded-2xl p-4 border border-gray-200">
+                <div class="migration-animate-init fade-in-up delay-500 bg-gray-50 rounded-2xl p-4 border border-gray-200 w-full sm:w-64">
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center shrink-0">
                             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -819,7 +819,7 @@
                 </div>
 
                 {{-- Support Card --}}
-                <div class="migration-animate-init fade-in-up delay-600 bg-white rounded-2xl p-4 border border-gray-200 migration-card">
+                <div class="migration-animate-init fade-in-up delay-600 bg-white rounded-2xl p-4 border border-gray-200 migration-card w-full sm:w-64">
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center shrink-0">
                             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
