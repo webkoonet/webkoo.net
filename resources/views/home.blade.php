@@ -288,7 +288,10 @@
 
                     {{-- Freelancer Label --}}
                     <div class="absolute bottom-2 left-0 right-0 text-center">
-                        <span class="text-base font-semibold text-white">Profesional Web Developer</span>
+                        <div>
+                            <span class="block text-sm font-bold text-white">Jerry</span>
+                            <span class="block text-xs text-white/80">Web Developer</span>
+                        </div>
                     </div>
                 </div>
                 <div class="p-8">
