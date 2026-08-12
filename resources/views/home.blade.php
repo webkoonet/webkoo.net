@@ -199,7 +199,7 @@
                         </li>
                     </ul>
                     {{-- CTA --}}
-                    <a href="#webkoo-builder" class="inline-flex items-center gap-2 text-purple-400 font-semibold hover:text-purple-300 group-hover:gap-3 transition-all">
+                    <a href="#webkoo-builder" class="inline-flex items-center gap-2 font-semibold hover:opacity-80 group-hover:gap-3 transition-all" style="color: #673de6;">
                         Learn more
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -630,7 +630,7 @@
                                 </svg>
                             </div>
                             {{-- Image/Photo Icon --}}
-                            <div class="absolute top-8 left-0 data-flow-icon bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-2 flex items-center justify-center shadow-lg" style="animation-delay: 1.6s;">
+                            <div class="absolute top-8 left-0 data-flow-icon rounded-xl p-2 flex items-center justify-center shadow-lg" style="background: linear-gradient(to bottom right, #673de6, #673de6); animation-delay: 1.6s;">
                                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
@@ -885,7 +885,7 @@
     <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
     <div class="absolute inset-0">
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl" style="background: rgba(103, 61, 230, 0.2);"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl"></div>
     </div>
 
@@ -972,13 +972,13 @@
             </div>
 
             {{-- WordPress Plan - Featured --}}
-            <div class="group relative bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-xl rounded-3xl border-2 border-blue-400/30 hover:border-blue-400/50 transition-all duration-500 overflow-hidden scale-105 shadow-2xl shadow-blue-500/10">
+            <div class="group relative backdrop-blur-xl rounded-3xl border-2 hover:border-opacity-50 transition-all duration-500 overflow-hidden scale-105 shadow-2xl" style="background: linear-gradient(to bottom right, rgba(59, 130, 246, 0.1), rgba(103, 61, 230, 0.1)); border-color: rgba(59, 130, 246, 0.3); box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.1);">
                 {{-- Glow effect --}}
                 <div class="absolute -top-20 -right-20 w-40 h-40 bg-blue-400/20 rounded-full blur-3xl"></div>
-                <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-400/20 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-20 -left-20 w-40 h-40 rounded-full blur-3xl" style="background: rgba(103, 61, 230, 0.2);"></div>
 
                 {{-- Popular Badge --}}
-                <div class="absolute top-0 right-0 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-bold px-4 py-1.5 rounded-bl-2xl">
+                <div class="absolute top-0 right-0 text-white text-xs font-bold px-4 py-1.5 rounded-bl-2xl" style="background: linear-gradient(to right, #3b82f6, #673de6);">
                     POPULER
                 </div>
 
@@ -1060,7 +1060,7 @@
 
                 <div class="relative p-8">
                     {{-- Icon/Header --}}
-                    <div class="w-14 h-14 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500" style="background: linear-gradient(to bottom right, #673de6, #673de6);">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
                         </svg>
@@ -1076,32 +1076,32 @@
 
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center gap-3 text-sm text-white/70">
-                            <div class="w-5 h-5 bg-purple-500/20 rounded-lg flex items-center justify-center shrink-0">
-                                <svg class="w-3 h-3 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                            <div class="w-5 h-5 rounded-lg flex items-center justify-center shrink-0" style="background: rgba(103, 61, 230, 0.2);">
+                                <svg class="w-3 h-3" style="color: #673de6;" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
                             <span>Desain eksklusif</span>
                         </li>
                         <li class="flex items-center gap-3 text-sm text-white/70">
-                            <div class="w-5 h-5 bg-purple-500/20 rounded-lg flex items-center justify-center shrink-0">
-                                <svg class="w-3 h-3 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                            <div class="w-5 h-5 rounded-lg flex items-center justify-center shrink-0" style="background: rgba(103, 61, 230, 0.2);">
+                                <svg class="w-3 h-3" style="color: #673de6;" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
                             <span>Fitur custom sesuai request</span>
                         </li>
                         <li class="flex items-center gap-3 text-sm text-white/70">
-                            <div class="w-5 h-5 bg-purple-500/20 rounded-lg flex items-center justify-center shrink-0">
-                                <svg class="w-3 h-3 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                            <div class="w-5 h-5 rounded-lg flex items-center justify-center shrink-0" style="background: rgba(103, 61, 230, 0.2);">
+                                <svg class="w-3 h-3" style="color: #673de6;" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
                             <span>Optimasi performa maksimal</span>
                         </li>
                         <li class="flex items-center gap-3 text-sm text-white/70">
-                            <div class="w-5 h-5 bg-purple-500/20 rounded-lg flex items-center justify-center shrink-0">
-                                <svg class="w-3 h-3 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                            <div class="w-5 h-5 rounded-lg flex items-center justify-center shrink-0" style="background: rgba(103, 61, 230, 0.2);">
+                                <svg class="w-3 h-3" style="color: #673de6;" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
