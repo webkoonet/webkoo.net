@@ -1,6 +1,65 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    /* Infinite Scroll Animation untuk Client Logos */
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .client-scroll-container {
+        overflow: hidden;
+    }
+
+    .client-scroll-track {
+        display: flex;
+        width: max-content;
+        animation: scroll-left 30s linear infinite;
+        will-change: transform;
+    }
+
+    .client-scroll-track:hover {
+        animation-play-state: paused;
+    }
+
+    .client-scroll-item {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Fixed size container untuk semua logo */
+        width: 120px;
+        height: 60px;
+    }
+
+    @media (min-width: 640px) {
+        .client-scroll-item {
+            width: 140px;
+            height: 70px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .client-scroll-item {
+            width: 160px;
+            height: 80px;
+        }
+    }
+
+    .client-scroll-item img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+</style>
+
 {{-- Hero Wrapper - menyatukan background untuk hero dan client section --}}
 <div class="relative -mt-16">
     {{-- Background Image - menyatu untuk hero dan client section --}}
@@ -42,58 +101,44 @@
             </p>
         </div>
 
-        {{-- Static Logo Grid - Grid di mobile, Flex di desktop --}}
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            {{-- Grid Layout - Mobile: 2 cols, Tablet: 4 cols, Desktop: Flex horizontal --}}
-            <div class="grid grid-cols-3 sm:grid-cols-4 lg:flex lg:items-center lg:justify-center gap-3 sm:gap-4 lg:gap-14 -mb-0 sm:-mb-8">
-                {{-- Client 1 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <img src="{{ asset('storage/assets/img/client-1.webp') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                {{-- Client 2 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <img src="{{ asset('storage/assets/img/client-2.webp') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                {{-- Client 3 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <img src="{{ asset('storage/assets/img/client-3.webp') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                {{-- Client 4 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <img src="{{ asset('storage/assets/img/client-4.webp') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                {{-- Client 5 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
-                    <img src="{{ asset('storage/assets/img/client-5.webp') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                {{-- Client 6 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
-                    <img src="{{ asset('storage/assets/img/client-6.webp') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                {{-- Client 7 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
-                    <img src="{{ asset('storage/assets/img/client-7.png') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                {{-- Client 8 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
-                    <img src="{{ asset('storage/assets/img/client-8.png') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
+        {{-- Infinite Scroll Client Logos --}}
+        <div class="client-scroll-container">
+            <div class="client-scroll-track">
+                {{-- First Set of Logos --}}
+                @foreach([
+                    'client-1.webp',
+                    'client-2.webp',
+                    'client-3.webp',
+                    'client-4.webp',
+                    'client-5.webp',
+                    'client-6.webp',
+                    'client-7.png',
+                    'client-8.png'
+                ] as $client)
+                    <div class="client-scroll-item">
+                        <img src="{{ asset('storage/assets/img/' . $client) }}"
+                             alt="Client Logo"
+                             class="opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                @endforeach
+
+                {{-- Duplicate Set for Seamless Loop --}}
+                @foreach([
+                    'client-1.webp',
+                    'client-2.webp',
+                    'client-3.webp',
+                    'client-4.webp',
+                    'client-5.webp',
+                    'client-6.webp',
+                    'client-7.png',
+                    'client-8.png'
+                ] as $client)
+                    <div class="client-scroll-item">
+                        <img src="{{ asset('storage/assets/img/' . $client) }}"
+                             alt="Client Logo"
+                             class="opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -411,58 +456,44 @@
             </div>
         </div>
 
-        {{-- Client Logos Grid --}}
-        <div class="mt-10 max-w-6xl mx-auto">
-            {{-- Grid Layout - Mobile: 2 cols, Tablet: 4 cols, Desktop: Flex horizontal --}}
-            <div class="grid grid-cols-3 sm:grid-cols-4 lg:flex lg:items-center lg:justify-center gap-3 sm:gap-4 lg:gap-14">
-                {{-- Client 1 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <img src="{{ asset('storage/assets/img/client-1.webp') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                {{-- Client 2 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <img src="{{ asset('storage/assets/img/client-2.webp') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                {{-- Client 3 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <img src="{{ asset('storage/assets/img/client-3.webp') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                {{-- Client 4 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <img src="{{ asset('storage/assets/img/client-4.webp') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                {{-- Client 5 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
-                    <img src="{{ asset('storage/assets/img/client-5.webp') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                {{-- Client 6 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
-                    <img src="{{ asset('storage/assets/img/client-6.webp') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                {{-- Client 7 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
-                    <img src="{{ asset('storage/assets/img/client-7.png') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                {{-- Client 8 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
-                    <img src="{{ asset('storage/assets/img/client-8.png') }}"
-                         alt="Client Logo"
-                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
+        {{-- Client Logos Infinite Scroll --}}
+        <div class="mt-10 client-scroll-container">
+            <div class="client-scroll-track">
+                {{-- First Set of Logos --}}
+                @foreach([
+                    'client-1.webp',
+                    'client-2.webp',
+                    'client-3.webp',
+                    'client-4.webp',
+                    'client-5.webp',
+                    'client-6.webp',
+                    'client-7.png',
+                    'client-8.png'
+                ] as $client)
+                    <div class="client-scroll-item">
+                        <img src="{{ asset('storage/assets/img/' . $client) }}"
+                             alt="Client Logo"
+                             class="opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                @endforeach
+
+                {{-- Duplicate Set for Seamless Loop --}}
+                @foreach([
+                    'client-1.webp',
+                    'client-2.webp',
+                    'client-3.webp',
+                    'client-4.webp',
+                    'client-5.webp',
+                    'client-6.webp',
+                    'client-7.png',
+                    'client-8.png'
+                ] as $client)
+                    <div class="client-scroll-item">
+                        <img src="{{ asset('storage/assets/img/' . $client) }}"
+                             alt="Client Logo"
+                             class="opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all">
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
