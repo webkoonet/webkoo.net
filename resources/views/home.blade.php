@@ -1131,17 +1131,25 @@
                     migrationAnimateElements.forEach(el => {
                         el.style.opacity = '1';
                     });
-                    // Start data flow icons animation with their delays
+                    // Start data flow icons animation with random delays
                     const icons = document.querySelectorAll('.data-flow-icon');
-                    icons.forEach((icon, index) => {
+                    // Create array of indices and shuffle
+                    const indices = Array.from({length: icons.length}, (_, i) => i);
+                    // Shuffle array
+                    for (let i = indices.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [indices[i], indices[j]] = [indices[j], indices[i]];
+                    }
+                    icons.forEach((icon, originalIndex) => {
                         // Stop animation first
                         icon.style.animation = 'none';
                         icon.style.opacity = '0';
-                        // Start animation with delay
+                        // Start animation with random delay
+                        const randomDelay = indices.indexOf(originalIndex) * 800;
                         setTimeout(() => {
                             icon.style.animation = '';
                             icon.style.opacity = '';
-                        }, index * 800);
+                        }, randomDelay);
                     });
                     // Start progress animation
                     animateProgress();
