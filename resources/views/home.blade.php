@@ -712,14 +712,14 @@
 
                     {{-- Success Text - Hidden initially --}}
                     <div id="migration-success-text" class="hidden mt-4 mb-12">
-                        <div class="inline-flex flex-col items-center bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-xl shadow-xl success-glow">
+                        <div class="inline-flex flex-col items-center bg-white/80 backdrop-blur-md border border-white/30 text-gray-900 px-6 py-3 rounded-xl shadow-lg">
                             <div class="flex items-center justify-center gap-2">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
                                 <span class="font-bold text-lg">Migrasi Berhasil!</span>
                             </div>
-                            <p class="text-xs opacity-90 mt-1 text-center">Website Anda sudah pindah ✨</p>
+                            <p class="text-xs text-gray-600 mt-1 text-center">Website Anda sudah pindah ✨</p>
                         </div>
                     </div>
                 </div>
@@ -846,7 +846,7 @@
             {{-- Highlight Card, Support Card & CTA --}}
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 {{-- Highlight Card - Perpanjangan Murah --}}
-                <div class="migration-animate-init fade-in-up delay-500 bg-gray-50 rounded-2xl p-4 border border-gray-200 w-full sm:w-64">
+                <div class="migration-animate-init fade-in-up delay-500 bg-white rounded-2xl p-4 border border-gray-200 migration-card w-full sm:w-64">
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center shrink-0">
                             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -855,7 +855,7 @@
                         </div>
                         <div class="flex-1">
                             <h3 class="text-sm font-bold text-gray-900">Hemat Biaya</h3>
-                            <p class="text-xs text-gray-700 font-semibold">Mulai Rp 489.000/tahun</p>
+                            <p class="text-xs text-gray-600">Mulai Rp 489.000/tahun</p>
                         </div>
                     </div>
                 </div>
