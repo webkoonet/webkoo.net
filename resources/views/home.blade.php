@@ -511,8 +511,11 @@
             100% { opacity: 0 !important; transform: translateX(-50px) scale(0.9); visibility: hidden; }
         }
         @keyframes new-server-slide-center {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%) scale(1.2); }
+            0% { transform: translateX(0) scale(1); }
+            25% { transform: translateX(-50px) scale(1.03); }
+            50% { transform: translateX(-100px) scale(1.08); }
+            75% { transform: translateX(-150px) scale(1.12); }
+            100% { transform: translateX(-200px) scale(1.15); }
         }
         @keyframes success-text-appear {
             0% { opacity: 0; transform: translateY(-20px); }
@@ -608,7 +611,7 @@
         {{-- Migration Process Visualization --}}
         <div class="mb-8 migration-animate-init fade-in-up delay-200">
             {{-- Server Animation - Old to New --}}
-            <div class="flex items-center justify-center gap-4 sm:gap-8 mt-16 mb-8 relative">
+            <div id="server-container" class="flex items-center justify-center gap-4 sm:gap-8 mt-16 mb-8 relative">
                 {{-- Old Server --}}
                 <div id="old-server" class="flex-1 text-center migration-float opacity-50">
                     <div class="relative inline-block">
@@ -640,7 +643,7 @@
                 </div>
 
                 {{-- Data Flow Animation - Website Elements Icons --}}
-                <div class="flex-1 relative h-24 sm:h-32">
+                <div id="data-flow" class="flex-1 relative h-24 sm:h-32">
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="relative w-full max-w-[200px] sm:max-w-[280px] md:max-w-[400px] lg:max-w-[500px] xl:max-w-[600px] h-24 sm:h-32">
                             {{-- Database Icon --}}
@@ -709,14 +712,14 @@
 
                     {{-- Success Text - Hidden initially --}}
                     <div id="migration-success-text" class="hidden mt-4 mb-12">
-                        <div class="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-xl shadow-xl success-glow text-center">
+                        <div class="inline-flex flex-col items-center bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-xl shadow-xl success-glow">
                             <div class="flex items-center justify-center gap-2">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
                                 <span class="font-bold text-lg">Migrasi Berhasil!</span>
                             </div>
-                            <p class="text-xs opacity-90 mt-1">Website Anda sudah pindah ✨</p>
+                            <p class="text-xs opacity-90 mt-1 text-center">Website Anda sudah pindah ✨</p>
                         </div>
                     </div>
                 </div>
@@ -1054,6 +1057,11 @@
 
         // Celebration effects
         function triggerCelebration() {
+            const serverContainer = document.getElementById('server-container');
+            const oldServer = document.getElementById('old-server');
+            const dataFlow = document.getElementById('data-flow');
+            const newServer = document.getElementById('new-server');
+
             // Stop data flow icons animation
             const icons = document.querySelectorAll('.data-flow-icon');
             icons.forEach(icon => {
@@ -1061,38 +1069,51 @@
                 icon.style.opacity = '0';
             });
 
-            // Fade out old server
-            const oldServer = document.getElementById('old-server');
+            // Hide old server and data flow
             if (oldServer) {
-                oldServer.classList.add('old-server-fade-out');
-                // Force hide after animation
-                setTimeout(() => {
-                    oldServer.style.display = 'none';
-                }, 800);
+                oldServer.style.transition = 'all 0.6s ease-out';
+                oldServer.style.opacity = '0';
+                oldServer.style.flex = '0';
+                oldServer.style.width = '0';
+                setTimeout(() => { oldServer.style.display = 'none'; }, 600);
+            }
+            if (dataFlow) {
+                dataFlow.style.transition = 'all 0.6s ease-out';
+                dataFlow.style.opacity = '0';
+                dataFlow.style.flex = '0';
+                dataFlow.style.width = '0';
+                setTimeout(() => { dataFlow.style.display = 'none'; }, 600);
             }
 
-            // Move new server to center and scale up
-            const newServer = document.getElementById('new-server');
+            // Center and scale new server after layout updates
             if (newServer) {
                 newServer.classList.remove('migration-float');
-                newServer.classList.add('new-server-center');
+                newServer.style.transition = 'transform 0.8s ease-out 0.3s';
+                setTimeout(() => {
+                    newServer.style.transform = 'scale(1.15)';
+                }, 300);
             }
 
             // Fade out progress bar
             const progressBarContainer = progressBar?.closest('.bg-white');
             if (progressBarContainer) {
-                progressBarContainer.classList.add('progress-bar-fade');
-                // Hide from layout after animation
-                setTimeout(() => {
-                    progressBarContainer.style.display = 'none';
-                }, 500);
+                progressBarContainer.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+                progressBarContainer.style.opacity = '0';
+                progressBarContainer.style.transform = 'scaleY(0)';
+                setTimeout(() => { progressBarContainer.style.display = 'none'; }, 500);
             }
 
             // Show success text
             const successText = document.getElementById('migration-success-text');
             if (successText) {
                 successText.classList.remove('hidden');
-                successText.classList.add('success-text-appear');
+                successText.style.transition = 'opacity 0.6s ease-out 0.5s, transform 0.6s ease-out 0.5s';
+                successText.style.opacity = '0';
+                successText.style.transform = 'translateY(-20px)';
+                setTimeout(() => {
+                    successText.style.opacity = '1';
+                    successText.style.transform = 'translateY(0)';
+                }, 50);
             }
 
             // Update server lights to all green and stop animation
