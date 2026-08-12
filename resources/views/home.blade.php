@@ -13,10 +13,10 @@
     {{-- Hero Content Section - h-screen --}}
     <section class="relative z-10 h-screen flex items-center justify-center">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 whitespace-nowrap">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-3 whitespace-nowrap leading-tight">
                 {{ __('messages.make_website') }} <span id="rotating-text" class="inline-block transition-all duration-500 min-h-[1.2em] font-light">{{ __('messages.business') }}</span>
             </h1>
-            <p class="text-base sm:text-lg text-gray-500 mb-10 max-w-2xl mx-auto">
+            <p class="text-base sm:text-lg text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
                 {{ __('messages.hero_description') }}
             </p>
 
@@ -37,7 +37,7 @@
     {{-- Trusted By / Clients Section --}}
     <section class="relative z-10 pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-            <p class="text-center text-sm text-gray-600 font-medium tracking-wide uppercase">
+            <p class="text-center text-xs text-gray-600 font-semibold tracking-wide uppercase leading-normal">
                 {{ __('messages.trusted_by') }}
             </p>
         </div>
@@ -114,7 +114,7 @@
     <div class="sticky top-0 flex items-center justify-center h-screen overflow-hidden">
         <div class="flex flex-col items-center justify-between h-full px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12 pt-20 sm:pt-24 md:pt-32">
             {{-- Welcome Text - Top --}}
-            <p id="welcome-text" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-white opacity-0 transition-opacity duration-700 text-center px-4">
+            <p id="welcome-text" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white opacity-0 transition-opacity duration-700 text-center px-4 leading-tight">
                 {{ __('messages.welcome_text') }}
             </p>
 
@@ -140,12 +140,12 @@
 
             {{-- Bottom Section - Description & Button --}}
             <div class="flex flex-col items-center pb-4 sm:pb-6 md:pb-8">
-                <p id="description-text" class="mb-3 sm:mb-4 text-xs sm:text-sm md:text-base text-white opacity-0 transition-all duration-700 text-center max-w-[200px] sm:max-w-xs md:max-w-xs leading-relaxed">
+                <p id="description-text" class="mb-3 sm:mb-4 text-xs sm:text-sm md:text-base text-white opacity-0 transition-all duration-700 text-center max-w-[200px] sm:max-w-xs md:max-w-xs leading-relaxed font-normal">
                     {!! __('messages.description_text') !!}
                 </p>
 
                 <a id="cta-button" href="#services"
-                   class="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 bg-white text-gray-900 text-xs sm:text-sm font-medium rounded-full opacity-0 transition-all duration-700 hover:bg-white/90 hover:scale-105 shadow-lg">
+                   class="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 bg-white text-gray-900 text-xs sm:text-sm font-semibold rounded-full opacity-0 transition-all duration-700 hover:bg-white/90 hover:scale-105 shadow-lg leading-normal">
                     {{ __('messages.explore_services') }}
                 </a>
             </div>
@@ -158,7 +158,7 @@
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Section Header --}}
         <div class="text-left mb-12 sm:mb-16">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium text-white">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-white leading-tight">
                 Pilih jenis website anda
             </h2>
         </div>
@@ -172,26 +172,26 @@
                 </div>
                 <div class="p-8">
                     {{-- Title --}}
-                    <h3 class="text-xl font-bold text-white mb-3">Website Builder</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 leading-tight">Website Builder</h3>
                     {{-- Description --}}
                     <p class="text-white/80 mb-6 leading-relaxed">
                         Fast, affordable websites using modern drag-and-drop builders. Perfect for small businesses and startups.
                     </p>
                     {{-- Features List --}}
                     <ul class="space-y-2 mb-6">
-                        <li class="flex items-center gap-2 text-sm text-white/80">
+                        <li class="flex items-center gap-2 text-sm text-white/80 font-medium leading-normal">
                             <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
                             Quick deployment (3-5 days)
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
+                        <li class="flex items-center gap-2 text-sm text-white/80 font-medium leading-normal">
                             <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
                             Easy to manage
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
+                        <li class="flex items-center gap-2 text-sm text-white/80 font-medium leading-normal">
                             <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
@@ -215,26 +215,26 @@
                 </div>
                 <div class="p-8">
                     {{-- Title --}}
-                    <h3 class="text-xl font-bold text-white mb-3">WordPress</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 leading-tight">WordPress</h3>
                     {{-- Description --}}
                     <p class="text-white/80 mb-6 leading-relaxed">
                         Flexible and scalable CMS solution. Ideal for blogs, content sites, and growing businesses.
                     </p>
                     {{-- Features List --}}
                     <ul class="space-y-2 mb-6">
-                        <li class="flex items-center gap-2 text-sm text-white/80">
+                        <li class="flex items-center gap-2 text-sm text-white/80 font-medium leading-normal">
                             <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
                             Custom theme development
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
+                        <li class="flex items-center gap-2 text-sm text-white/80 font-medium leading-normal">
                             <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
                             Plugin integration
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
+                        <li class="flex items-center gap-2 text-sm text-white/80 font-medium leading-normal">
                             <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
@@ -289,33 +289,33 @@
                     {{-- Freelancer Label --}}
                     <div class="absolute bottom-2 left-0 right-0 text-center">
                         <div>
-                            <span class="block text-sm font-bold text-white">Jerry</span>
-                            <span class="block text-xs text-white/80">Web Developer</span>
+                            <span class="block text-sm font-bold text-white leading-normal">Jerry</span>
+                            <span class="block text-xs text-white/80 leading-normal">Web Developer</span>
                         </div>
                     </div>
                 </div>
                 <div class="p-8">
                     {{-- Title --}}
-                    <h3 class="text-xl font-bold text-white mb-3">Custom Development</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 leading-tight">Custom Development</h3>
                     {{-- Description --}}
                     <p class="text-white/80 mb-6 leading-relaxed">
                         Fully custom web applications built from scratch. For unique requirements and enterprise solutions.
                     </p>
                     {{-- Features List --}}
                     <ul class="space-y-2 mb-6">
-                        <li class="flex items-center gap-2 text-sm text-white/80">
+                        <li class="flex items-center gap-2 text-sm text-white/80 font-medium leading-normal">
                             <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
                             Tailored architecture
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
+                        <li class="flex items-center gap-2 text-sm text-white/80 font-medium leading-normal">
                             <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
                             Scalable & secure
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
+                        <li class="flex items-center gap-2 text-sm text-white/80 font-medium leading-normal">
                             <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
@@ -340,8 +340,8 @@
     <div class="w-full px-4 sm:px-6 lg:px-8">
         {{-- Section Header --}}
         <div class="text-center mb-12">
-            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">{{ __('messages.trusted_by') }}</h2>
-            <p class="text-lg text-gray-600">{{ __('messages.testimonial_subtitle') }}</p>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 mb-4 leading-tight">{{ __('messages.trusted_by') }}</h2>
+            <p class="text-base sm:text-lg text-gray-600 leading-relaxed">{{ __('messages.testimonial_subtitle') }}</p>
         </div>
 
         {{-- Peek-a-boo Testimonial Slider --}}
@@ -405,8 +405,8 @@
                                     {{ substr($testimonial['name'], 0, 1) }}
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-gray-900">{{ $testimonial['name'] }}</h4>
-                                    <p class="text-sm text-gray-600">{{ $testimonial['role'] }}</p>
+                                    <h4 class="font-semibold text-gray-900 leading-normal">{{ $testimonial['name'] }}</h4>
+                                    <p class="text-sm text-gray-600 leading-normal">{{ $testimonial['role'] }}</p>
                                 </div>
                             </div>
                         </div>
@@ -571,10 +571,10 @@
                 </svg>
                 <span class="text-gray-800 text-sm font-medium">Migrasi Gratis</span>
             </div>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-900">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
                 Sudah Punya Website? Ingin Berpindah?
             </h2>
-            <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-center">
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-center leading-relaxed">
                 Pindahkan website Anda ke Webkoo tanpa biaya migrasi. Nikmati biaya perpanjangan yang terjangkau dan performa yang lebih baik.
             </p>
         </div>
