@@ -879,61 +879,94 @@
     </script>
 </section>
 
-{{-- Pricing Section --}}
-<section class="relative py-20 bg-gradient-to-b from-gray-900 to-gray-950" id="pricing-section">
-    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+{{-- Pricing Section - Glassmorphism Style --}}
+<section class="relative py-24 sm:py-32 overflow-hidden" id="pricing-section">
+    {{-- Animated Background --}}
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+    <div class="absolute inset-0">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Section Header --}}
-        <div class="text-left mb-12">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium text-white">
-                Sudah Punya Website? Ingin Berpindah?
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-6 backdrop-blur-md">
+                <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span class="text-white/80 text-sm font-medium">Transparan & Terjangkau</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-white mb-4 tracking-tight">
+                Paket & Harga Website
             </h2>
+            <p class="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
+                Pilih paket yang sesuai dengan kebutuhan bisnis Anda. Semua paket sudah termasuk hosting premium, SSL gratis, dan support prioritas.
+            </p>
         </div>
 
-        {{-- Pricing Cards --}}
-        <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+        {{-- Pricing Cards - Glassmorphism Style --}}
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
 
             {{-- Free Plan --}}
-            <div class="bg-gray-900/70 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-2xl hover:bg-gray-900/80 transition-all duration-300 overflow-hidden border border-white/10">
-                <div class="p-8">
+            <div class="group relative bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden">
+                {{-- Subtle gradient overlay on hover --}}
+                <div class="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <div class="relative p-8">
+                    {{-- Icon/Header --}}
+                    <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+
                     <h3 class="text-xl font-bold text-white mb-2">Website Builder</h3>
-                    <p class="text-white/60 text-sm mb-6">Cocok untuk pemula</p>
+                    <p class="text-white/50 text-sm mb-6">Cocok untuk pemula & UMKM</p>
 
                     <div class="mb-6">
-                        <span class="text-5xl font-bold text-white">GRATIS</span>
+                        <span class="text-5xl font-bold text-white tracking-tight">GRATIS</span>
                     </div>
 
                     <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-2 text-sm text-white/80">
-                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-emerald-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
                             <span>Drag & drop builder</span>
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
-                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Template premium</span>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-emerald-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span>50+ template premium</span>
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
-                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-emerald-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
                             <span>Gratis selamanya</span>
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/40">
-                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                            </svg>
+                        <li class="flex items-center gap-3 text-sm text-white/40">
+                            <div class="w-5 h-5 bg-white/5 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </div>
                             <span>Domain custom</span>
                         </li>
                     </ul>
 
                     <a href="https://wa.me/6281234567890?text=Halo%20Webkoo,%20saya%20tertarik%20paket%20Website%20Builder%20GRATIS"
                        target="_blank"
-                       class="inline-flex items-center gap-2 text-green-400 font-semibold hover:text-green-300 group-hover:gap-3 transition-all">
-                        Mulai Gratis
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       class="group/btn inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white font-medium transition-all duration-300">
+                        <span>Mulai Gratis</span>
+                        <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
@@ -941,62 +974,83 @@
             </div>
 
             {{-- WordPress Plan - Featured --}}
-            <div class="bg-gray-900/70 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-2xl hover:bg-gray-900/80 transition-all duration-300 overflow-hidden border border-white/10 relative">
+            <div class="group relative bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-xl rounded-3xl border-2 border-blue-400/30 hover:border-blue-400/50 transition-all duration-500 overflow-hidden scale-105 shadow-2xl shadow-blue-500/10">
+                {{-- Glow effect --}}
+                <div class="absolute -top-20 -right-20 w-40 h-40 bg-blue-400/20 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-400/20 rounded-full blur-3xl"></div>
+
                 {{-- Popular Badge --}}
-                <div class="absolute top-4 right-4">
-                    <span class="bg-green-500/20 text-green-400 text-xs font-semibold px-3 py-1 rounded-full border border-green-500/30">POPULER</span>
+                <div class="absolute top-0 right-0 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-bold px-4 py-1.5 rounded-bl-2xl">
+                    POPULER
                 </div>
 
-                <div class="p-8">
+                <div class="relative p-8">
+                    {{-- Icon/Header --}}
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21.469 6.823c.046.07.113.153.113.243 0 .09-.046.164-.09.234l-6.535 12.055s-.046.116-.136.116c-.09 0-.136-.047-.182-.116l-3.732-6.85-3.732 6.85s-.046.116-.136.116c-.09 0-.136-.047-.182-.116L1.548 7.3c-.046-.07-.09-.144-.09-.234 0-.09.046-.173.09-.243l4.606-1.974c.067-.046.136-.09.203-.09.067 0 .136.044.18.09l2.838 2.386 3.575-8.557c.046-.112.09-.202.203-.202.113 0 .158.09.203.202l3.552 8.557 2.862-2.386c.046-.046.113-.09.18-.09.067 0 .136.044.203.09l4.606 1.974z"/>
+                        </svg>
+                    </div>
+
                     <h3 class="text-xl font-bold text-white mb-2">Website WordPress</h3>
-                    <p class="text-white/60 text-sm mb-6">Paling banyak dipilih</p>
+                    <p class="text-white/50 text-sm mb-6">Paling banyak dipilih</p>
 
                     <div class="mb-6">
                         <div class="flex items-baseline gap-2">
-                            <span class="text-white/50 line-through text-lg">Rp989.000</span>
-                            <span class="text-5xl font-bold text-white">Rp789K</span>
+                            <span class="text-white/40 line-through text-lg">Rp989.000</span>
+                            <span class="text-5xl font-bold text-white tracking-tight">Rp789K</span>
                         </div>
-                        <p class="text-white/60 text-sm mt-1">Pertama • perpanjangan Rp489K/thn</p>
+                        <p class="text-white/50 text-sm mt-1">Pertama • perpanjangan Rp489K/thn</p>
                     </div>
 
                     <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-2 text-sm text-white/80">
-                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-blue-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
                             <span>WordPress profesional</span>
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
-                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-blue-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
                             <span>Domain .com gratis</span>
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
-                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-blue-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
                             <span>Hosting super cepat</span>
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
-                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-blue-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
                             <span>SSL gratis</span>
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
-                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-blue-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
                             <span>Support prioritas</span>
                         </li>
                     </ul>
 
                     <a href="https://wa.me/6281234567890?text=Halo%20Webkoo,%20saya%20tertarik%20paket%20WordPress%20Rp789.000"
                        target="_blank"
-                       class="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 group-hover:gap-3 transition-all">
-                        Pilih Paket Ini
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       class="group/btn inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-xl text-white font-semibold transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50">
+                        <span>Pilih Paket Ini</span>
+                        <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
@@ -1004,47 +1058,66 @@
             </div>
 
             {{-- Custom Plan --}}
-            <div class="bg-gray-900/70 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-2xl hover:bg-gray-900/80 transition-all duration-300 overflow-hidden border border-white/10">
-                <div class="p-8">
+            <div class="group relative bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden">
+                {{-- Subtle gradient overlay on hover --}}
+                <div class="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <div class="relative p-8">
+                    {{-- Icon/Header --}}
+                    <div class="w-14 h-14 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                    </div>
+
                     <h3 class="text-xl font-bold text-white mb-2">Website Custom</h3>
-                    <p class="text-white/60 text-sm mb-6">Untuk kebutuhan khusus</p>
+                    <p class="text-white/50 text-sm mb-6">Untuk kebutuhan khusus & enterprise</p>
 
                     <div class="mb-6">
-                        <span class="text-5xl font-bold text-white">Rp1.500K+</span>
+                        <span class="text-5xl font-bold text-white tracking-tight">Rp1.5K+</span>
+                        <p class="text-white/50 text-sm mt-1">Mulai dari • sesuai kebutuhan</p>
                     </div>
 
                     <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-2 text-sm text-white/80">
-                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-purple-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
                             <span>Desain eksklusif</span>
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
-                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Fitur custom</span>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-purple-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span>Fitur custom sesuai request</span>
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
-                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Optimasi performa</span>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-purple-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span>Optimasi performa maksimal</span>
                         </li>
-                        <li class="flex items-center gap-2 text-sm text-white/80">
-                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Consulting gratis</span>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-purple-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span>Consulting & maintenance</span>
                         </li>
                     </ul>
 
                     <a href="https://wa.me/6281234567890?text=Halo%20Webkoo,%20saya%20tertarik%20paket%20Website%20Custom"
                        target="_blank"
-                       class="inline-flex items-center gap-2 text-purple-400 font-semibold hover:text-purple-300 group-hover:gap-3 transition-all">
-                        Konsultasi Dulu
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       class="group/btn inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white font-medium transition-all duration-300">
+                        <span>Konsultasi Dulu</span>
+                        <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
@@ -1054,15 +1127,18 @@
         </div>
 
         {{-- Bottom CTA --}}
-        <div class="mt-12">
-            <p class="text-white/60 text-sm mb-3">Butuh bantuan memilih?</p>
+        <div class="mt-16 text-center">
+            <p class="text-white/50 text-sm mb-4">Butuh bantuan memilih paket yang tepat?</p>
             <a href="https://wa.me/6281234567890?text=Halo%20Webkoo,%20saya%20butuh%20rekomendasi%20paket%20website"
                target="_blank"
-               class="inline-flex items-center gap-2 text-green-400 font-semibold hover:text-green-300 transition-colors">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+               class="inline-flex items-center gap-3 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl text-white font-medium transition-all duration-300 hover:scale-105 backdrop-blur-md group">
+                <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                 </svg>
-                Chat dengan kami
+                <span>Chat dengan kami</span>
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
             </a>
         </div>
     </div>
