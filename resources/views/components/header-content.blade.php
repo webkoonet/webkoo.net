@@ -155,8 +155,8 @@
                 </div>
             </div>
 
-            {{-- Right Side: Language Switcher & WA Button --}}
-            <div class="flex items-center gap-3 shrink-0">
+            {{-- Right Side: WA Button, Language Switcher & Mobile Menu Button --}}
+            <div class="flex items-center gap-2 sm:gap-3 shrink-0">
                 {{-- WhatsApp Button --}}
                 <a href="https://wa.me/6285179995773"
                    target="_blank"
@@ -219,19 +219,20 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {{-- Mobile Menu Button --}}
-            <button type="button"
-                    id="mobile-menu-button"
-                    class="lg:hidden ml-4 p-2 -mr-2 text-gray-700 hover:text-gray-900 transition-colors"
-                    aria-expanded="false">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M4 6h16M4 12h16M4 18h16"/>
-                    <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M6 18L18 6M6 6l12 12"/>
-                </svg>
+                {{-- Mobile Menu Button --}}
+                <button type="button"
+                        id="mobile-menu-button"
+                        class="lg:hidden p-2 text-gray-700 hover:text-gray-900 transition-colors"
+                        aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
             </button>
         </div>
 
