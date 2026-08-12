@@ -1,5 +1,5 @@
 {{-- Header / Navbar - Megamenu Navigation --}}
-<header class="bg-white/80 backdrop-blur-xl border-b border-gray-200/50 sticky top-0 z-50 transition-transform duration-300">
+<header class="bg-white/80 backdrop-blur-xl border-b border-gray-200/50 sticky top-0 z-[60] transition-transform duration-300">
     <div class="w-full">
         <div class="flex items-center justify-between h-16 px-6 lg:px-8">
 
@@ -193,7 +193,7 @@
 
                     {{-- Dropdown Menu --}}
                     <div id="language-dropdown"
-                         class="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 hidden z-50">
+                         class="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 hidden z-[60]">
                         <div class="py-1">
                             {{-- English Option --}}
                             <button type="button"
@@ -233,110 +233,178 @@
                     </svg>
                 </button>
             </div>
-            </button>
-        </div>
-
-        {{-- Mobile Menu --}}
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-200">
-            <div class="px-6 py-4 space-y-2">
-
-                {{-- Pricing Megamenu (Mobile) --}}
-                <div class="mobile-megamenu-item">
-                    <button type="button"
-                            class="mobile-megamenu-trigger w-full flex items-center justify-between py-2 text-base font-medium text-gray-900 hover:text-gray-700 transition-colors">
-                        <span>{{ __('messages.pricing') }}</span>
-                        <svg class="w-4 h-4 transition-transform mobile-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div class="mobile-megamenu-content hidden pl-4 mt-2 space-y-2">
-                        <a href="#webkoo-builder" class="block py-2 text-sm text-gray-600 hover:text-gray-900">
-                            <span class="font-medium">{{ __('messages.webkoo_builder') }}</span>
-                            <span class="text-xs text-gray-500 block">{{ __('messages.webkoo_builder_desc') }}</span>
-                        </a>
-                        <a href="#wordpress" class="block py-2 text-sm text-gray-600 hover:text-gray-900">
-                            <span class="font-medium">{{ __('messages.wordpress') }}</span>
-                            <span class="text-xs text-gray-500 block">{{ __('messages.wordpress_desc') }}</span>
-                        </a>
-                        <a href="#custom" class="block py-2 text-sm text-gray-600 hover:text-gray-900">
-                            <span class="font-medium">{{ __('messages.custom_build') }}</span>
-                            <span class="text-xs text-gray-500 block">{{ __('messages.custom_build_desc') }}</span>
-                        </a>
-                        <a href="#contact" class="block py-2 text-sm text-blue-600 hover:text-blue-700">
-                            {{ __('messages.need_custom_pricing') }} →
-                        </a>
-                    </div>
-                </div>
-
-                {{-- Products Megamenu (Mobile) --}}
-                <div class="mobile-megamenu-item">
-                    <button type="button"
-                            class="mobile-megamenu-trigger w-full flex items-center justify-between py-2 text-base font-medium text-gray-900 hover:text-gray-700 transition-colors">
-                        <span>{{ __('messages.products') }}</span>
-                        <svg class="w-4 h-4 transition-transform mobile-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div class="mobile-megamenu-content hidden pl-4 mt-2 space-y-2">
-                        <div class="pb-2 border-b border-gray-100">
-                            <p class="text-xs font-semibold text-gray-900 mb-2">{{ __('messages.web_services') }}</p>
-                            <a href="#websites" class="block py-1.5 text-sm text-gray-600 hover:text-gray-900">{{ __('messages.websites') }}</a>
-                            <a href="#web-apps" class="block py-1.5 text-sm text-gray-600 hover:text-gray-900">{{ __('messages.web_apps') }}</a>
-                            <a href="#ecommerce" class="block py-1.5 text-sm text-gray-600 hover:text-gray-900">{{ __('messages.ecommerce') }}</a>
-                            <a href="#landing-pages" class="block py-1.5 text-sm text-gray-600 hover:text-gray-900">{{ __('messages.landing_pages') }}</a>
-                        </div>
-                        <a href="#contact" class="block py-2 text-sm text-blue-600 hover:text-blue-700">
-                            {{ __('messages.consultation') }} →
-                        </a>
-                    </div>
-                </div>
-
-                {{-- Resources Megamenu (Mobile) --}}
-                <div class="mobile-megamenu-item">
-                    <button type="button"
-                            class="mobile-megamenu-trigger w-full flex items-center justify-between py-2 text-base font-medium text-gray-900 hover:text-gray-700 transition-colors">
-                        <span>{{ __('messages.resources') }}</span>
-                        <svg class="w-4 h-4 transition-transform mobile-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div class="mobile-megamenu-content hidden pl-4 mt-2 space-y-2">
-                        <div class="pb-2 border-b border-gray-100">
-                            <p class="text-xs font-semibold text-gray-900 mb-2">{{ __('messages.learn') }}</p>
-                            <a href="#blog" class="block py-1.5 text-sm text-gray-600 hover:text-gray-900">{{ __('messages.blog') }}</a>
-                            <a href="#tutorials" class="block py-1.5 text-sm text-gray-600 hover:text-gray-900">{{ __('messages.tutorials') }}</a>
-                            <a href="#documentation" class="block py-1.5 text-sm text-gray-600 hover:text-gray-900">{{ __('messages.documentation') }}</a>
-                        </div>
-                        <a href="#contact" class="block py-2 text-sm text-blue-600 hover:text-blue-700">
-                            {{ __('messages.contact_us') }} →
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </div>
 </header>
 
+{{-- Mobile Menu - Off-canvas (outside header for proper z-index) --}}
+<div id="mobile-menu-backdrop" class="hidden fixed inset-0 bg-black/50 z-[60] transition-opacity duration-300 opacity-0"></div>
+<div id="mobile-menu" class="hidden fixed top-0 right-0 h-full w-[85%] sm:w-[400px] bg-white z-[70] shadow-2xl transform translate-x-full transition-transform duration-300 ease-out">
+            <div class="flex flex-col h-full">
+                {{-- Header with Close Button --}}
+                <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+                    <span class="text-lg font-semibold text-gray-900">Menu</span>
+                    <button type="button"
+                            id="mobile-menu-close"
+                            class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+
+                {{-- Scrollable Content --}}
+                <div class="flex-1 overflow-y-auto px-6 py-4 space-y-2">
+
+                    {{-- Pricing Megamenu (Mobile) --}}
+                    <div class="mobile-megamenu-item">
+                        <button type="button"
+                                class="mobile-megamenu-trigger w-full flex items-center justify-between py-3 text-base font-medium text-gray-900 hover:text-gray-700 transition-colors">
+                            <span>{{ __('messages.pricing') }}</span>
+                            <svg class="w-5 h-5 transition-transform mobile-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-megamenu-content hidden pl-4 mt-2 space-y-2 pb-3 border-b border-gray-100">
+                            <a href="#webkoo-builder" class="block py-2 text-sm text-gray-600 hover:text-gray-900">
+                                <span class="font-medium">{{ __('messages.webkoo_builder') }}</span>
+                                <span class="text-xs text-gray-500 block">{{ __('messages.webkoo_builder_desc') }}</span>
+                            </a>
+                            <a href="#wordpress" class="block py-2 text-sm text-gray-600 hover:text-gray-900">
+                                <span class="font-medium">{{ __('messages.wordpress') }}</span>
+                                <span class="text-xs text-gray-500 block">{{ __('messages.wordpress_desc') }}</span>
+                            </a>
+                            <a href="#custom" class="block py-2 text-sm text-gray-600 hover:text-gray-900">
+                                <span class="font-medium">{{ __('messages.custom_build') }}</span>
+                                <span class="text-xs text-gray-500 block">{{ __('messages.custom_build_desc') }}</span>
+                            </a>
+                            <a href="#contact" class="block py-2 text-sm text-blue-600 hover:text-blue-700">
+                                {{ __('messages.need_custom_pricing') }} →
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- Products Megamenu (Mobile) --}}
+                    <div class="mobile-megamenu-item">
+                        <button type="button"
+                                class="mobile-megamenu-trigger w-full flex items-center justify-between py-3 text-base font-medium text-gray-900 hover:text-gray-700 transition-colors">
+                            <span>{{ __('messages.products') }}</span>
+                            <svg class="w-5 h-5 transition-transform mobile-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-megamenu-content hidden pl-4 mt-2 space-y-2 pb-3 border-b border-gray-100">
+                            <div class="pb-2">
+                                <p class="text-xs font-semibold text-gray-900 mb-2">{{ __('messages.web_services') }}</p>
+                                <a href="#websites" class="block py-1.5 text-sm text-gray-600 hover:text-gray-900">{{ __('messages.websites') }}</a>
+                                <a href="#web-apps" class="block py-1.5 text-sm text-gray-600 hover:text-gray-900">{{ __('messages.web_apps') }}</a>
+                                <a href="#ecommerce" class="block py-1.5 text-sm text-gray-600 hover:text-gray-900">{{ __('messages.ecommerce') }}</a>
+                                <a href="#landing-pages" class="block py-1.5 text-sm text-gray-600 hover:text-gray-900">{{ __('messages.landing_pages') }}</a>
+                            </div>
+                            <a href="#contact" class="block py-2 text-sm text-blue-600 hover:text-blue-700">
+                                {{ __('messages.consultation') }} →
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- Resources Megamenu (Mobile) --}}
+                    <div class="mobile-megamenu-item">
+                        <button type="button"
+                                class="mobile-megamenu-trigger w-full flex items-center justify-between py-3 text-base font-medium text-gray-900 hover:text-gray-700 transition-colors">
+                            <span>{{ __('messages.resources') }}</span>
+                            <svg class="w-5 h-5 transition-transform mobile-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-megamenu-content hidden pl-4 mt-2 space-y-2 pb-3 border-b border-gray-100">
+                            <div class="pb-2">
+                                <p class="text-xs font-semibold text-gray-900 mb-2">{{ __('messages.learn') }}</p>
+                                <a href="#blog" class="block py-1.5 text-sm text-gray-600 hover:text-gray-900">{{ __('messages.blog') }}</a>
+                                <a href="#tutorials" class="block py-1.5 text-sm text-gray-600 hover:text-gray-900">{{ __('messages.tutorials') }}</a>
+                                <a href="#documentation" class="block py-1.5 text-sm text-gray-600 hover:text-gray-900">{{ __('messages.documentation') }}</a>
+                            </div>
+                            <a href="#contact" class="block py-2 text-sm text-blue-600 hover:text-blue-700">
+                                {{ __('messages.contact_us') }} →
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle - Off-canvas
         const button = document.getElementById('mobile-menu-button');
+        const closeBtn = document.getElementById('mobile-menu-close');
         const menu = document.getElementById('mobile-menu');
+        const backdrop = document.getElementById('mobile-menu-backdrop');
         const menuIcon = document.getElementById('menu-icon');
         const closeIcon = document.getElementById('close-icon');
 
-        if (button && menu) {
-            button.addEventListener('click', function() {
-                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        function openMenu() {
+            // Show backdrop
+            backdrop.classList.remove('hidden');
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+            }, 10);
 
-                menu.classList.toggle('hidden');
-                button.setAttribute('aria-expanded', !isExpanded);
+            // Slide in menu
+            menu.classList.remove('hidden');
+            setTimeout(() => {
+                menu.classList.remove('translate-x-full');
+            }, 10);
 
-                menuIcon.classList.toggle('hidden');
-                closeIcon.classList.toggle('hidden');
-            });
+            // Update button state
+            button.setAttribute('aria-expanded', 'true');
+            menuIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
         }
+
+        function closeMenu() {
+            // Slide out menu
+            menu.classList.add('translate-x-full');
+            setTimeout(() => {
+                menu.classList.add('hidden');
+            }, 300);
+
+            // Hide backdrop
+            backdrop.classList.add('opacity-0');
+            setTimeout(() => {
+                backdrop.classList.add('hidden');
+            }, 300);
+
+            // Update button state
+            button.setAttribute('aria-expanded', 'false');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+
+            // Restore body scroll
+            document.body.style.overflow = '';
+        }
+
+        if (button && menu) {
+            button.addEventListener('click', openMenu);
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeMenu);
+        }
+
+        // Close menu when clicking backdrop
+        if (backdrop) {
+            backdrop.addEventListener('click', closeMenu);
+        }
+
+        // Close menu when clicking menu links
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(function(link) {
+            link.addEventListener('click', closeMenu);
+        });
 
         // Mobile Megamenu Toggle
         const mobileMegamenuTriggers = document.querySelectorAll('.mobile-megamenu-trigger');
