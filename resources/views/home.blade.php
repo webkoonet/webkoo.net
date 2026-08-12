@@ -199,7 +199,7 @@
                         </li>
                     </ul>
                     {{-- CTA --}}
-                    <a href="#webkoo-builder" class="inline-flex items-center gap-2 font-semibold hover:opacity-80 group-hover:gap-3 transition-all" style="color: #673de6;">
+                    <a href="#webkoo-builder" class="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 group-hover:gap-3 transition-all">
                         Learn more
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -323,7 +323,7 @@
                         </li>
                     </ul>
                     {{-- CTA --}}
-                    <a href="#custom" class="inline-flex items-center gap-2 text-green-400 font-semibold hover:text-green-300 group-hover:gap-3 transition-all">
+                    <a href="#custom" class="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 group-hover:gap-3 transition-all">
                         Learn more
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
