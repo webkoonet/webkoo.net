@@ -19,8 +19,21 @@
     .client-scroll-track {
         display: flex;
         width: max-content;
+        gap: 2rem;
         animation: scroll-left 30s linear infinite;
         will-change: transform;
+    }
+
+    @media (min-width: 640px) {
+        .client-scroll-track {
+            gap: 3rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .client-scroll-track {
+            gap: 4rem;
+        }
     }
 
     .client-scroll-track:hover {
