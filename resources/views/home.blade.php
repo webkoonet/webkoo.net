@@ -171,8 +171,8 @@
                     <div class="absolute w-10 h-5 sm:w-12 sm:h-6 md:w-14 md:h-7 border-b-3 sm:border-b-4 border-gray-900 rounded-b-full"></div>
                 </div>
 
-                {{-- Green Checkmark Icon - Right side --}}
-                <div class="absolute -right-4 top-3 w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 bg-green-500 rounded-full flex items-center justify-center shadow-md">
+                {{-- Green Checkmark Icon - Right side, appears with text --}}
+                <div id="green-checkmark" class="absolute -right-4 top-1.5 w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 bg-green-500 rounded-full flex items-center justify-center shadow-md opacity-0 transition-opacity duration-700">
                     <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -1484,6 +1484,7 @@
     const welcomeText = document.getElementById('welcome-text');
     const descriptionText = document.getElementById('description-text');
     const ctaButton = document.getElementById('cta-button');
+    const greenCheckmark = document.getElementById('green-checkmark');
     const gradientBg = document.getElementById('gradient-bg');
     const header = document.querySelector('header');
 
@@ -1567,6 +1568,7 @@
                 scrollingLogo.style.opacity = logoOpacity.toString();
                 scrollingLogo.style.transform = `scale(${logoScale})`;
                 welcomeText.style.opacity = '0';
+                greenCheckmark.style.opacity = '0';
                 descriptionText.style.opacity = '0';
                 descriptionText.style.transform = 'translateY(20px)';
                 ctaButton.style.opacity = '0';
@@ -1579,6 +1581,7 @@
                 scrollingLogo.style.opacity = '1';
                 scrollingLogo.style.transform = `scale(${logoScale})`;
                 welcomeText.style.opacity = '0';
+                greenCheckmark.style.opacity = '0';
                 descriptionText.style.opacity = '0';
                 descriptionText.style.transform = 'translateY(20px)';
                 ctaButton.style.opacity = '0';
@@ -1590,6 +1593,8 @@
                 scrollingLogo.style.opacity = '1';
                 scrollingLogo.style.transform = 'scale(0.6)';
                 welcomeText.style.opacity = Math.min(1, textOpacity).toString();
+                // Green checkmark fades in with welcome text (no translateY needed)
+                greenCheckmark.style.opacity = Math.min(1, textOpacity).toString();
                 // Description fades in slightly after welcome text
                 const descOpacity = Math.max(0, (progress - 0.55) / 0.2);
                 descriptionText.style.opacity = Math.min(1, descOpacity).toString();
@@ -1604,6 +1609,7 @@
                 scrollingLogo.style.opacity = '1';
                 scrollingLogo.style.transform = 'scale(0.6)';
                 welcomeText.style.opacity = '1';
+                greenCheckmark.style.opacity = '1';
                 descriptionText.style.opacity = '1';
                 descriptionText.style.transform = 'translateY(0)';
                 ctaButton.style.opacity = '1';
