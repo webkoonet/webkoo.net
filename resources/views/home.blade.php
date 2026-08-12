@@ -13,7 +13,46 @@
     }
 
     .client-scroll-container {
+        position: relative;
         overflow: hidden;
+    }
+
+    /* Fade mask di sisi kiri dan kanan */
+    .client-scroll-container::before,
+    .client-scroll-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 150px;
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    /* Fade mask sisi kiri */
+    .client-scroll-container::before {
+        left: 0;
+        background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    }
+
+    /* Fade mask sisi kanan */
+    .client-scroll-container::after {
+        right: 0;
+        background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    }
+
+    @media (min-width: 640px) {
+        .client-scroll-container::before,
+        .client-scroll-container::after {
+            width: 200px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .client-scroll-container::before,
+        .client-scroll-container::after {
+            width: 250px;
+        }
     }
 
     .client-scroll-track {
