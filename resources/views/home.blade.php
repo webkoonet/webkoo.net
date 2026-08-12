@@ -506,6 +506,33 @@
             0% { width: 75%; }
             100% { width: 100%; }
         }
+        @keyframes old-server-fade-out {
+            0% { opacity: 0.5; transform: translateX(0) scale(1); }
+            100% { opacity: 0 !important; transform: translateX(-50px) scale(0.9); visibility: hidden; }
+        }
+        @keyframes new-server-slide-center {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%) scale(1.2); }
+        }
+        @keyframes success-text-appear {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes progress-bar-fade-out {
+            0% { opacity: 1; transform: scaleY(1); }
+            100% { opacity: 0; transform: scaleY(0); }
+        }
+        @keyframes success-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(34, 197, 94, 0.8), 0 0 60px rgba(34, 197, 94, 0.4); }
+        }
+
+        /* Celebration Animation Classes */
+        .old-server-fade-out { animation: old-server-fade-out 0.8s ease-out forwards; }
+        .new-server-center { animation: new-server-slide-center 0.8s ease-out forwards; }
+        .success-text-appear { animation: success-text-appear 0.6s ease-out 0.8s forwards; opacity: 0; }
+        .progress-bar-fade { animation: progress-bar-fade-out 0.5s ease-out forwards; transform-origin: top; }
+        .success-glow { animation: success-glow 1.5s ease-in-out infinite; }
         @keyframes fade-in-up {
             0% { transform: translateY(30px); opacity: 0; }
             100% { transform: translateY(0); opacity: 1; }
@@ -581,11 +608,11 @@
         {{-- Migration Process Visualization --}}
         <div class="mb-8 migration-animate-init fade-in-up delay-200">
             {{-- Server Animation - Old to New --}}
-            <div class="flex items-center justify-center gap-4 sm:gap-8 my-20">
+            <div class="flex items-center justify-center gap-4 sm:gap-8 mt-16 mb-8 relative">
                 {{-- Old Server --}}
-                <div class="flex-1 text-center migration-float">
+                <div id="old-server" class="flex-1 text-center migration-float opacity-50">
                     <div class="relative inline-block">
-                        <div class="w-24 h-20 sm:w-32 sm:h-24 bg-gradient-to-br from-gray-400 to-gray-500 rounded-xl shadow-lg p-2 mx-auto relative overflow-hidden opacity-50 grayscale">
+                        <div class="w-24 h-20 sm:w-32 sm:h-24 bg-gradient-to-br from-gray-400 to-gray-500 rounded-xl shadow-lg p-2 mx-auto relative overflow-hidden grayscale transition-opacity duration-500">
                             <div class="absolute top-1 left-1 right-1 flex gap-1">
                                 <div class="flex-1 h-1 bg-gray-500 rounded"></div>
                                 <div class="w-1.5 h-1 bg-red-500 rounded-full"></div>
@@ -652,7 +679,7 @@
                 </div>
 
                 {{-- New Server --}}
-                <div class="flex-1 text-center migration-float delay-300">
+                <div id="new-server" class="flex-1 text-center migration-float delay-300">
                     <div class="relative inline-block">
                         <div class="w-24 h-20 sm:w-32 sm:h-24 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl shadow-xl p-2 mx-auto relative overflow-hidden">
                             <div class="absolute top-1 left-1 right-1 flex gap-1">
@@ -679,6 +706,19 @@
                         </div>
                     </div>
                     <p class="mt-2 text-xs text-gray-900 font-medium">Website Baru ✨</p>
+
+                    {{-- Success Text - Hidden initially --}}
+                    <div id="migration-success-text" class="hidden mt-4 mb-12">
+                        <div class="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-xl shadow-xl success-glow text-center">
+                            <div class="flex items-center justify-center gap-2">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <span class="font-bold text-lg">Migrasi Berhasil!</span>
+                            </div>
+                            <p class="text-xs opacity-90 mt-1">Website Anda sudah pindah ✨</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -852,11 +892,12 @@
 
     {{-- Animation Trigger Script --}}
     <script>
-        // Trigger animations when migration section is visible
-        const migrationSection = document.getElementById('migration-section');
-        const migrationAnimateElements = document.querySelectorAll('.migration-animate-init');
-        const progressBar = document.getElementById('migration-progress-bar');
-        const progressText = document.getElementById('migration-progress-text');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Trigger animations when migration section is visible
+            const migrationSection = document.getElementById('migration-section');
+            const migrationAnimateElements = document.querySelectorAll('.migration-animate-init');
+            const progressBar = document.getElementById('migration-progress-bar');
+            const progressText = document.getElementById('migration-progress-text');
 
         const observerOptions = {
             threshold: 0.1,
@@ -990,10 +1031,6 @@
                 let progress2 = 75;
                 const interval2 = setInterval(() => {
                     progress2 += 0.42; // 25 / 60 (for 2s)
-                    if (progress2 >= 100) {
-                        progress2 = 100;
-                        clearInterval(interval2);
-                    }
                     progressText.textContent = Math.round(progress2) + '%';
 
                     // Update remaining steps
@@ -1004,8 +1041,67 @@
                     if (progress2 >= 92 && !step6Started) { setStepState(6, 'in-progress'); step6Started = true; }
                     if (progress2 >= 95 && step6Started) { setStepState(6, 'complete'); }
 
+                    // Trigger celebration when complete
+                    if (progress2 >= 100) {
+                        clearInterval(interval2);
+                        setTimeout(() => {
+                            triggerCelebration();
+                        }, 300);
+                    }
                 }, 50);
             }, 3000); // 3s delay after reaching 75%
+        }
+
+        // Celebration effects
+        function triggerCelebration() {
+            // Stop data flow icons animation
+            const icons = document.querySelectorAll('.data-flow-icon');
+            icons.forEach(icon => {
+                icon.style.animation = 'none';
+                icon.style.opacity = '0';
+            });
+
+            // Fade out old server
+            const oldServer = document.getElementById('old-server');
+            if (oldServer) {
+                oldServer.classList.add('old-server-fade-out');
+                // Force hide after animation
+                setTimeout(() => {
+                    oldServer.style.display = 'none';
+                }, 800);
+            }
+
+            // Move new server to center and scale up
+            const newServer = document.getElementById('new-server');
+            if (newServer) {
+                newServer.classList.remove('migration-float');
+                newServer.classList.add('new-server-center');
+            }
+
+            // Fade out progress bar
+            const progressBarContainer = progressBar?.closest('.bg-white');
+            if (progressBarContainer) {
+                progressBarContainer.classList.add('progress-bar-fade');
+                // Hide from layout after animation
+                setTimeout(() => {
+                    progressBarContainer.style.display = 'none';
+                }, 500);
+            }
+
+            // Show success text
+            const successText = document.getElementById('migration-success-text');
+            if (successText) {
+                successText.classList.remove('hidden');
+                successText.classList.add('success-text-appear');
+            }
+
+            // Update server lights to all green and stop animation
+            const serverLights = document.querySelectorAll('.server-light');
+            serverLights.forEach(light => {
+                light.style.backgroundColor = '#22c55e';
+                light.style.boxShadow = '0 0 10px #22c55e';
+                light.style.animation = 'none';
+            });
         }
 
         const migrationObserver = new IntersectionObserver((entries) => {
@@ -1024,6 +1120,7 @@
         if (migrationSection) {
             migrationObserver.observe(migrationSection);
         }
+        });
     </script>
 </section>
 
