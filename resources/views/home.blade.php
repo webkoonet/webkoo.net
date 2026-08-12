@@ -914,10 +914,8 @@
 
                 <div class="relative p-8">
                     {{-- Icon/Header --}}
-                    <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500" style="background: #323232;">
+                        <img src="{{ asset('storage/assets/img/logo.webp') }}" alt="Webkoo" class="w-8 h-8 object-contain">
                     </div>
 
                     <h3 class="text-xl font-bold text-white mb-2">Website Builder</h3>
@@ -987,9 +985,7 @@
                 <div class="relative p-8">
                     {{-- Icon/Header --}}
                     <div class="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M21.469 6.823c.046.07.113.153.113.243 0 .09-.046.164-.09.234l-6.535 12.055s-.046.116-.136.116c-.09 0-.136-.047-.182-.116l-3.732-6.85-3.732 6.85s-.046.116-.136.116c-.09 0-.136-.047-.182-.116L1.548 7.3c-.046-.07-.09-.144-.09-.234 0-.09.046-.173.09-.243l4.606-1.974c.067-.046.136-.09.203-.09.067 0 .136.044.18.09l2.838 2.386 3.575-8.557c.046-.112.09-.202.203-.202.113 0 .158.09.203.202l3.552 8.557 2.862-2.386c.046-.046.113-.09.18-.09.067 0 .136.044.203.09l4.606 1.974z"/>
-                        </svg>
+                        <img src="{{ asset('storage/assets/img/wordpress-logo.png') }}" alt="WordPress" class="w-8 h-8 object-contain">
                     </div>
 
                     <h3 class="text-xl font-bold text-white mb-2">Website WordPress</h3>
