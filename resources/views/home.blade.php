@@ -502,6 +502,10 @@
             0% { width: 0%; }
             100% { width: 75%; }
         }
+        @keyframes progress-bar-fill-complete {
+            0% { width: 75%; }
+            100% { width: 100%; }
+        }
         @keyframes fade-in-up {
             0% { transform: translateY(30px); opacity: 0; }
             100% { transform: translateY(0); opacity: 1; }
@@ -526,6 +530,7 @@
         .data-flow-icon { animation: data-flow-icon-move 4s ease-in-out infinite; }
         .server-light { animation: server-light-blink 2s ease-in-out infinite; }
         .progress-animate { animation: progress-bar-fill 3s ease-out forwards; }
+        .progress-animate-complete { animation: progress-bar-fill-complete 2s ease-out forwards; }
         .fade-in-up { animation: fade-in-up 0.6s ease-out forwards; }
         .slide-in-left { animation: slide-in-left 0.5s ease-out forwards; }
         .bounce-check { animation: bounce-check 0.5s ease-in-out; }
@@ -681,79 +686,79 @@
             <div class="bg-white rounded-2xl shadow-lg p-4 my-20 border border-gray-100 max-w-md mx-auto">
                 <div class="flex items-center justify-between mb-2">
                     <span class="text-sm font-medium text-gray-700">Progress Migrasi</span>
-                    <span class="text-base font-bold text-gray-900">75%</span>
+                    <span id="migration-progress-text" class="text-base font-bold text-gray-900">0%</span>
                 </div>
                 <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
-                    <div class="h-full bg-gray-900 rounded-full progress-animate"></div>
+                    <div id="migration-progress-bar" class="h-full bg-gray-900 rounded-full w-0"></div>
                 </div>
             </div>
 
             {{-- Migration Steps - Animated Cards --}}
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-                {{-- Step 1 - Complete --}}
-                <div class="migration-card bg-white rounded-xl p-3 border border-gray-200 migration-animate-init fade-in-up delay-300 text-center">
-                    <div class="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center mx-auto mb-2">
-                        <svg class="w-4 h-4 text-white bounce-check" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                    </div>
-                    <h4 class="font-semibold text-gray-900 text-xs">Backup Data</h4>
-                    <p class="text-xs text-gray-600">Selesai</p>
-                </div>
-
-                {{-- Step 2 - Complete --}}
-                <div class="migration-card bg-white rounded-xl p-3 border border-gray-200 migration-animate-init fade-in-up delay-400 text-center">
-                    <div class="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center mx-auto mb-2">
-                        <svg class="w-4 h-4 text-white bounce-check delay-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                    </div>
-                    <h4 class="font-semibold text-gray-900 text-xs">Transfer DB</h4>
-                    <p class="text-xs text-gray-600">Selesai</p>
-                </div>
-
-                {{-- Step 3 - In Progress --}}
-                <div class="migration-card bg-blue-50 rounded-xl p-3 border border-blue-200 migration-animate-init fade-in-up delay-500 text-center">
-                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-2">
-                        <svg class="w-4 h-4 text-white animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-                        </svg>
-                    </div>
-                    <h4 class="font-semibold text-blue-900 text-xs">Transfer Files</h4>
-                    <p class="text-xs text-blue-600 font-medium">Sedang...</p>
-                </div>
-
-                {{-- Step 4 - Waiting --}}
-                <div class="migration-card bg-gray-50 rounded-xl p-3 border border-gray-200 migration-animate-init fade-in-up delay-600 text-center">
-                    <div class="w-8 h-8 bg-gray-300 rounded-lg flex items-center justify-center mx-auto mb-2">
-                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {{-- Step 1 - Backup Data --}}
+                <div id="migration-step-1" class="migration-card rounded-xl p-3 border migration-animate-init fade-in-up delay-300 text-center" data-step="1">
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center mx-auto mb-2 step-icon">
+                        <svg class="w-4 h-4 text-white step-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h4 class="font-semibold text-gray-500 text-xs">DNS Config</h4>
-                    <p class="text-xs text-gray-400">Menunggu</p>
+                    <h4 class="font-semibold text-xs step-title">Backup Data</h4>
+                    <p class="text-xs step-status">Menunggu</p>
                 </div>
 
-                {{-- Step 5 - Waiting --}}
-                <div class="migration-card bg-gray-50 rounded-xl p-3 border border-gray-200 migration-animate-init fade-in-up delay-700 text-center">
-                    <div class="w-8 h-8 bg-gray-300 rounded-lg flex items-center justify-center mx-auto mb-2">
-                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                {{-- Step 2 - Transfer DB --}}
+                <div id="migration-step-2" class="migration-card rounded-xl p-3 border migration-animate-init fade-in-up delay-400 text-center" data-step="2">
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center mx-auto mb-2 step-icon">
+                        <svg class="w-4 h-4 text-white step-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h4 class="font-semibold text-gray-500 text-xs">Testing</h4>
-                    <p class="text-xs text-gray-400">Menunggu</p>
+                    <h4 class="font-semibold text-xs step-title">Transfer DB</h4>
+                    <p class="text-xs step-status">Menunggu</p>
                 </div>
 
-                {{-- Step 6 - Waiting --}}
-                <div class="migration-card bg-gray-50 rounded-xl p-3 border border-gray-200 migration-animate-init fade-in-up delay-800 text-center">
-                    <div class="w-8 h-8 bg-gray-300 rounded-lg flex items-center justify-center mx-auto mb-2">
-                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                {{-- Step 3 - Transfer Files --}}
+                <div id="migration-step-3" class="migration-card rounded-xl p-3 border migration-animate-init fade-in-up delay-500 text-center" data-step="3">
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center mx-auto mb-2 step-icon">
+                        <svg class="w-4 h-4 text-white step-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h4 class="font-semibold text-gray-500 text-xs">Go Live!</h4>
-                    <p class="text-xs text-gray-400">Menunggu</p>
+                    <h4 class="font-semibold text-xs step-title">Transfer Files</h4>
+                    <p class="text-xs step-status">Menunggu</p>
+                </div>
+
+                {{-- Step 4 - DNS Config --}}
+                <div id="migration-step-4" class="migration-card rounded-xl p-3 border migration-animate-init fade-in-up delay-600 text-center" data-step="4">
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center mx-auto mb-2 step-icon">
+                        <svg class="w-4 h-4 text-white step-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-xs step-title">DNS Config</h4>
+                    <p class="text-xs step-status">Menunggu</p>
+                </div>
+
+                {{-- Step 5 - Testing --}}
+                <div id="migration-step-5" class="migration-card rounded-xl p-3 border migration-animate-init fade-in-up delay-700 text-center" data-step="5">
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center mx-auto mb-2 step-icon">
+                        <svg class="w-4 h-4 text-white step-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-xs step-title">Testing</h4>
+                    <p class="text-xs step-status">Menunggu</p>
+                </div>
+
+                {{-- Step 6 - Go Live --}}
+                <div id="migration-step-6" class="migration-card rounded-xl p-3 border migration-animate-init fade-in-up delay-800 text-center" data-step="6">
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center mx-auto mb-2 step-icon">
+                        <svg class="w-4 h-4 text-white step-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-xs step-title">Go Live!</h4>
+                    <p class="text-xs step-status">Menunggu</p>
                 </div>
             </div>
         </div>
@@ -850,11 +855,158 @@
         // Trigger animations when migration section is visible
         const migrationSection = document.getElementById('migration-section');
         const migrationAnimateElements = document.querySelectorAll('.migration-animate-init');
+        const progressBar = document.getElementById('migration-progress-bar');
+        const progressText = document.getElementById('migration-progress-text');
 
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
         };
+
+        // Step state configurations
+        const stepStates = {
+            waiting: {
+                cardClass: 'bg-gray-50 border-gray-200',
+                iconClass: 'bg-gray-300',
+                titleClass: 'text-gray-500',
+                statusText: 'Menunggu',
+                statusClass: 'text-gray-400',
+                svg: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>'
+            },
+            'in-progress': {
+                cardClass: 'bg-blue-50 border-blue-200',
+                iconClass: 'bg-blue-600',
+                titleClass: 'text-blue-900',
+                statusText: 'Sedang...',
+                statusClass: 'text-blue-600 font-medium',
+                svg: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>'
+            },
+            complete: {
+                cardClass: 'bg-white border-gray-200',
+                iconClass: 'bg-gray-900',
+                titleClass: 'text-gray-900',
+                statusText: 'Selesai',
+                statusClass: 'text-gray-600',
+                svg: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>'
+            }
+        };
+
+        // Set step state
+        function setStepState(stepNum, state) {
+            const step = document.getElementById(`migration-step-${stepNum}`);
+            if (!step) return;
+
+            const config = stepStates[state];
+            const card = step;
+            const icon = step.querySelector('.step-icon');
+            const svg = step.querySelector('.step-svg');
+            const title = step.querySelector('.step-title');
+            const status = step.querySelector('.step-status');
+
+            // Clear all state classes
+            card.className = card.className.replace(/bg-\w+-\d+/g, '').replace(/border-\w+-\d+/g, '');
+            icon.className = icon.className.replace(/bg-\w+-\d+/g, '');
+            title.className = title.className.replace(/text-\w+-\d+/g, '');
+            status.className = status.className.replace(/text-\w+-\d+/g, '').replace(/font-medium/g, '');
+
+            // Apply new state classes
+            card.classList.add(...config.cardClass.split(' '));
+            icon.classList.add(...config.iconClass.split(' '));
+            title.classList.add(...config.titleClass.split(' '));
+            status.classList.add(...config.statusClass.split(' '));
+
+            // Update SVG
+            svg.innerHTML = config.svg;
+
+            // Update status text
+            status.textContent = config.statusText;
+
+            // Handle animation for icon
+            if (state === 'in-progress') {
+                svg.classList.add('animate-spin');
+            } else {
+                svg.classList.remove('animate-spin');
+            }
+
+            // Add bounce animation for complete
+            if (state === 'complete') {
+                svg.classList.add('bounce-check');
+            } else {
+                svg.classList.remove('bounce-check');
+            }
+        }
+
+        // Reset all steps to waiting
+        function resetAllSteps() {
+            for (let i = 1; i <= 6; i++) {
+                setStepState(i, 'waiting');
+            }
+        }
+
+        // Progress bar animation with step updates
+        function animateProgress() {
+            if (!progressBar || !progressText) return;
+
+            // Reset
+            progressBar.style.width = '0%';
+            progressBar.style.transition = 'none';
+            progressText.textContent = '0%';
+            resetAllSteps();
+
+            // Force reflow
+            void progressBar.offsetWidth;
+
+            // Track which steps have been updated
+            let step1Done = false, step2Done = false, step3Done = false;
+            let step4Started = false, step5Started = false, step6Started = false;
+
+            // Phase 1: 0% -> 75% (3 seconds)
+            progressBar.style.transition = 'width 3s ease-out';
+            progressBar.style.width = '75%';
+
+            // Update progress and steps during first phase
+            let progress1 = 0;
+            const interval1 = setInterval(() => {
+                progress1 += 1.25; // 75 / 60 (assuming ~60fps for 3s)
+                if (progress1 >= 75) {
+                    progress1 = 75;
+                    clearInterval(interval1);
+                }
+                progressText.textContent = Math.round(progress1) + '%';
+
+                // Update steps based on progress
+                if (progress1 >= 12 && !step1Done) { setStepState(1, 'complete'); step1Done = true; }
+                if (progress1 >= 25 && !step2Done) { setStepState(2, 'complete'); step2Done = true; }
+                if (progress1 >= 37 && !step3Done) { setStepState(3, 'complete'); step3Done = true; }
+
+            }, 50);
+
+            // Phase 2: Pause 3 seconds, then 75% -> 100% (2 seconds)
+            setTimeout(() => {
+                progressBar.style.transition = 'width 2s ease-out';
+                progressBar.style.width = '100%';
+
+                // Update progress and remaining steps during second phase
+                let progress2 = 75;
+                const interval2 = setInterval(() => {
+                    progress2 += 0.42; // 25 / 60 (for 2s)
+                    if (progress2 >= 100) {
+                        progress2 = 100;
+                        clearInterval(interval2);
+                    }
+                    progressText.textContent = Math.round(progress2) + '%';
+
+                    // Update remaining steps
+                    if (progress2 >= 80 && !step4Started) { setStepState(4, 'in-progress'); step4Started = true; }
+                    if (progress2 >= 82 && step4Started) { setStepState(4, 'complete'); }
+                    if (progress2 >= 86 && !step5Started) { setStepState(5, 'in-progress'); step5Started = true; }
+                    if (progress2 >= 88 && step5Started) { setStepState(5, 'complete'); }
+                    if (progress2 >= 92 && !step6Started) { setStepState(6, 'in-progress'); step6Started = true; }
+                    if (progress2 >= 95 && step6Started) { setStepState(6, 'complete'); }
+
+                }, 50);
+            }, 3000); // 3s delay after reaching 75%
+        }
 
         const migrationObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -862,6 +1014,8 @@
                     migrationAnimateElements.forEach(el => {
                         el.style.opacity = '1';
                     });
+                    // Start progress animation
+                    animateProgress();
                     migrationObserver.unobserve(migrationSection);
                 }
             });
