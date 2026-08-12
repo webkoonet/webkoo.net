@@ -486,11 +486,13 @@
             100% { transform: translateX(300px) scale(1); opacity: 1; }
         }
         @keyframes data-flow-icon-move {
-            0% { transform: translateX(0) scale(0.8); opacity: 0; }
-            10% { opacity: 1; transform: translateX(15%) scale(1); }
-            50% { transform: translateX(50%) scale(1.2); }
-            90% { opacity: 1; transform: translateX(85%) scale(1); }
-            100% { transform: translateX(100%) scale(0.8); opacity: 0; }
+            0% { left: 0%; transform: scale(0.7); opacity: 0; }
+            15% { opacity: 0.5; transform: scale(0.85); }
+            30% { opacity: 1; transform: scale(1); }
+            50% { transform: scale(1.3); }
+            70% { opacity: 1; transform: scale(1); }
+            85% { opacity: 0.5; transform: scale(0.85); }
+            100% { left: calc(100% - 40px); transform: scale(0.7); opacity: 0; }
         }
         @keyframes server-light-blink {
             0%, 100% { background-color: #ef4444; box-shadow: 0 0 5px #ef4444; }
@@ -606,9 +608,9 @@
                 </div>
 
                 {{-- Data Flow Animation - Website Elements Icons --}}
-                <div class="flex-1 relative h-20 sm:h-28">
-                    <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
-                        <div class="relative w-full max-w-[200px] sm:max-w-[280px] md:max-w-[350px] lg:max-w-[400px] h-16 sm:h-20">
+                <div class="flex-1 relative h-24 sm:h-32">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="relative w-full max-w-[200px] sm:max-w-[280px] md:max-w-[400px] lg:max-w-[500px] xl:max-w-[600px] h-24 sm:h-32">
                             {{-- Database Icon --}}
                             <div class="absolute top-0 left-0 data-flow-icon bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-1.5 sm:p-2 flex items-center justify-center shadow-lg" style="animation-delay: 0s;">
                                 <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1457,5 +1459,20 @@
         // Initialize after a small delay to ensure proper layout
         setTimeout(updateSlider, 100);
     }
+</script>
+
+{{-- Random Animation Delay for Data Flow Icons --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const icons = document.querySelectorAll('.data-flow-icon');
+        const baseDelays = [0, 0.8, 1.6, 2.4, 3.2];
+
+        // Acak urutan delays
+        const shuffledDelays = baseDelays.sort(() => Math.random() - 0.5);
+
+        icons.forEach((icon, index) => {
+            icon.style.animationDelay = `${shuffledDelays[index]}s`;
+        });
+    });
 </script>
 @endsection
