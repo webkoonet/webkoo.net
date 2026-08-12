@@ -1131,6 +1131,18 @@
                     migrationAnimateElements.forEach(el => {
                         el.style.opacity = '1';
                     });
+                    // Start data flow icons animation with their delays
+                    const icons = document.querySelectorAll('.data-flow-icon');
+                    icons.forEach((icon, index) => {
+                        // Stop animation first
+                        icon.style.animation = 'none';
+                        icon.style.opacity = '0';
+                        // Start animation with delay
+                        setTimeout(() => {
+                            icon.style.animation = '';
+                            icon.style.opacity = '';
+                        }, index * 800);
+                    });
                     // Start progress animation
                     animateProgress();
                     migrationObserver.unobserve(migrationSection);
