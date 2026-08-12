@@ -13,21 +13,21 @@
     {{-- Hero Content Section - h-screen --}}
     <section class="relative z-10 h-screen flex items-center justify-center">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-3 whitespace-nowrap leading-tight">
+            <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 leading-tight text-wrap break-words">
                 {{ __('messages.make_website') }} <span id="rotating-text" class="inline-block transition-all duration-500 min-h-[1.2em] font-light">{{ __('messages.business') }}</span>
             </h1>
-            <p class="text-base sm:text-lg text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p class="text-sm sm:text-base md:text-lg text-gray-500 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-4">
                 {{ __('messages.hero_description') }}
             </p>
 
             {{-- CTA Buttons --}}
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
                 <a href="#contact"
-                   class="px-8 py-3 bg-gradient-to-r from-[#323232] to-[#000000] text-white font-medium rounded-full hover:opacity-90 transition-opacity shadow-lg">
+                   class="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-[#323232] to-[#000000] text-white font-semibold rounded-full hover:opacity-90 transition-opacity shadow-lg text-sm sm:text-base">
                     {{ __('messages.build_website') }}
                 </a>
                 <a href="#portfolio"
-                   class="px-8 py-3 bg-white text-gray-900 font-medium rounded-full shadow-lg hover:shadow-xl transition-shadow">
+                   class="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-gray-900 font-semibold rounded-full shadow-lg hover:shadow-xl transition-shadow text-sm sm:text-base">
                     {{ __('messages.view_demo') }}
                 </a>
             </div>
@@ -35,68 +35,64 @@
     </section>
 
     {{-- Trusted By / Clients Section --}}
-    <section class="relative z-10 pb-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-            <p class="text-center text-xs text-gray-600 font-semibold tracking-wide uppercase leading-normal">
+    <section class="relative z-10 pb-12 sm:pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
+            <p class="text-center text-[10px] sm:text-xs text-gray-600 font-semibold tracking-wide uppercase leading-normal">
                 {{ __('messages.trusted_by') }}
             </p>
         </div>
 
-        {{-- Static Logo Grid --}}
+        {{-- Static Logo Grid - Grid di mobile, Flex di desktop --}}
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            {{-- Row 1: 5 logos --}}
-            <div class="flex items-center justify-center gap-6 sm:gap-10 lg:gap-14 -mb-8">
+            {{-- Grid Layout - Mobile: 2 cols, Tablet: 4 cols, Desktop: Flex horizontal --}}
+            <div class="grid grid-cols-3 sm:grid-cols-4 lg:flex lg:items-center lg:justify-center gap-3 sm:gap-4 lg:gap-14 -mb-0 sm:-mb-8">
                 {{-- Client 1 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
                     <img src="{{ asset('storage/assets/img/client-1.webp') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
                 {{-- Client 2 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
                     <img src="{{ asset('storage/assets/img/client-2.webp') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
                 {{-- Client 3 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
                     <img src="{{ asset('storage/assets/img/client-3.webp') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
                 {{-- Client 4 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
                     <img src="{{ asset('storage/assets/img/client-4.webp') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
                 {{-- Client 5 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
                     <img src="{{ asset('storage/assets/img/client-5.webp') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
-            </div>
-
-            {{-- Row 2: 3 logos (centered) --}}
-            <div class="flex items-center justify-center gap-6 sm:gap-10 lg:gap-14">
                 {{-- Client 6 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
                     <img src="{{ asset('storage/assets/img/client-6.webp') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
                 {{-- Client 7 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
                     <img src="{{ asset('storage/assets/img/client-7.png') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
                 {{-- Client 8 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
                     <img src="{{ asset('storage/assets/img/client-8.png') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-[80px] sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
             </div>
         </div>
@@ -417,59 +413,55 @@
 
         {{-- Client Logos Grid --}}
         <div class="mt-10 max-w-6xl mx-auto">
-            {{-- Row 1: 5 logos --}}
-            <div class="flex items-center justify-center gap-6 sm:gap-10 lg:gap-14 -mb-8">
+            {{-- Grid Layout - Mobile: 2 cols, Tablet: 4 cols, Desktop: Flex horizontal --}}
+            <div class="grid grid-cols-3 sm:grid-cols-4 lg:flex lg:items-center lg:justify-center gap-3 sm:gap-4 lg:gap-14">
                 {{-- Client 1 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
                     <img src="{{ asset('storage/assets/img/client-1.webp') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
                 {{-- Client 2 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
                     <img src="{{ asset('storage/assets/img/client-2.webp') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
                 {{-- Client 3 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
                     <img src="{{ asset('storage/assets/img/client-3.webp') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
                 {{-- Client 4 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center">
                     <img src="{{ asset('storage/assets/img/client-4.webp') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
                 {{-- Client 5 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
                     <img src="{{ asset('storage/assets/img/client-5.webp') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
-            </div>
-
-            {{-- Row 2: 3 logos (centered) --}}
-            <div class="flex items-center justify-center gap-6 sm:gap-10 lg:gap-14">
                 {{-- Client 6 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
                     <img src="{{ asset('storage/assets/img/client-6.webp') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
                 {{-- Client 7 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
                     <img src="{{ asset('storage/assets/img/client-7.png') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
                 {{-- Client 8 --}}
-                <div class="opacity-60 hover:opacity-100 transition-opacity">
+                <div class="opacity-60 hover:opacity-100 transition-opacity flex items-center justify-center col-span-2 sm:col-span-1 lg:col-span-auto">
                     <img src="{{ asset('storage/assets/img/client-8.png') }}"
                          alt="Client Logo"
-                         class="h-24 max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                         class="h-16 sm:h-20 lg:h-24 max-w-20 sm:max-w-32 w-auto object-contain grayscale hover:grayscale-0 transition-all">
                 </div>
             </div>
         </div>
@@ -495,10 +487,10 @@
         }
         @keyframes data-flow-icon-move {
             0% { transform: translateX(0) scale(0.8); opacity: 0; }
-            10% { opacity: 1; transform: translateX(50px) scale(1); }
-            50% { transform: translateX(200px) scale(1.5); }
-            90% { opacity: 1; transform: translateX(350px) scale(1); }
-            100% { transform: translateX(400px) scale(0.8); opacity: 0; }
+            10% { opacity: 1; transform: translateX(15%) scale(1); }
+            50% { transform: translateX(50%) scale(1.2); }
+            90% { opacity: 1; transform: translateX(85%) scale(1); }
+            100% { transform: translateX(100%) scale(0.8); opacity: 0; }
         }
         @keyframes server-light-blink {
             0%, 100% { background-color: #ef4444; box-shadow: 0 0 5px #ef4444; }
@@ -614,36 +606,36 @@
                 </div>
 
                 {{-- Data Flow Animation - Website Elements Icons --}}
-                <div class="flex-1 relative h-28">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative w-full h-20">
+                <div class="flex-1 relative h-20 sm:h-28">
+                    <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
+                        <div class="relative w-full max-w-[200px] sm:max-w-[280px] md:max-w-[350px] lg:max-w-[400px] h-16 sm:h-20">
                             {{-- Database Icon --}}
-                            <div class="absolute top-0 left-0 data-flow-icon bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-2 flex items-center justify-center shadow-lg" style="animation-delay: 0s;">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="absolute top-0 left-0 data-flow-icon bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-1.5 sm:p-2 flex items-center justify-center shadow-lg" style="animation-delay: 0s;">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
                                 </svg>
                             </div>
                             {{-- File/Document Icon --}}
-                            <div class="absolute top-4 left-0 data-flow-icon bg-gradient-to-br from-gray-600 to-gray-700 rounded-xl p-2 flex items-center justify-center shadow-lg" style="animation-delay: 0.8s;">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="absolute top-2 sm:top-4 left-0 data-flow-icon bg-gradient-to-br from-gray-600 to-gray-700 rounded-xl p-1.5 sm:p-2 flex items-center justify-center shadow-lg" style="animation-delay: 0.8s;">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                                 </svg>
                             </div>
                             {{-- Image/Photo Icon --}}
-                            <div class="absolute top-8 left-0 data-flow-icon rounded-xl p-2 flex items-center justify-center shadow-lg" style="background: linear-gradient(to bottom right, #673de6, #673de6); animation-delay: 1.6s;">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="absolute top-4 sm:top-8 left-0 data-flow-icon rounded-xl p-1.5 sm:p-2 flex items-center justify-center shadow-lg" style="background: linear-gradient(to bottom right, #673de6, #673de6); animation-delay: 1.6s;">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
                             </div>
                             {{-- Code Icon --}}
-                            <div class="absolute top-12 left-0 data-flow-icon bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-2 flex items-center justify-center shadow-lg" style="animation-delay: 2.4s;">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="absolute top-6 sm:top-12 left-0 data-flow-icon bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-1.5 sm:p-2 flex items-center justify-center shadow-lg" style="animation-delay: 2.4s;">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
                                 </svg>
                             </div>
                             {{-- Settings/Config Icon --}}
-                            <div class="absolute top-16 left-0 data-flow-icon bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-2 flex items-center justify-center shadow-lg" style="animation-delay: 3.2s;">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="absolute top-8 sm:top-16 left-0 data-flow-icon bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-1.5 sm:p-2 flex items-center justify-center shadow-lg" style="animation-delay: 3.2s;">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                                 </svg>
