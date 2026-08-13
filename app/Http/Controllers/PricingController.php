@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 
 class PricingController extends Controller
 {
@@ -12,13 +11,8 @@ class PricingController extends Controller
      */
     public function index(Request $request)
     {
-        // Get locale from route parameter
-        $locale = $request->route('locale') ?? 'en';
-
-        // Validate and set locale
-        if (in_array($locale, ['en', 'id'])) {
-            App::setLocale($locale);
-        }
+        // Get locale from middleware (already set by SetLocale middleware)
+        $locale = app()->getLocale();
 
         $pricingData = [
             'plans' => [
@@ -35,11 +29,8 @@ class PricingController extends Controller
      */
     public function show(Request $request, string $slug)
     {
-        $locale = $request->route('locale') ?? 'en';
-
-        if (in_array($locale, ['en', 'id'])) {
-            App::setLocale($locale);
-        }
+        // Get locale from middleware (already set by SetLocale middleware)
+        $locale = app()->getLocale();
 
         return "Plan details: {$slug} (locale: {$locale})";
     }
