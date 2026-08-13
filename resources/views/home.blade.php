@@ -1291,7 +1291,7 @@
                     <p class="text-white/50 text-sm mb-6">Cocok untuk pemula & UMKM</p>
 
                     <div class="mb-6">
-                        <span class="text-5xl font-bold text-white tracking-tight">GRATIS</span>
+                        <span class="text-4xl font-bold text-white tracking-tight">Rp 0</span>
                     </div>
 
                     <ul class="space-y-3 mb-8">
@@ -1309,7 +1309,7 @@
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <span>50+ template premium</span>
+                            <span>Support live chat</span>
                         </li>
                         <li class="flex items-center gap-3 text-sm text-white/70">
                             <div class="w-5 h-5 bg-emerald-500/20 rounded-lg flex items-center justify-center shrink-0">
@@ -1319,13 +1319,45 @@
                             </div>
                             <span>Gratis selamanya</span>
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-white/40">
-                            <div class="w-5 h-5 bg-white/5 rounded-lg flex items-center justify-center shrink-0">
-                                <svg class="w-3 h-3 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-emerald-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <span>Domain custom</span>
+                            <span>Custom domain dapat</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-emerald-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span>Support toko online</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-emerald-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span>Support pembayaran otomatis</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-emerald-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span>Support cek ongkir zonasi/flat</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <div class="w-5 h-5 bg-emerald-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-3 h-3 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span>Support marketing tools</span>
                         </li>
                     </ul>
 
@@ -1337,6 +1369,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
+                    <div class="text-center mt-4">
+                        <a href="{{ app()->getLocale() === 'id' ? '/id/harga' : '/pricing' }}" class="text-sm text-white/50 hover:text-white/80 transition-colors">Lihat detail lengkap →</a>
+                    </div>
                 </div>
             </div>
 
@@ -1363,7 +1398,7 @@
                     <div class="mb-6">
                         <div class="flex items-baseline gap-2">
                             <span class="text-white/40 line-through text-lg">Rp989.000</span>
-                            <span class="text-5xl font-bold text-white tracking-tight">Rp789K</span>
+                            <span class="text-4xl font-bold text-white tracking-tight">Rp789K</span>
                         </div>
                         <p class="text-white/50 text-sm mt-1">Pertama • perpanjangan Rp489K/thn</p>
                     </div>
@@ -1375,7 +1410,7 @@
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <span>WordPress profesional</span>
+                            <span>Menulis Blog / artikel</span>
                         </li>
                         <li class="flex items-center gap-3 text-sm text-white/70">
                             <div class="w-5 h-5 bg-blue-500/20 rounded-lg flex items-center justify-center shrink-0">
@@ -1383,7 +1418,7 @@
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <span>Domain .com gratis</span>
+                            <span>Woocommerce / toko online</span>
                         </li>
                         <li class="flex items-center gap-3 text-sm text-white/70">
                             <div class="w-5 h-5 bg-blue-500/20 rounded-lg flex items-center justify-center shrink-0">
@@ -1391,7 +1426,7 @@
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <span>Hosting super cepat</span>
+                            <span>Support marketing tools</span>
                         </li>
                         <li class="flex items-center gap-3 text-sm text-white/70">
                             <div class="w-5 h-5 bg-blue-500/20 rounded-lg flex items-center justify-center shrink-0">
@@ -1399,15 +1434,7 @@
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <span>SSL gratis</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-sm text-white/70">
-                            <div class="w-5 h-5 bg-blue-500/20 rounded-lg flex items-center justify-center shrink-0">
-                                <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                            <span>Support prioritas</span>
+                            <span>Tampilan custom sesuai kebutuhan</span>
                         </li>
                     </ul>
 
@@ -1419,6 +1446,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
+                    <div class="text-center mt-4">
+                        <a href="{{ app()->getLocale() === 'id' ? '/id/harga' : '/pricing' }}" class="text-sm text-white/50 hover:text-white/80 transition-colors">Lihat detail lengkap →</a>
+                    </div>
                 </div>
             </div>
 
@@ -1439,8 +1469,8 @@
                     <p class="text-white/50 text-sm mb-6">Untuk kebutuhan khusus & enterprise</p>
 
                     <div class="mb-6">
-                        <span class="text-5xl font-bold text-white tracking-tight">Rp1.5K+</span>
-                        <p class="text-white/50 text-sm mt-1">Mulai dari • sesuai kebutuhan</p>
+                        <span class="text-4xl font-bold text-white tracking-tight">Flexible</span>
+                        <p class="text-white/50 text-sm mt-1">Harga menyesuaikan kebutuhan Anda</p>
                     </div>
 
                     <ul class="space-y-3 mb-8">
@@ -1486,6 +1516,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
+                    <div class="text-center mt-4">
+                        <a href="{{ app()->getLocale() === 'id' ? '/id/harga' : '/pricing' }}" class="text-sm text-white/50 hover:text-white/80 transition-colors">Lihat detail lengkap →</a>
+                    </div>
                 </div>
             </div>
 

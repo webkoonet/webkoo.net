@@ -12,15 +12,12 @@
                     $queryString = request()->getQueryString();
                     $queryParams = $queryString ? '?' . $queryString : '';
 
-                    // Get path without locale prefix
-                    $path = request()->path();
-                    if (str_starts_with($path, 'id/')) {
-                        $pathWithoutLocale = substr($path, 3);
-                    } elseif ($path === 'id') {
-                        $pathWithoutLocale = '';
-                    } else {
-                        $pathWithoutLocale = $path;
-                    }
+                    // Get path without locale prefix using helper
+                    $pathWithoutLocale = getPathWithoutLocale(request()->path());
+
+                    // Get translated paths using helper functions
+                    $englishPath = getEnglishPath($pathWithoutLocale, $currentLocale);
+                    $indonesianPath = getLocalizedPath($pathWithoutLocale, 'id');
                 @endphp
 
                 {{-- Logo --}}
@@ -198,7 +195,7 @@
                             {{-- English Option --}}
                             <button type="button"
                                     data-lang="en"
-                                    data-url="{{ '/' . ltrim($pathWithoutLocale, '/') . $queryParams }}"
+                                    data-url="{{ '/' . ltrim($englishPath, '/') . $queryParams }}"
                                     class="language-option w-full flex items-center gap-2 px-4 py-2 text-sm {{ !$isIndonesian ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-50' }} transition-colors">
                                 <img src="{{ asset('storage/assets/img/flag-en.svg') }}"
                                      alt="English"
@@ -209,7 +206,7 @@
                             {{-- Indonesian Option --}}
                             <button type="button"
                                     data-lang="id"
-                                    data-url="{{ '/id' . ($pathWithoutLocale ? '/' . ltrim($pathWithoutLocale, '/') : '') . $queryParams }}"
+                                    data-url="{{ '/id' . ($indonesianPath ? '/' . ltrim($indonesianPath, '/') : '') . $queryParams }}"
                                     class="language-option w-full flex items-center gap-2 px-4 py-2 text-sm {{ $isIndonesian ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-50' }} transition-colors">
                                 <img src="{{ asset('storage/assets/img/flag-id.svg') }}"
                                      alt="Indonesian"

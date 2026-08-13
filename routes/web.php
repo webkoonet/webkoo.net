@@ -1,12 +1,24 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PricingController;
 use Illuminate\Support\Facades\Route;
 
 // Default locale (English) - no prefix
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Indonesian locale with /id prefix
-Route::prefix('id')->group(function () {
+// Pricing routes - default locale (English)
+Route::get('/pricing', [PricingController::class, 'index'])->name('pricing.default');
+Route::get('/pricing/{slug}', [PricingController::class, 'show'])->name('pricing.show.default');
+
+// Routes with explicit locale parameter - NO MIDDLEWARE
+Route::prefix('{locale}')->where(['locale' => 'en|id'])->group(function () {
+    // English pricing routes with /en prefix
+    Route::get('/pricing', [PricingController::class, 'index'])->name('pricing');
+    Route::get('/pricing/{slug}', [PricingController::class, 'show'])->name('pricing.show');
+
+    // Indonesian routes with /id prefix
     Route::get('/', [HomeController::class, 'index'])->name('home.id');
+    Route::get('/harga', [PricingController::class, 'index'])->name('pricing.id');
+    Route::get('/harga/{slug}', [PricingController::class, 'show'])->name('pricing.show.id');
 });

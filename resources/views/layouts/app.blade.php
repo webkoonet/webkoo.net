@@ -7,14 +7,17 @@
 
     {{-- Hreflang SEO Tags --}}
     @php
-        $currentPath = request()->path();
+        $currentLocale = app()->getLocale();
+        $pathWithoutLocale = getPathWithoutLocale(request()->path());
         $queryParams = empty(request()->query->all()) ? '' : '?' . http_build_query(request()->query->all());
-        $pathWithoutLocale = str_replace('/id', '', $currentPath);
-        if (empty($pathWithoutLocale)) $pathWithoutLocale = '/';
+
+        // Get translated paths using helper functions
+        $englishPath = getEnglishPath($pathWithoutLocale, $currentLocale);
+        $indonesianPath = getLocalizedPath($pathWithoutLocale, 'id');
     @endphp
-    <link rel="alternate" hreflang="en" href="{{ url('/') . ($pathWithoutLocale === '/' ? '' : '/' . $pathWithoutLocale) . $queryParams }}">
-    <link rel="alternate" hreflang="id" href="{{ url('/id') . ($pathWithoutLocale === '/' ? '' : $pathWithoutLocale) . $queryParams }}">
-    <link rel="alternate" hreflang="x-default" href="{{ url('/') . ($pathWithoutLocale === '/' ? '' : '/' . $pathWithoutLocale) . $queryParams }}">
+    <link rel="alternate" hreflang="en" href="{{ url('/') . ($englishPath === '' ? '' : '/' . $englishPath) . $queryParams }}">
+    <link rel="alternate" hreflang="id" href="{{ url('/id') . ($indonesianPath === '' ? '' : '/' . $indonesianPath) . $queryParams }}">
+    <link rel="alternate" hreflang="x-default" href="{{ url('/') . ($englishPath === '' ? '' : '/' . $englishPath) . $queryParams }}">
 
     <title>{{ $title ?? config('app.name', 'Laravel') }}</title>
 
