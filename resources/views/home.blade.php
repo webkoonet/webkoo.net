@@ -1542,6 +1542,273 @@
     </div>
 </section>
 
+{{-- FAQ Section --}}
+<section class="relative py-20 sm:py-28 md:py-32 bg-white overflow-hidden" id="faq-section">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {{-- Section Header --}}
+        <div class="text-center mb-12 sm:mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 border border-gray-200 rounded-full mb-6">
+                <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-gray-800 text-sm font-medium">Pertanyaan yang Sering Diajukan</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 mb-4 leading-tight">
+                FAQ
+            </h2>
+            <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Jawaban untuk pertanyaan umum seputar layanan website kami. Masih punya pertanyaan lain? Hubungi kami via WhatsApp!
+            </p>
+        </div>
+
+        {{-- FAQ Accordion --}}
+        <div class="space-y-4" id="faq-accordion">
+            {{-- FAQ Item 1 --}}
+            <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-gray-300 hover:shadow-md">
+                <button class="faq-trigger w-full px-6 sm:px-8 py-5 flex items-center justify-between text-left bg-white hover:bg-gray-50 transition-colors">
+                    <span class="font-semibold text-gray-900 pr-4">Apakah Website Builder benar-benar gratis?</span>
+                    <svg class="faq-icon w-5 h-5 text-gray-500 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-5">
+                    <p class="text-gray-600 leading-relaxed">
+                        Ya! Website Builder kami 100% gratis selamanya. Anda sudah mendapatkan fitur drag & drop builder, support live chat, dan bisa membuat toko online dengan pembayaran otomatis. Gratis tanpa biaya tersembunyi.
+                    </p>
+                </div>
+            </div>
+
+            {{-- FAQ Item 2 --}}
+            <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-gray-300 hover:shadow-md">
+                <button class="faq-trigger w-full px-6 sm:px-8 py-5 flex items-center justify-between text-left bg-white hover:bg-gray-50 transition-colors">
+                    <span class="font-semibold text-gray-900 pr-4">Berapa lama website saya jadi?</span>
+                    <svg class="faq-icon w-5 h-5 text-gray-500 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-5">
+                    <div class="text-gray-600 leading-relaxed space-y-2">
+                        <p>Tergantung paket yang Anda pilih:</p>
+                        <ul class="space-y-1 ml-4">
+                            <li>• <strong>Website Builder:</strong> 3-5 hari kerja (instant setup)</li>
+                            <li>• <strong>WordPress:</strong> 5-7 hari kerja</li>
+                            <li>• <strong>Custom Development:</strong> 2-8 minggi (tergantung kompleksitas)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            {{-- FAQ Item 3 --}}
+            <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-gray-300 hover:shadow-md">
+                <button class="faq-trigger w-full px-6 sm:px-8 py-5 flex items-center justify-between text-left bg-white hover:bg-gray-50 transition-colors">
+                    <span class="font-semibold text-gray-900 pr-4">Apa perbedaan Website Builder dan WordPress?</span>
+                    <svg class="faq-icon w-5 h-5 text-gray-500 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-5">
+                    <div class="text-gray-600 leading-relaxed space-y-3">
+                        <p><strong>Website Builder</strong> adalah platform kami sendiri dengan drag & drop. Cocok untuk yang ingin cepat dan mudah tanpa coding. Gratis selamanya.</p>
+                        <p><strong>WordPress</strong> adalah CMS terpopuler di dunia. Lebih fleksibel dengan ribuan plugin, cocok untuk blog, company profile, dan toko online yang butuh fitur advanced. Perlu biaya langganan.</p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- FAQ Item 4 --}}
+            <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-gray-300 hover:shadow-md">
+                <button class="faq-trigger w-full px-6 sm:px-8 py-5 flex items-center justify-between text-left bg-white hover:bg-gray-50 transition-colors">
+                    <span class="font-semibold text-gray-900 pr-4">Apakah bisa migrasi dari penyedia lain?</span>
+                    <svg class="faq-icon w-5 h-5 text-gray-500 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-5">
+                    <p class="text-gray-600 leading-relaxed">
+                        Tentu! Kami menyediakan layanan migrasi gratis tanpa biaya tersembunyi. Tim kami akan memindahkan semua data, gambar, dan konfigurasi website Anda ke platform kami dengan proses yang cepat dan aman tanpa downtime.
+                    </p>
+                </div>
+            </div>
+
+            {{-- FAQ Item 5 --}}
+            <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-gray-300 hover:shadow-md">
+                <button class="faq-trigger w-full px-6 sm:px-8 py-5 flex items-center justify-between text-left bg-white hover:bg-gray-50 transition-colors">
+                    <span class="font-semibold text-gray-900 pr-4">Apa saja metode pembayaran yang tersedia?</span>
+                    <svg class="faq-icon w-5 h-5 text-gray-500 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-5">
+                    <div class="text-gray-600 leading-relaxed">
+                        <p class="mb-3">Kami menerima berbagai metode pembayaran:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-gray-100 rounded-full text-sm text-gray-700">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z"/></svg>
+                                Transfer Bank
+                            </span>
+                            <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-gray-100 rounded-full text-sm text-gray-700">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                E-Wallet
+                            </span>
+                            <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-gray-100 rounded-full text-sm text-gray-700">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                                Kartu Kredit
+                            </span>
+                            <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-gray-100 rounded-full text-sm text-gray-700">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                QRIS
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- FAQ Item 6 --}}
+            <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-gray-300 hover:shadow-md">
+                <button class="faq-trigger w-full px-6 sm:px-8 py-5 flex items-center justify-between text-left bg-white hover:bg-gray-50 transition-colors">
+                    <span class="font-semibold text-gray-900 pr-4">Apakah domain dan SSL sudah termasuk?</span>
+                    <svg class="faq-icon w-5 h-5 text-gray-500 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-5">
+                    <div class="text-gray-600 leading-relaxed space-y-2">
+                        <p><strong>SSL Certificate:</strong> Gratis selamanya untuk semua paket! Kami menggunakan Let's Encrypt SSL yang otomatis ter renewable.</p>
+                        <p><strong>Domain:</strong> Anda bisa menggunakan domain sendiri (.com, .id, dll). Untuk Website Builder gratis, Anda tetap perlu membeli domain terpisah atau menggunakan subdomain gratis.</p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- FAQ Item 7 --}}
+            <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-gray-300 hover:shadow-md">
+                <button class="faq-trigger w-full px-6 sm:px-8 py-5 flex items-center justify-between text-left bg-white hover:bg-gray-50 transition-colors">
+                    <span class="font-semibold text-gray-900 pr-4">Bagaimana dengan support dan maintenance?</span>
+                    <svg class="faq-icon w-5 h-5 text-gray-500 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-5">
+                    <div class="text-gray-600 leading-relaxed space-y-2">
+                        <p>Semua paket sudah termasuk:</p>
+                        <ul class="space-y-1 ml-4">
+                            <li>• Support via WhatsApp 24/7</li>
+                            <li>• Update security dan plugin otomatis</li>
+                            <li>• Backup harian untuk WordPress</li>
+                            <li>• Monitoring uptime server</li>
+                        </ul>
+                        <p class="mt-2">Untuk Custom Development, kami memberikan support & konsultasi lifetime.</p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- FAQ Item 8 --}}
+            <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-gray-300 hover:shadow-md">
+                <button class="faq-trigger w-full px-6 sm:px-8 py-5 flex items-center justify-between text-left bg-white hover:bg-gray-50 transition-colors">
+                    <span class="font-semibold text-gray-900 pr-4">Apakah ada garansi atau refund?</span>
+                    <svg class="faq-icon w-5 h-5 text-gray-500 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-5">
+                    <div class="text-gray-600 leading-relaxed space-y-2">
+                        <p>Ya! Kami memberikan garansi kepuasan:</p>
+                        <ul class="space-y-1 ml-4">
+                            <li>• <strong>14 hari garansi uang kembali</strong> untuk WordPress dan Custom Development</li>
+                            <li>• Free revision jika hasil tidak sesuai dengan brief</li>
+                            <li>• Bug fix gratis selama masa garansi</li>
+                        </ul>
+                        <p class="mt-2">Kepuasan Anda adalah prioritas kami!</p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- FAQ Item 9 --}}
+            <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-gray-300 hover:shadow-md">
+                <button class="faq-trigger w-full px-6 sm:px-8 py-5 flex items-center justify-between text-left bg-white hover:bg-gray-50 transition-colors">
+                    <span class="font-semibold text-gray-900 pr-4">Apakah bisa request fitur khusus untuk Custom Development?</span>
+                    <svg class="faq-icon w-5 h-5 text-gray-500 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-5">
+                    <div class="text-gray-600 leading-relaxed">
+                        Tentu! Custom Development dirancang untuk kebutuhan unik. API integration, sistem payment gateway custom, automation workflow, reporting dashboard—semua bisa dibangun sesuai spesifikasi bisnis Anda. Konsultasikan kebutuhan Anda dengan kami gratis.
+                    </div>
+                </div>
+            </div>
+
+            {{-- FAQ Item 10 --}}
+            <div class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-gray-300 hover:shadow-md">
+                <button class="faq-trigger w-full px-6 sm:px-8 py-5 flex items-center justify-between text-left bg-white hover:bg-gray-50 transition-colors">
+                    <span class="font-semibold text-gray-900 pr-4">Bagaimana jika saya butuh bantuan teknis di luar jam kerja?</span>
+                    <svg class="faq-icon w-5 h-5 text-gray-500 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="faq-content hidden px-6 sm:px-8 pb-5">
+                    <div class="text-gray-600 leading-relaxed">
+                        Support WhatsApp kami tersedia 24/7—meski di luar jam kerja, Anda tetap bisa mengirim pesan. Tim technical support kami akan merespon secepat mungkin. Untuk klien Custom Development dengan SLA premium, kami menyediakan dedicated support channel dengan response time terjamin.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Bottom CTA --}}
+        <div class="mt-12 text-center">
+            <p class="text-gray-600 mb-4">Masih punya pertanyaan lain?</p>
+            <a href="https://wa.me/6281234567890?text=Halo%20Webkoo,%20saya%20punya%20pertanyaan%20seputar%20layanan%20website"
+               target="_blank"
+               class="inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white font-semibold rounded-2xl hover:bg-gray-800 hover:scale-105 transition-all duration-300 shadow-xl">
+                <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                <span>Tanya Kami via WhatsApp</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    {{-- FAQ Accordion JavaScript --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const trigger = item.querySelector('.faq-trigger');
+                const content = item.querySelector('.faq-content');
+                const icon = item.querySelector('.faq-icon');
+
+                trigger.addEventListener('click', function() {
+                    const isOpen = !content.classList.contains('hidden');
+
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            const otherContent = otherItem.querySelector('.faq-content');
+                            const otherIcon = otherItem.querySelector('.faq-icon');
+                            otherContent.classList.add('hidden');
+                            otherIcon.style.transform = 'rotate(0deg)';
+                            otherItem.classList.remove('border-gray-900');
+                        }
+                    });
+
+                    // Toggle current item
+                    if (isOpen) {
+                        content.classList.add('hidden');
+                        icon.style.transform = 'rotate(0deg)';
+                        item.classList.remove('border-gray-900');
+                    } else {
+                        content.classList.remove('hidden');
+                        icon.style.transform = 'rotate(180deg)';
+                        item.classList.add('border-gray-900');
+                    }
+                });
+            });
+        });
+    </script>
+</section>
+
 <script>
     const texts = [
         '{{ __('messages.business') }}',
