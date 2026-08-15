@@ -1712,10 +1712,11 @@
                     <div class="text-gray-600 leading-relaxed space-y-2">
                         <p>Ya! Kami memberikan garansi kepuasan:</p>
                         <ul class="space-y-1 ml-4">
-                            <li>• <strong>14 hari garansi uang kembali</strong> untuk WordPress dan Custom Development</li>
+                            <li>• <strong>7 hari garansi uang kembali</strong> untuk WordPress dan Website Builder</li>
                             <li>• Free revision jika hasil tidak sesuai dengan brief</li>
                             <li>• Bug fix gratis selama masa garansi</li>
                         </ul>
+                        <p class="mt-3 text-sm"><em class="text-gray-500">*Syarat & ketentuan berlaku: Refund hanya berlaku untuk biaya jasa pembuatan, tidak termasuk biaya server, domain, dan SSL yang sudah dibeli.</em></p>
                         <p class="mt-2">Kepuasan Anda adalah prioritas kami!</p>
                     </div>
                 </div>
