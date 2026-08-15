@@ -1466,11 +1466,11 @@
                     </div>
 
                     <h3 class="text-xl font-bold text-white mb-2">Website Custom</h3>
-                    <p class="text-white/50 text-sm mb-6">Untuk kebutuhan khusus & enterprise</p>
+                    <p class="text-white/50 text-sm mb-6">Template tidak cukup? Kami bangun dari nol sesuai visi Anda</p>
 
                     <div class="mb-6">
-                        <span class="text-4xl font-bold text-white tracking-tight">Flexible</span>
-                        <p class="text-white/50 text-sm mt-1">Harga menyesuaikan kebutuhan Anda</p>
+                        <span class="text-4xl font-bold text-white tracking-tight">Investasi Cerdas</span>
+                        <p class="text-white/50 text-sm mt-1">Bayar untuk yang Anda butuhkan, bukan yang tidak</p>
                     </div>
 
                     <ul class="space-y-3 mb-8">
@@ -1480,7 +1480,7 @@
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <span>Desain eksklusif</span>
+                            <span>Desain One-of-a-kind</span>
                         </li>
                         <li class="flex items-center gap-3 text-sm text-white/70">
                             <div class="w-5 h-5 rounded-lg flex items-center justify-center shrink-0" style="background: rgba(103, 61, 230, 0.2);">
@@ -1488,7 +1488,7 @@
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <span>Fitur custom sesuai request</span>
+                            <span>Fitur Tanpa Batas — API, payment, automation</span>
                         </li>
                         <li class="flex items-center gap-3 text-sm text-white/70">
                             <div class="w-5 h-5 rounded-lg flex items-center justify-center shrink-0" style="background: rgba(103, 61, 230, 0.2);">
@@ -1496,7 +1496,7 @@
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <span>Optimasi performa maksimal</span>
+                            <span>Skalabilitas Terjamin — Ikut pertumbuhan bisnis</span>
                         </li>
                         <li class="flex items-center gap-3 text-sm text-white/70">
                             <div class="w-5 h-5 rounded-lg flex items-center justify-center shrink-0" style="background: rgba(103, 61, 230, 0.2);">
@@ -1504,7 +1504,7 @@
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <span>Consulting & maintenance</span>
+                            <span>Partner Jangka Panjang — Support & konsultasi lifetime</span>
                         </li>
                     </ul>
 
