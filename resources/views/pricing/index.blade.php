@@ -53,7 +53,7 @@
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 md:py-32">
-        <div class="text-center">
+        <div class="text-center pb-16 sm:pb-20">
             {{-- Main Question --}}
             <h1 class="text-2xl sm:text-3xl md:text-lg lg:text-lg font-medium text-white mb-6 leading-tight" style="margin-bottom: 24px;">
                 Apakah benar dengan <span class="text-blue-400 shimmer-text-white">Rp 0</span> dapat memilki website?
