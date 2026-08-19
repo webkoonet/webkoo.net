@@ -32,64 +32,11 @@
 
                 {{-- Megamenu Navigation (Desktop) --}}
                 <div class="hidden lg:flex items-center gap-6">
-                    {{-- Pricing Megamenu --}}
-                    <div class="megamenu-container relative group">
-                        <button type="button"
-                                class="megamenu-trigger flex items-center gap-1 text-sm font-normal text-gray-600 hover:text-gray-900 transition-colors">
-                            <span>{{ __('messages.pricing') }}</span>
-                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </button>
-                        <div class="megamenu-content absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            <div class="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 w-[680px]">
-                                {{-- Header --}}
-                                <div class="mb-4 pb-3 border-b border-gray-100">
-                                    <h3 class="text-sm font-semibold text-gray-900">{{ __('messages.pricing_plans') }}</h3>
-                                </div>
-
-                                {{-- Pricing Cards Grid --}}
-                                <div class="grid grid-cols-3 gap-4">
-                                    {{-- Webkoo Builder --}}
-                                    <a href="#webkoo-builder" class="group block">
-                                        <div class="bg-gray-50 hover:bg-gray-100 rounded-xl p-4 transition-all duration-200">
-                                            <div class="flex items-start justify-between mb-2">
-                                                <h4 class="font-semibold text-gray-900 text-sm">{{ __('messages.webkoo_builder') }}</h4>
-                                                <span class="px-2 py-0.5 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-[10px] font-medium rounded-full">{{ __('messages.popular') }}</span>
-                                            </div>
-                                            <p class="text-xs text-gray-600 leading-relaxed">{{ __('messages.webkoo_builder_desc') }}</p>
-                                        </div>
-                                    </a>
-
-                                    {{-- WordPress --}}
-                                    <a href="#wordpress" class="group block">
-                                        <div class="bg-gray-50 hover:bg-gray-100 rounded-xl p-4 transition-all duration-200">
-                                            <h4 class="font-semibold text-gray-900 text-sm mb-2">{{ __('messages.wordpress') }}</h4>
-                                            <p class="text-xs text-gray-600 leading-relaxed">{{ __('messages.wordpress_desc') }}</p>
-                                        </div>
-                                    </a>
-
-                                    {{-- Custom --}}
-                                    <a href="#custom" class="group block">
-                                        <div class="bg-gray-50 hover:bg-gray-100 rounded-xl p-4 transition-all duration-200">
-                                            <div class="flex items-start justify-between mb-2">
-                                                <h4 class="font-semibold text-gray-900 text-sm">{{ __('messages.custom_build') }}</h4>
-                                                <span class="px-2 py-0.5 bg-gradient-to-r from-green-500 to-green-600 text-white text-[10px] font-medium rounded-full">{{ __('messages.new') }}</span>
-                                            </div>
-                                            <p class="text-xs text-gray-600 leading-relaxed">{{ __('messages.custom_build_desc') }}</p>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                {{-- CTA Section --}}
-                                <div class="mt-4 pt-3 border-t border-gray-100">
-                                    <a href="#contact" class="text-sm text-gray-900 hover:text-gray-700 font-medium flex items-center gap-1">
-                                        {{ __('messages.need_custom_pricing') }} →
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {{-- Pricing - Single Menu --}}
+                    <a href="{{ $isIndonesian ? '/id/pricing' : '/pricing' }}"
+                       class="text-sm font-normal text-gray-600 hover:text-gray-900 transition-colors">
+                        {{ __('messages.pricing') }}
+                    </a>
 
                     {{-- Products Megamenu --}}
                     <div class="megamenu-container relative group">
@@ -252,33 +199,11 @@
                 {{-- Scrollable Content --}}
                 <div class="flex-1 overflow-y-auto px-6 py-4 space-y-2">
 
-                    {{-- Pricing Megamenu (Mobile) --}}
-                    <div class="mobile-megamenu-item">
-                        <button type="button"
-                                class="mobile-megamenu-trigger w-full flex items-center justify-between py-3 text-base font-medium text-gray-900 hover:text-gray-700 transition-colors">
-                            <span>{{ __('messages.pricing') }}</span>
-                            <svg class="w-5 h-5 transition-transform mobile-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </button>
-                        <div class="mobile-megamenu-content hidden pl-4 mt-2 space-y-2 pb-3 border-b border-gray-100">
-                            <a href="#webkoo-builder" class="block py-2 text-sm text-gray-600 hover:text-gray-900">
-                                <span class="font-medium">{{ __('messages.webkoo_builder') }}</span>
-                                <span class="text-xs text-gray-500 block">{{ __('messages.webkoo_builder_desc') }}</span>
-                            </a>
-                            <a href="#wordpress" class="block py-2 text-sm text-gray-600 hover:text-gray-900">
-                                <span class="font-medium">{{ __('messages.wordpress') }}</span>
-                                <span class="text-xs text-gray-500 block">{{ __('messages.wordpress_desc') }}</span>
-                            </a>
-                            <a href="#custom" class="block py-2 text-sm text-gray-600 hover:text-gray-900">
-                                <span class="font-medium">{{ __('messages.custom_build') }}</span>
-                                <span class="text-xs text-gray-500 block">{{ __('messages.custom_build_desc') }}</span>
-                            </a>
-                            <a href="#contact" class="block py-2 text-sm text-blue-600 hover:text-blue-700">
-                                {{ __('messages.need_custom_pricing') }} →
-                            </a>
-                        </div>
-                    </div>
+                    {{-- Pricing - Single Menu (Mobile) --}}
+                    <a href="{{ $isIndonesian ? '/id/pricing' : '/pricing' }}"
+                       class="mobile-menu-link block py-3 text-base font-medium text-gray-900 hover:text-gray-700 transition-colors border-b border-gray-100">
+                        {{ __('messages.pricing') }}
+                    </a>
 
                     {{-- Products Megamenu (Mobile) --}}
                     <div class="mobile-megamenu-item">
