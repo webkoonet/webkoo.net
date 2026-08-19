@@ -36,19 +36,17 @@
     </main>
 
     {{-- Footer --}}
-    <footer class="bg-[#323232] text-white">
+    <footer class="bg-[#0a0a0c] text-[#323232] overflow-hidden">
         {{-- Main Footer Content --}}
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
                 {{-- Brand Column --}}
                 <div class="lg:col-span-2">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
-                        <span class="text-xl font-bold">WebBuilder</span>
+                        <img src="{{ asset('storage/assets/img/logo.webp') }}"
+                             alt="Webkoo"
+                             class="h-10 w-auto">
+                        <span class="text-xl font-bold text-white">Webkoo</span>
                     </div>
                     <p class="text-gray-400 mb-6 max-w-sm">
                         Buat website profesional dalam hitungan menit. Gratis selamanya dengan Website Builder, atau pilih WordPress & Custom Development untuk kebutuhan khusus.
@@ -75,7 +73,7 @@
 
                 {{-- Products --}}
                 <div>
-                    <h4 class="font-semibold mb-4">Produk</h4>
+                    <h4 class="font-semibold mb-4 text-white">Produk</h4>
                     <ul class="space-y-3">
                         <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Website Builder</a></li>
                         <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">WordPress Hosting</a></li>
@@ -87,7 +85,7 @@
 
                 {{-- Company --}}
                 <div>
-                    <h4 class="font-semibold mb-4">Perusahaan</h4>
+                    <h4 class="font-semibold mb-4 text-white">Perusahaan</h4>
                     <ul class="space-y-3">
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Tentang Kami</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Hubungi Kami</a></li>
@@ -99,7 +97,7 @@
 
                 {{-- Legal --}}
                 <div>
-                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <h4 class="font-semibold mb-4 text-white">Legal</h4>
                     <ul class="space-y-3">
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Syarat & Ketentuan</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kebijakan Privasi</a></li>
@@ -146,6 +144,20 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        {{-- Binary Brand Banner - WEBKOO ASCII Art --}}
+        <div class="min-h-[40vh] w-full flex items-center justify-center px-2">
+            <pre class="leading-[1.05] font-bold font-mono text-center m-0 whitespace-pre w-full" style="font-size: 1.2vw; color: #323232; letter-spacing: 0.3px;">
+010101        010101  0101010101010101  0101010101010101    010101  010101    0101010101010101  0101010101010101
+010101        010101  0101010101010101  01010101010101010   010101 010101     0101010101010101  0101010101010101
+010101  0101  010101  010101            010101    0101010   010101010101      010101    010101  010101    010101
+01010101010101010101  0101010101010100  0101010101010101    0101010101        010101    010101  010101    010101
+01010101    01010101  0101010101010100  0101010101010101    010101010101      010101    010101  010101    010101
+010101        010101  010101            010101    0101010   010101 010101     010101    010101  010101    010101
+010101        010101  0101010101010101  01010101010101010   010101  010101    0101010101010101  0101010101010101
+010101        010101  0101010101010101  0101010101010101    010101   010101   0101010101010101  0101010101010101
+            </pre>
         </div>
     </footer>
 
