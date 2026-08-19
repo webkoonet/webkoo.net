@@ -60,7 +60,7 @@
             </h1>
 
             {{-- Answer --}}
-            <p class="text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-blue-400" style="margin-bottom: 46px;">
+            <p class="text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-white" style="margin-bottom: 46px;">
                 Ya, benar. Tanpa biaya tersembunyi.
             </p>
 
@@ -134,19 +134,22 @@
             <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
                 <div class="p-8">
                     {{-- Plan Name --}}
-                    <div class="text-center mb-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Basic</h3>
-                        <p class="text-sm text-gray-500">Untuk pemula & UMKM</p>
+                    <div class="flex items-center justify-center gap-2 mb-6">
+                        <img src="{{ asset('storage/assets/img/logo.webp') }}"
+                             alt="Webkoo"
+                             class="h-8 w-auto">
+                        <div class="h-4 w-0.5 bg-gray-400"></div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Builder</h3>
+                        </div>
                     </div>
 
                     {{-- Price --}}
                     <div class="text-center mb-6">
                         <div class="flex items-baseline justify-center gap-1">
-                            <span class="text-2xl text-gray-600">Rp</span>
-                            <span class="text-5xl font-bold text-gray-900">304</span>
-                            <span class="text-xl text-gray-600">.000</span>
+                            <span class="text-5xl font-bold text-gray-900">Rp 0</span>
                         </div>
-                        <p class="text-sm text-gray-500 mt-2">per tahun</p>
+                        <p class="text-sm text-gray-500 mt-2">Gratis selamanya</p>
                     </div>
 
                     {{-- CTA Button --}}
@@ -199,7 +202,7 @@
             </div>
 
             {{-- Popular Plan (Highlighted) --}}
-            <div class="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden pricing-float border-2 border-green-400">
+            <div class="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden pricing-float border-2 border-blue-500">
                 {{-- Popular Badge --}}
                 <div class="absolute top-0 right-0 bg-blue-500/20 text-white text-xs font-bold px-4 py-2 rounded-bl-2xl">
                     POPULER
@@ -207,19 +210,23 @@
 
                 <div class="p-8">
                     {{-- Plan Name --}}
-                    <div class="text-center mb-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Professional</h3>
-                        <p class="text-sm text-gray-300">Untuk bisnis berkembang</p>
+                    <div class="flex items-center justify-center gap-2 mb-6">
+                        <img src="{{ asset('storage/assets/img/logo.webp') }}"
+                             alt="Webkoo"
+                             class="h-8 w-auto">
+                        <div class="h-4 w-0.5 bg-gray-500"></div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">WordPress</h3>
+                        </div>
                     </div>
 
                     {{-- Price --}}
                     <div class="text-center mb-6">
                         <div class="flex items-baseline justify-center gap-1">
-                            <span class="text-2xl text-gray-400">Rp</span>
-                            <span class="text-5xl font-bold text-blue-400 shimmer-text-white">589</span>
-                            <span class="text-xl text-gray-400">.000</span>
+                            <span class="text-white/40 line-through text-lg">Rp989K</span>
+                            <span class="text-5xl font-bold text-blue-400 shimmer-text-white">Rp789K</span>
                         </div>
-                        <p class="text-sm text-gray-400 mt-2">per tahun</p>
+                        <p class="text-sm text-gray-400 mt-2">Pertama • perpanjangan Rp489K/thn</p>
                     </div>
 
                     {{-- CTA Button --}}
@@ -281,19 +288,22 @@
             <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
                 <div class="p-8">
                     {{-- Plan Name --}}
-                    <div class="text-center mb-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Enterprise</h3>
-                        <p class="text-sm text-gray-500">Untuk perusahaan besar</p>
+                    <div class="flex items-center justify-center gap-2 mb-6">
+                        <img src="{{ asset('storage/assets/img/logo.webp') }}"
+                             alt="Webkoo"
+                             class="h-8 w-auto">
+                        <div class="h-4 w-0.5 bg-gray-400"></div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Custom</h3>
+                        </div>
                     </div>
 
                     {{-- Price --}}
                     <div class="text-center mb-6">
                         <div class="flex items-baseline justify-center gap-1">
-                            <span class="text-2xl text-gray-600">Rp</span>
-                            <span class="text-5xl font-bold text-gray-900">1.250</span>
-                            <span class="text-xl text-gray-600">.000</span>
+                            <span class="text-4xl font-bold text-gray-900">Investasi Cerdas</span>
                         </div>
-                        <p class="text-sm text-gray-500 mt-2">per tahun</p>
+                        <p class="text-sm text-gray-500 mt-2">Bayar untuk yang Anda butuhkan</p>
                     </div>
 
                     {{-- CTA Button --}}
