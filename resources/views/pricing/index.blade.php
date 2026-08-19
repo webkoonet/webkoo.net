@@ -129,7 +129,7 @@
         </div>
 
         {{-- Pricing Cards Grid --}}
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
             {{-- Basic Plan --}}
             <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
                 <div class="p-8">
@@ -140,7 +140,7 @@
                              class="h-8 w-auto">
                         <div class="h-4 w-0.5 bg-gray-400"></div>
                         <div>
-                            <h3 class="text-lg font-bold text-gray-900">Builder</h3>
+                            <h3 class="text-lg font-bold text-gray-900">Site Builder</h3>
                         </div>
                     </div>
 
@@ -165,12 +165,6 @@
                             <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-700">Gratis Domain .com</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
                             <span class="text-gray-700">SEO Google Search</span>
                         </div>
                         <div class="flex items-center gap-3">
@@ -183,13 +177,22 @@
                             <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-700">Bantuan 24 Jam</span>
+                            <span class="text-gray-700">Unlimited Halaman</span>
                         </div>
-                        <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-3 relative">
                             <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-700">5 Halaman</span>
+                            <span class="text-gray-700">Toko Online (Maks. 5 Produk)</span>
+                            <div class="tooltip-container relative inline-block">
+                                <svg class="w-4 h-4 text-amber-500 cursor-pointer" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 2l1.5 2h2l1.5-2 1 1.5 2 0.5 1 1.5L17 7v2l1 2-1 2-1.5 1-0.5 2-1 1.5-1.5 2-2-0.5-2.5 0.5v-2H8v2l-2.5-0.5-2 0.5-1.5-2-1-1.5-0.5-2-1.5-1 1-2-1-2V7l-0.5-2.5 1-1.5 2-0.5 1-1.5L5 2h2l1.5 2H10zm-1 16v-2h2v2H9z"/>
+                                </svg>
+                                <div class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg whitespace-nowrap opacity-0 invisible transition-all duration-200 pointer-events-none z-10">
+                                    bisa di upgrade
+                                    <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                                </div>
+                            </div>
                         </div>
                         <div class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -197,17 +200,70 @@
                             </svg>
                             <span class="text-gray-700">SSL Gratis</span>
                         </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Support Tiket</span>
+                        </div>
+
+                        {{-- Premium Features Toggle --}}
+                        <button class="premium-toggle w-full flex items-center justify-center gap-2 text-sm text-blue-600 hover:text-blue-700 font-medium py-2 transition-colors cursor-pointer">
+                            <span>Lihat Paket Premium</span>
+                            <svg class="premium-icon w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+
+                        {{-- Premium Features Dropdown --}}
+                        <div class="premium-features hidden space-y-3 pt-3 border-t border-gray-100">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Unlimited Jumlah Produk di Toko Online</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Support Meta Tag Pixel</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Custom Script Header & Footer</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Custom Nama Domain</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Livechat System</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Support Private WhatsApp</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            {{-- Popular Plan (Highlighted) --}}
+            {{-- Custom Plan (Middle - Popular) --}}
             <div class="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden pricing-float border-2 border-blue-500">
                 {{-- Popular Badge --}}
                 <div class="absolute top-0 right-0 bg-blue-500/20 text-white text-xs font-bold px-4 py-2 rounded-bl-2xl">
                     POPULER
                 </div>
-
                 <div class="p-8">
                     {{-- Plan Name --}}
                     <div class="flex items-center justify-center gap-2 mb-6">
@@ -216,21 +272,20 @@
                              class="h-8 w-auto">
                         <div class="h-4 w-0.5 bg-gray-500"></div>
                         <div>
-                            <h3 class="text-lg font-bold text-white">WordPress</h3>
+                            <h3 class="text-lg font-bold text-white">Custom</h3>
                         </div>
                     </div>
 
                     {{-- Price --}}
                     <div class="text-center mb-6">
                         <div class="flex items-baseline justify-center gap-1">
-                            <span class="text-white/40 line-through text-lg">Rp989K</span>
-                            <span class="text-5xl font-bold text-blue-400 shimmer-text-white">Rp789K</span>
+                            <span class="text-4xl font-bold text-blue-400 shimmer-text-white">Hubungi Kami</span>
                         </div>
-                        <p class="text-sm text-gray-400 mt-2">Pertama • perpanjangan Rp489K/thn</p>
+                        <p class="text-sm text-gray-400 mt-2">Harga sesuai kebutuhan Anda</p>
                     </div>
 
                     {{-- CTA Button --}}
-                    <a href="https://wa.me/6281234567890?text=Halo%20Webkoo,%20saya%20tertarik%20dengan%20paket%20Professional"
+                    <a href="https://wa.me/6281234567890?text=Halo%20Webkoo,%20saya%20tertarik%20dengan%20paket%20Custom"
                        target="_blank"
                        class="block w-full py-3 px-6 bg-blue-500/20 hover:bg-blue-600 text-white font-semibold rounded-xl transition-colors text-center mb-6 pricing-pulse">
                         Pesan Sekarang
@@ -242,49 +297,55 @@
                             <svg class="w-5 h-5 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-200">Semua fitur Basic</span>
+                            <span class="text-gray-200">Fitur Apapun Sesuai Keinginan</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-200">15 Halaman</span>
+                            <span class="text-gray-200">Dibuat Oleh Freelancer Profesional</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-200">Blog System</span>
+                            <span class="text-gray-200">Desain 100% Custom & Unik</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-200">Contact Form</span>
+                            <span class="text-gray-200">Unlimited Revisions</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-200">Google Analytics</span>
+                            <span class="text-gray-200">Full Source Code & Ownership</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-200">Social Media Integration</span>
+                            <span class="text-gray-200">Custom API Integration</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-200">Backup Harian</span>
+                            <span class="text-gray-200">Free Konsultasi & Perencanaan</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-200">Support Private WhatsApp</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {{-- Enterprise Plan --}}
+            {{-- WordPress Plan --}}
             <div class="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
                 <div class="p-8">
                     {{-- Plan Name --}}
@@ -294,20 +355,21 @@
                              class="h-8 w-auto">
                         <div class="h-4 w-0.5 bg-gray-400"></div>
                         <div>
-                            <h3 class="text-lg font-bold text-gray-900">Custom</h3>
+                            <h3 class="text-lg font-bold text-gray-900">WordPress</h3>
                         </div>
                     </div>
 
                     {{-- Price --}}
                     <div class="text-center mb-6">
                         <div class="flex items-baseline justify-center gap-1">
-                            <span class="text-4xl font-bold text-gray-900">Investasi Cerdas</span>
+                            <span class="text-gray-400 line-through text-lg">Rp989K</span>
+                            <span class="text-5xl font-bold text-gray-900">Rp789K</span>
                         </div>
-                        <p class="text-sm text-gray-500 mt-2">Bayar untuk yang Anda butuhkan</p>
+                        <p class="text-sm text-gray-500 mt-2">Pertama • perpanjangan Rp489K/thn</p>
                     </div>
 
                     {{-- CTA Button --}}
-                    <a href="https://wa.me/6281234567890?text=Halo%20Webkoo,%20saya%20tertarik%20dengan%20paket%20Enterprise"
+                    <a href="https://wa.me/6281234567890?text=Halo%20Webkoo,%20saya%20tertarik%20dengan%20paket%20WordPress"
                        target="_blank"
                        class="block w-full py-3 px-6 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-xl transition-colors text-center mb-6">
                         Pesan Sekarang
@@ -319,13 +381,37 @@
                             <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-700">Semua fitur Professional</span>
+                            <span class="text-gray-700">Tanpa Batas Halaman</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-700">Unlimited Halaman</span>
+                            <span class="text-gray-700">Blog / Artikel System</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Live Chat System</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Multi Language Support</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Responsive Mobile Friendly</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">SEO Optimization</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -337,25 +423,55 @@
                             <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-700">Custom Development</span>
+                            <span class="text-gray-700">Contact Form</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+
+                        {{-- WordPress Features Toggle --}}
+                        <button class="wordpress-features-toggle w-full flex items-center justify-center gap-2 text-sm text-blue-600 hover:text-blue-700 font-medium py-2 transition-colors cursor-pointer">
+                            <span>Lihat Fitur Lengkapnya</span>
+                            <svg class="wordpress-features-icon w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
-                            <span class="text-gray-700">Priority Support</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-gray-700">Dedicated Manager</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-gray-700">SLA 99.9% Uptime</span>
+                        </button>
+
+                        {{-- WordPress Features Dropdown --}}
+                        <div class="wordpress-features hidden space-y-3 pt-3 border-t border-gray-100">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Google Analytics Integration</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Social Media Integration</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Backup Harian</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Security Protection</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Caching System</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Image Optimization</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -523,6 +639,91 @@ document.addEventListener('DOMContentLoaded', function() {
             content.classList.toggle('hidden');
             icon.classList.toggle('rotate-180');
         });
+    });
+
+    // Premium Features Toggle
+    const premiumToggle = document.querySelector('.premium-toggle');
+    const premiumFeatures = document.querySelector('.premium-features');
+    const premiumIcon = document.querySelector('.premium-icon');
+
+    if (premiumToggle && premiumFeatures && premiumIcon) {
+        premiumToggle.addEventListener('click', function() {
+            premiumFeatures.classList.toggle('hidden');
+            premiumIcon.classList.toggle('rotate-180');
+
+            // Update text based on state
+            const toggleText = this.querySelector('span');
+            if (premiumFeatures.classList.contains('hidden')) {
+                toggleText.textContent = 'Lihat Paket Premium';
+            } else {
+                toggleText.textContent = 'Tutup Paket Premium';
+            }
+        });
+    }
+
+    // WordPress Features Toggle
+    const wordpressToggle = document.querySelector('.wordpress-features-toggle');
+    const wordpressFeatures = document.querySelector('.wordpress-features');
+    const wordpressIcon = document.querySelector('.wordpress-features-icon');
+
+    if (wordpressToggle && wordpressFeatures && wordpressIcon) {
+        wordpressToggle.addEventListener('click', function() {
+            wordpressFeatures.classList.toggle('hidden');
+            wordpressIcon.classList.toggle('rotate-180');
+
+            // Update text based on state
+            const toggleText = this.querySelector('span');
+            if (wordpressFeatures.classList.contains('hidden')) {
+                toggleText.textContent = 'Lihat Fitur Lengkapnya';
+            } else {
+                toggleText.textContent = 'Tutup Fitur Lengkapnya';
+            }
+        });
+    }
+
+    // Tooltip functionality for mobile click
+    const tooltipContainers = document.querySelectorAll('.tooltip-container');
+
+    tooltipContainers.forEach(container => {
+        const crown = container.querySelector('svg');
+        const tooltip = container.querySelector('.tooltip');
+
+        crown.addEventListener('click', function(e) {
+            e.stopPropagation();
+            // Close all other tooltips
+            tooltipContainers.forEach(otherContainer => {
+                if (otherContainer !== container) {
+                    otherContainer.querySelector('.tooltip').classList.add('opacity-0', 'invisible');
+                    otherContainer.querySelector('.tooltip').classList.remove('opacity-100', 'visible');
+                }
+            });
+
+            // Toggle current tooltip
+            tooltip.classList.toggle('opacity-0');
+            tooltip.classList.toggle('invisible');
+            tooltip.classList.toggle('opacity-100');
+            tooltip.classList.toggle('visible');
+        });
+    });
+
+    // Close tooltips when clicking outside
+    document.addEventListener('click', function() {
+        tooltipContainers.forEach(container => {
+            const tooltip = container.querySelector('.tooltip');
+            tooltip.classList.add('opacity-0', 'invisible');
+            tooltip.classList.remove('opacity-100', 'visible');
+        });
+    });
+
+    // Close tooltips when pressing Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            tooltipContainers.forEach(container => {
+                const tooltip = container.querySelector('.tooltip');
+                tooltip.classList.add('opacity-0', 'invisible');
+                tooltip.classList.remove('opacity-100', 'visible');
+            });
+        }
     });
 });
 </script>
